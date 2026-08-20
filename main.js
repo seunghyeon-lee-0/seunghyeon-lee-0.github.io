@@ -73,6 +73,41 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('section, .fade').forEach(el => el.classList.add('visible'));
   }
 
+  /* ── Scroll spy ────────────────────────────────────── */
+  const nav = document.querySelector('nav');
+  const navLinks = [...nav.querySelectorAll('a')];
+  const targets = navLinks
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  if (targets.length) {
+    const setActive = () => {
+      // 뷰포트 상단 1/3 지점을 기준선으로 삼아 현재 섹션을 판정
+      const line = window.scrollY + window.innerHeight / 3;
+      let current = targets[0];
+      targets.forEach(t => { if (t.offsetTop <= line) current = t; });
+      const href = '#' + current.id;
+      let changed = false;
+      navLinks.forEach(a => {
+        const on = a.getAttribute('href') === href;
+        if (on !== a.classList.contains('active')) changed = true;
+        a.classList.toggle('active', on);
+      });
+      // 모바일에서 nav가 가로 스크롤될 때 활성 링크를 화면 안으로
+      if (changed && nav.scrollWidth > nav.clientWidth) {
+        const a = navLinks.find(x => x.classList.contains('active'));
+        if (a) nav.scrollTo({ left: a.offsetLeft - nav.clientWidth / 2 + a.offsetWidth / 2, behavior: 'smooth' });
+      }
+    };
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { setActive(); ticking = false; });
+    }, { passive: true });
+    setActive();
+  }
+
   /* ── Contact form → mailto ─────────────────────────── */
   const form = document.getElementById('contactForm');
   form?.addEventListener('submit', e => {
