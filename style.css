@@ -175,7 +175,7 @@ h2{
   font-weight:700;line-height:1.06;letter-spacing:-.04em;
   color:var(--dark);margin-bottom:1.3rem;
 }
-.sec-sub{font-size:1.18rem;color:var(--muted);line-height:1.85;margin-bottom:3rem;max-width:44em;font-weight:400}
+.sec-sub{font-size:1.24rem;color:var(--muted);line-height:1.85;margin-bottom:3rem;max-width:44em;font-weight:400}
 
 /* ── ABOUT ─────────────────────────────────────────────── */
 .about-split{
@@ -197,7 +197,7 @@ h2{
   font-size:.7rem;letter-spacing:.2em;color:var(--subtle);text-align:center;
 }
 
-.about-body{font-size:1.14rem;color:var(--muted);line-height:1.95}
+.about-body{font-size:1.18rem;color:var(--muted);line-height:1.95}
 .about-body p+p{margin-top:1.1rem}
 .highlight{color:var(--dark);font-weight:600}
 
@@ -232,23 +232,30 @@ h2{
 .ct-dot--accent{background:var(--dark);border-color:var(--dark);box-shadow:0 0 0 4px rgba(29,29,31,.12)}
 .ct-year{font-size:.94rem;font-weight:700;color:var(--dark);grid-row:1;padding-top:.16rem;letter-spacing:-.01em}
 .ct-label{font-size:1.24rem;font-weight:700;color:var(--dark);grid-row:1;grid-column:2;letter-spacing:-.025em;line-height:1.35}
+.ct-note{color:var(--subtle);font-weight:400;font-size:.92em}
 .ct-desc{font-size:1.05rem;color:var(--muted);line-height:1.75;grid-row:2;grid-column:2;margin-top:.35rem}
 .ct-item--last .ct-desc{color:var(--dark)}
 
 /* ── HOW I WORK ────────────────────────────────────────── */
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:2.6rem}
-.how-card{background:var(--fill);border-radius:18px;padding:1.9rem 1.9rem 2rem}
+.how-card{background:var(--fill);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+/* 세 사진 모두 같은 비율(4:3)로 잘라 크기를 통일 */
+.how-photo{aspect-ratio:4/3;background:var(--fill2);overflow:hidden}
+.how-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.how-card:nth-child(3) .how-photo img{object-position:center 32%}
+.how-body{padding:1.6rem 1.7rem 1.8rem;display:flex;flex-direction:column;flex:1}
+.how-caption{margin-top:auto;padding-top:1rem;font-size:.9rem;color:var(--subtle);line-height:1.6}
 .how-step{
   font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--subtle);font-weight:700;margin-bottom:1rem;
 }
-.how-title{font-size:1.45rem;font-weight:700;letter-spacing:-.03em;color:var(--dark);margin-bottom:.65rem}
+.how-title{font-size:1.45rem;font-weight:700;letter-spacing:-.03em;color:var(--dark);margin-bottom:.6rem}
 .how-desc{font-size:1.14rem;color:var(--dark);line-height:1.7;font-weight:500;letter-spacing:-.015em}
 /* 카드 사이를 잇는 화살표 — 데스크톱은 카드 오른쪽, 모바일은 아래쪽 */
 .how-card{position:relative}
 .how-arrow{
-  position:absolute;top:50%;right:-.9rem;transform:translateY(-50%) rotate(-90deg);
-  font-size:1.15rem;color:var(--subtle);line-height:1;pointer-events:none;
+  position:absolute;top:50%;right:-.62rem;transform:translateY(-50%) rotate(-90deg);
+  font-size:1.3rem;color:var(--subtle);line-height:1;pointer-events:none;z-index:2;
 }
 
 /* ── RESEARCH INTERESTS ────────────────────────────────── */
@@ -286,6 +293,7 @@ h2{
 
 /* ── CARDS ─────────────────────────────────────────────── */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:stretch}
+#research .card-grid{grid-template-columns:repeat(2,1fr)}
 
 .pcard{
   background:#fff;border:1px solid var(--border);
@@ -295,24 +303,32 @@ h2{
   transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1);
 }
 .pcard:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.1)}
-.pcard-img{overflow:hidden;aspect-ratio:16/9;flex-shrink:0;background:var(--fill)}
+/* 사진을 카드 안쪽으로 들여 여백을 준다 */
+.pcard-img{
+  overflow:hidden;aspect-ratio:16/9;flex-shrink:0;background:var(--fill);
+  margin:1rem 1rem 0;border-radius:12px;
+}
 .pcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .pcard:hover .pcard-img img{transform:scale(1.04)}
-.pcard-body{padding:1.9rem 2rem 2rem;display:flex;flex-direction:column;flex:1}
-.ptag{font-size:.82rem;letter-spacing:.07em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.7rem;line-height:1.5}
+.pcard-body{padding:1.6rem 1.7rem 1.8rem;display:flex;flex-direction:column;flex:1}
+.ptag{font-size:.86rem;letter-spacing:.07em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.7rem;line-height:1.5}
 .pname{font-size:1.4rem;font-weight:700;letter-spacing:-.03em;color:var(--dark);margin-bottom:.8rem;line-height:1.35}
-.pdesc{font-size:1.06rem;color:var(--muted);line-height:1.85;margin-bottom:1.1rem;flex:1}
+.pdesc{font-size:1.12rem;color:var(--muted);line-height:1.85;margin-bottom:1.1rem;flex:1}
 .ptechs{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.1rem}
 .ptech{padding:.3rem .75rem;background:var(--fill);border:none;border-radius:980px;font-size:.86rem;color:var(--dark);font-weight:500}
 .plink{font-size:.98rem;color:var(--dark);font-weight:700;letter-spacing:-.015em}
-.pnote{font-size:.88rem;color:var(--subtle);letter-spacing:-.01em;margin-top:.5rem}
+.pnote{font-size:.94rem;color:var(--subtle);letter-spacing:-.01em;margin-top:.5rem}
 .status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#e07b39;margin-right:.4rem;vertical-align:middle}
 .pbadge{
   display:inline-block;background:var(--dark);color:#fff;
   font-size:.84rem;font-weight:600;letter-spacing:-.01em;
   padding:.26rem .7rem;border-radius:980px;margin-bottom:.85rem;align-self:flex-start;
 }
-.psub{font-size:.9rem;color:var(--subtle);font-weight:500;margin-bottom:.9rem;letter-spacing:-.01em}
+/* 한 줄로 유지 — 카드 폭에 맞춰 자간을 조금 좁힌다 */
+.psub{
+  font-size:.88rem;color:var(--subtle);font-weight:500;margin-bottom:1rem;letter-spacing:-.03em;
+  white-space:nowrap;
+}
 
 /* ── EXPERIENCE / EDUCATION ────────────────────────────── */
 .exp-list{display:flex;flex-direction:column}
@@ -321,14 +337,22 @@ h2{
 .exp-meta{display:flex;flex-direction:column;gap:.3rem}
 .exp-logo-row{display:flex;align-items:center;gap:.9rem;margin-bottom:.45rem}
 .exp-logo{width:48px;height:48px;object-fit:contain;flex-shrink:0}
-.exp-date{font-size:.92rem;color:var(--subtle);font-weight:500;letter-spacing:.01em}
+.exp-date{font-size:.98rem;color:var(--subtle);font-weight:500;letter-spacing:.01em}
 .exp-org{font-size:1.12rem;color:var(--dark);font-weight:700;letter-spacing:-.02em;line-height:1.35}
-.exp-loc{font-size:.88rem;color:var(--subtle)}
+.exp-loc{font-size:.94rem;color:var(--subtle)}
 .exp-title{font-size:1.3rem;font-weight:700;letter-spacing:-.025em;color:var(--dark);margin-bottom:.85rem}
 .exp-title .sub{font-size:.96rem;color:var(--muted);font-weight:400;letter-spacing:0}
 .exp-items{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.exp-items li{font-size:1.06rem;color:var(--muted);line-height:1.8;padding-left:1.1rem;position:relative}
+.exp-items li{font-size:1.12rem;color:var(--muted);line-height:1.8;padding-left:1.1rem;position:relative}
 .exp-items li::before{content:'';position:absolute;left:0;top:.72em;width:4px;height:4px;background:var(--hairline);border-radius:50%}
+/* 수강 과목 태그 */
+.course-block{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.5rem;padding-top:1.4rem;border-top:1px solid var(--hairline)}
+.course-label{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.6rem}
+.course-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.course{
+  padding:.3rem .75rem;background:var(--fill);border-radius:8px;
+  font-size:.92rem;color:var(--dark);font-weight:500;letter-spacing:-.01em;
+}
 .tag-inline{background:var(--sage-pale);border:1px solid var(--sage-mid);border-radius:6px;padding:.2rem .65rem;font-size:.94rem;font-weight:600;color:var(--accent)}
 
 /* ── AWARDS ────────────────────────────────────────────── */
@@ -353,10 +377,16 @@ h2{
   transition:grid-template-rows .28s cubic-bezier(.22,1,.36,1);
 }
 .award-card.open .award-detail{grid-template-rows:1fr}
-.award-detail > p{
-  overflow:hidden;margin:0;font-size:1rem;color:var(--muted);line-height:1.8;
+.award-detail > div{overflow:hidden}
+.award-detail p{margin:0;font-size:1.04rem;color:var(--muted);line-height:1.8}
+.award-card.open .award-detail > div{padding-top:.85rem}
+.rel-link{
+  display:inline-block;margin-top:.85rem;padding:.45rem 1rem;
+  background:#fff;border:1px solid var(--hairline);border-radius:980px;
+  font:inherit;font-size:.94rem;font-weight:600;color:var(--dark);cursor:pointer;
+  transition:background .12s;
 }
-.award-card.open .award-detail > p{padding-top:.85rem}
+.rel-link:hover{background:var(--fill2)}
 .award-card:hover{background:var(--fill2)}
 .award-rank{
   flex-shrink:0;padding:.34rem .85rem;border-radius:8px;background:#fff;
@@ -365,7 +395,7 @@ h2{
 }
 .award-rank.gold{background:var(--dark);color:#fff;box-shadow:none}
 .award-name{font-size:1.08rem;font-weight:600;color:var(--dark);line-height:1.5;letter-spacing:-.015em}
-.award-meta{font-size:.92rem;color:var(--subtle);line-height:1.6}
+.award-meta{font-size:.98rem;color:var(--subtle);line-height:1.6}
 
 /* ── CERTS ─────────────────────────────────────────────── */
 .certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
@@ -376,12 +406,13 @@ h2{
 }
 .cert-card:hover{background:var(--fill2)}
 .cert-icon{
-  width:40px;height:40px;flex-shrink:0;background:#fff;border-radius:10px;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 1px 3px rgba(0,0,0,.09);font-size:.74rem;font-weight:700;letter-spacing:-.02em;
+  width:44px;height:44px;flex-shrink:0;background:#fff;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:0 1px 3px rgba(0,0,0,.09);font-size:.78rem;font-weight:700;letter-spacing:-.02em;
 }
+.cert-icon img{width:32px;height:32px;object-fit:contain}
 .cert-title{font-size:1.06rem;font-weight:600;color:var(--dark);margin-bottom:.22rem;line-height:1.4}
-.cert-meta{font-size:.9rem;color:var(--subtle)}
+.cert-meta{font-size:.96rem;color:var(--subtle)}
 
 /* ── CONTACT ───────────────────────────────────────────── */
 #contact{text-align:center;padding-bottom:8rem}
@@ -421,7 +452,7 @@ h2{
 .form-separator::before,.form-separator::after{content:'';flex:1;height:1px;background:var(--hairline)}
 
 /* ── FOOTER ────────────────────────────────────────────── */
-footer{border-top:1px solid var(--hairline);padding:1.8rem 2rem;text-align:center;font-size:.92rem;color:var(--subtle);background:#fff}
+footer{border-top:1px solid var(--hairline);padding:1.8rem 2rem;text-align:center;font-size:.98rem;color:var(--subtle);background:#fff}
 footer a{color:var(--subtle);text-decoration:none}
 footer a:hover{color:var(--dark)}
 
@@ -453,7 +484,7 @@ footer a:hover{color:var(--dark)}
 .modal-chapter{margin-bottom:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid var(--hairline)}
 .modal-chapter:last-of-type{border-bottom:none}
 .modal-chapter-label{font-size:.86rem;letter-spacing:.11em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.9rem}
-.modal-text{font-size:1.08rem;color:var(--muted);line-height:1.95}
+.modal-text{font-size:1.14rem;color:var(--muted);line-height:1.95}
 .modal-text+.modal-text{margin-top:.9rem}
 .modal-text strong{color:var(--dark);font-weight:600}
 .modal-hypothesis{
@@ -466,11 +497,11 @@ footer a:hover{color:var(--dark)}
 }
 .modal-sub{font-size:1.1rem;font-weight:700;color:var(--dark);margin:1.5rem 0 .6rem;letter-spacing:-.015em}
 .modal-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-top:.7rem}
-.modal-list li{font-size:1.05rem;color:var(--muted);line-height:1.85;padding-left:1.1rem;position:relative}
+.modal-list li{font-size:1.12rem;color:var(--muted);line-height:1.85;padding-left:1.1rem;position:relative}
 .modal-list li::before{content:'';position:absolute;left:0;top:.75em;width:4px;height:4px;background:var(--hairline);border-radius:50%}
 .modal-img-slot{border-radius:14px;overflow:hidden;background:var(--fill);border:1px solid var(--border);margin-top:1.2rem}
 .modal-img-slot img{width:100%;display:block}
-.modal-img-caption{font-size:.92rem;color:var(--subtle);line-height:1.7;margin-top:.6rem}
+.modal-img-caption{font-size:.98rem;color:var(--subtle);line-height:1.7;margin-top:.6rem}
 .modal-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.2rem 0 1.6rem}
 .modal-stat{background:var(--fill);border-radius:14px;padding:1.1rem .7rem;text-align:center}
 .modal-stat-num{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;color:var(--dark)}
@@ -490,20 +521,20 @@ footer a:hover{color:var(--dark)}
 /* 강조 — 카드 본문의 핵심 구절(붉은색), 모달 상단의 수상 내역(파란색) */
 .hl{color:#c0392b;font-weight:600}
 .modal-award{
-  font-size:1.06rem;font-weight:600;color:#1a4fa0;line-height:1.7;
-  background:#eef3fb;border-radius:12px;padding:.9rem 1.2rem;margin-bottom:1.4rem;
+  font-size:1.08rem;font-weight:700;color:#1a4fa0;line-height:1.7;
+  background:#eef3fb;border-radius:12px;padding:.95rem 1.25rem;margin-bottom:1.4rem;
 }
-.modal-award strong{font-weight:800;color:#12376f}
+.modal-award strong{font-weight:700;color:#1a4fa0}
 
 /* Overview 다음에 전체 폭으로 펼쳐지는 My Role 박스 */
 .modal-role{
-  margin:1.6rem 0 .2rem;
+  margin:0 0 1.6rem;
   background:var(--fill);border-radius:16px;padding:1.5rem 1.6rem;
 }
 .modal-role-label{font-size:.84rem;letter-spacing:.11em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.45rem}
 .modal-role-sub{font-size:1.04rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;letter-spacing:-.015em;line-height:1.45}
 .modal-role ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.modal-role li{font-size:1.02rem;color:var(--muted);line-height:1.75;padding-left:.95rem;position:relative}
+.modal-role li{font-size:1.08rem;color:var(--muted);line-height:1.75;padding-left:.95rem;position:relative}
 .modal-role li::before{content:'';position:absolute;left:0;top:.72em;width:3px;height:3px;background:var(--subtle);border-radius:50%}
 .modal-chapter::after{content:'';display:block;clear:both}
 
@@ -533,6 +564,7 @@ section.visible{opacity:1;transform:translateY(0)}
   #home{width:auto;padding:0 2.2rem;gap:3rem}
   .photo-frame{width:260px}
   .skills-grid,.card-grid,.award-grid,.certs-grid,.how-grid{grid-template-columns:repeat(2,1fr)}
+  #research .card-grid{grid-template-columns:repeat(2,1fr)}
   .about-split{grid-template-columns:1fr minmax(260px,.5fr);min-height:0}
   .about-split-text{padding:2.6rem 2.6rem 2.4rem}
   .exp-item{grid-template-columns:220px 1fr;gap:2rem}
@@ -591,15 +623,17 @@ section.visible{opacity:1;transform:translateY(0)}
   .ct-dot{left:-1.16rem;top:.95rem}
 
   /* 1열 그리드 */
-  .skills-grid,.card-grid,.award-grid,.certs-grid,.how-grid{grid-template-columns:1fr}
-  .how-card{padding:1.5rem 1.5rem 1.6rem}
+  .skills-grid,.card-grid,.award-grid,.certs-grid,.how-grid,#research .card-grid{grid-template-columns:1fr}
+  .how-body{padding:1.4rem 1.5rem 1.5rem}
   .how-title{font-size:1.2rem}
   .how-arrow{top:auto;right:auto;bottom:-1.05rem;left:50%;transform:translateX(-50%)}
   .block-label{font-size:.74rem;gap:.7rem;margin-top:2.6rem}
   .block-label::before{width:24px}
   .interest{font-size:.88rem;padding:.45rem 1rem}
   .skill-card{padding:1.4rem 1.5rem}
-  .pcard-body{padding:1.6rem 1.5rem 1.7rem}
+  .pcard-body{padding:1.4rem 1.4rem 1.6rem}
+  .pcard-img{margin:.8rem .8rem 0}
+  .psub{white-space:normal;font-size:.92rem}
   .pname{font-size:1.18rem}
 
   /* education: 로고 행 + 스택 */
@@ -617,7 +651,7 @@ section.visible{opacity:1;transform:translateY(0)}
   .award-meta{grid-column:2 / -1;grid-row:2;text-align:left;white-space:normal;margin-top:.3rem}
   .award-card::after{grid-column:3;grid-row:1;align-self:start;margin-top:.35rem}
   .award-detail{grid-column:1 / -1;grid-row:3}
-  .award-detail > p{font-size:.95rem}
+  .award-detail p{font-size:.98rem}
 
   /* modal */
   .modal-img-pair{grid-template-columns:1fr}
