@@ -284,17 +284,14 @@ h2{
 
 /* ── RESEARCH INTERESTS ────────────────────────────────── */
 .interest-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
-/* 항목별로 다른 색을 줘 한눈에 구분되게 한다 */
+/* 무채색을 유지하되, 테두리와 굵기로 존재감을 준다 */
 .interest{
-  padding:.75rem 1.6rem;border:1px solid transparent;border-radius:980px;
-  font-size:1.2rem;font-weight:600;letter-spacing:-.015em;
-  transition:transform .18s cubic-bezier(.22,1,.36,1),box-shadow .18s;
+  padding:.75rem 1.6rem;border:1.5px solid var(--dark);border-radius:980px;
+  font-size:1.2rem;font-weight:600;color:var(--dark);letter-spacing:-.015em;
+  background:#fff;
+  transition:background .16s,color .16s;
 }
-.interest:hover{transform:translateY(-2px);box-shadow:0 6px 18px -8px rgba(0,0,0,.35)}
-.interest:nth-child(1){background:#e8f0fb;border-color:#c5d9f4;color:#17457f}
-.interest:nth-child(2){background:#e6f4ec;border-color:#c2e2d1;color:#14603f}
-.interest:nth-child(3){background:#f0ecfb;border-color:#d8cff2;color:#42317f}
-.interest:nth-child(4){background:#fbf0e6;border-color:#f0dcc3;color:#8a5312}
+.interest:hover{background:var(--dark);color:#fff}
 .block-label{
   font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--dark);font-weight:700;display:flex;align-items:center;gap:1rem;
