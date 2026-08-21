@@ -115,6 +115,12 @@ document.addEventListener('DOMContentLoaded', function () {
     setActive();
   }
 
+  /* ── 이메일 링크 조립 ──────────────────────────────── */
+  // 주소를 HTML에 그대로 두지 않아 수집 봇이 긁어가기 어렵게 한다
+  const mailLink = document.getElementById('mailLink');
+  const mailAddr = mailLink ? mailLink.dataset.user + '@' + mailLink.dataset.domain : 'dltmd004@yonsei.ac.kr';
+  if (mailLink) mailLink.setAttribute('href', 'mailto:' + mailAddr);
+
   /* ── Contact form → mailto ─────────────────────────── */
   const form = document.getElementById('contactForm');
   form?.addEventListener('submit', e => {
@@ -124,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const msg = document.getElementById('cf-msg').value.trim();
     const subject = encodeURIComponent(`[Portfolio] ${name || 'Contact'}`);
     const body = encodeURIComponent(`${msg}\n\n---\n${name}\n${email}`);
-    window.location.href = `mailto:dltmd004@yonsei.ac.kr?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${mailAddr}?subject=${subject}&body=${body}`;
   });
 
 });
