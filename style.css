@@ -486,6 +486,7 @@ h2{
 /* ── FOOTER ────────────────────────────────────────────── */
 footer{border-top:1px solid var(--hairline);padding:1.8rem 2rem;text-align:center;font-size:.98rem;color:var(--subtle);background:#fff}
 footer a{color:var(--subtle);text-decoration:none}
+.build{font-variant-numeric:tabular-nums;opacity:.55}
 footer a:hover{color:var(--dark)}
 
 /* ── MODAL ─────────────────────────────────────────────── */
