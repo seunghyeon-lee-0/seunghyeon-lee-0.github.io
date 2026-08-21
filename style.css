@@ -185,7 +185,7 @@ h2{
 }
 .about-split-text{padding:3.6rem 3.6rem 3.2rem;display:flex;flex-direction:column;justify-content:center}
 .about-split-photo{position:relative;overflow:hidden;background:var(--fill2)}
-.about-split-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.about-split-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
 .about-photo-caption{
   position:absolute;z-index:2;bottom:1rem;left:50%;transform:translateX(-50%);
   font-size:.72rem;color:rgba(255,255,255,.9);
@@ -612,7 +612,7 @@ section.visible{opacity:1;transform:translateY(0)}
   /* about: 사진 위 / 텍스트 아래 */
   .about-split{grid-template-columns:1fr;grid-template-rows:64vw auto;border-radius:20px}
   .about-split-photo{grid-row:1;min-height:64vw}
-  .about-split-photo img{object-position:center 20%}
+  .about-split-photo img{object-position:center 30%}
   .about-split-text{grid-row:2;padding:2rem 1.5rem 2.2rem}
   .about-body{font-size:.98rem}
   .career-timeline{padding-left:1.2rem;margin-top:1.8rem}
