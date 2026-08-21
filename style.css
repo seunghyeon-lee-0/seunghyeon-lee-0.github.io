@@ -269,12 +269,13 @@ h2{
   font-size:1.5rem;font-weight:700;letter-spacing:-.035em;color:var(--dark);
   line-height:1.3;margin-bottom:.5rem;
 }
-.how-num{color:var(--subtle);font-weight:700}
+.how-num{color:var(--dark);font-weight:700}
 .how-desc{font-size:1.08rem;color:var(--muted);line-height:1.65;margin-bottom:1.6rem}
 /* 사진은 모서리가 둥근 직사각형 — 별도 액자 장식 없이 */
 .how-figure{margin-top:auto}
 .how-photo{border-radius:14px;overflow:hidden;background:var(--fill2)}
 .how-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.how-card:nth-child(2) .how-photo img{object-fit:contain;background:#fff}
 .how-card:nth-child(3) .how-photo img{object-position:center 32%}
 .how-caption{margin-top:.9rem;font-size:.92rem;color:var(--subtle);line-height:1.55}
 .how-arrow{
@@ -550,7 +551,7 @@ footer a:hover{color:var(--dark)}
 .modal-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-top:.7rem}
 .modal-list li{font-size:1.12rem;color:var(--muted);line-height:1.85;padding-left:1.1rem;position:relative}
 .modal-list li::before{content:'';position:absolute;left:0;top:.75em;width:4px;height:4px;background:var(--hairline);border-radius:50%}
-.modal-img-slot{border-radius:14px;overflow:hidden;background:var(--fill);border:1px solid var(--border);margin-top:1.2rem}
+.modal-img-slot{border-radius:14px;overflow:hidden;background:var(--fill);border:1px solid var(--border);margin-top:2.1rem}
 .modal-img-slot img{width:100%;display:block}
 .modal-img-caption{font-size:.98rem;color:var(--subtle);line-height:1.7;margin-top:.6rem}
 .modal-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.2rem 0 1.6rem}
@@ -567,6 +568,16 @@ footer a:hover{color:var(--dark)}
 .modal-table th:last-child{border-radius:0 10px 0 0}
 .modal-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.8rem}
 .modal-actions .btn-primary,.modal-actions .btn-ghost{font-size:.96rem;padding:.72rem 1.6rem}
+/* 보도자료 버튼 */
+.btn-press{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.72rem 1.5rem;border-radius:980px;
+  background:var(--fill);border:1px solid var(--hairline);
+  color:var(--dark);font-size:.96rem;font-weight:600;text-decoration:none;
+  transition:background .14s,border-color .14s;
+}
+.btn-press:hover{background:var(--fill2);border-color:var(--subtle)}
+.btn-press svg{width:17px;height:17px;flex-shrink:0}
 .modal-video{width:100%;border-radius:14px;margin-top:1.2rem;background:#000;display:block}
 
 /* 강조 — 카드 본문의 핵심 구절(붉은색), 모달 상단의 수상 내역(파란색) */
@@ -590,8 +601,9 @@ footer a:hover{color:var(--dark)}
 .modal-chapter::after{content:'';display:block;clear:both}
 
 /* 2단 이미지 (나란히 배치) */
-.modal-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.2rem}
+.modal-img-pair{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.1rem}
 .modal-img-pair .modal-img-slot{margin-top:0}
+.modal-img-caption + .modal-text{margin-top:1.6rem}
 
 /* ── SCROLL REVEAL ─────────────────────────────────────── */
 .fade{opacity:0;transform:translateY(40px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}
