@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ── Tabs (Working Papers / Selected Projects) ─────── */
+  const tabs = [...document.querySelectorAll('.tab')];
+  const panels = [...document.querySelectorAll('.tab-panel')];
+
+  window.showTab = function (name, scroll) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+    panels.forEach(p => { p.hidden = (p.id !== 'tab-' + name); });
+    // 탭 전환 시 새로 노출된 카드의 등장 애니메이션을 즉시 완료 상태로
+    document.querySelectorAll('.tab-panel:not([hidden]) .fade')
+      .forEach(el => el.classList.add('visible'));
+    if (scroll !== false) {
+      const sec = document.getElementById('projects');
+      if (sec) window.scrollTo({ top: sec.offsetTop - 8, behavior: 'smooth' });
+    }
+  };
+
   /* ── Modal ─────────────────────────────────────────── */
   const overlay = document.getElementById('modal-overlay');
 
@@ -26,36 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  /* ── Carousel ──────────────────────────────────────── */
-  window.scrollCarousel = function (id, dir) {
-    const c = document.getElementById(id);
-    const card = c && c.querySelector('.pcard');
-    if (!card) return;
-    c.scrollBy({ left: dir * (card.offsetWidth + 16), behavior: 'smooth' });
-  };
-
-  document.querySelectorAll('.project-carousel').forEach(c => {
-    let dragging = false, startX = 0, startScroll = 0, moved = 0;
-    c.addEventListener('mousedown', e => {
-      dragging = true; moved = 0;
-      startX = e.pageX - c.offsetLeft;
-      startScroll = c.scrollLeft;
-      c.classList.add('is-dragging');
-    });
-    c.addEventListener('mousemove', e => {
-      if (!dragging) return;
-      e.preventDefault();
-      const delta = (e.pageX - c.offsetLeft) - startX;
-      moved = Math.abs(delta);
-      c.scrollLeft = startScroll - delta * 1.2;
-    });
-    const stop = () => { dragging = false; c.classList.remove('is-dragging'); };
-    document.addEventListener('mouseup', stop);
-    c.addEventListener('mouseleave', stop);
-    // 드래그 직후 발생하는 click이 모달을 열지 않도록 차단
-    c.addEventListener('click', e => { if (moved > 8) { e.stopPropagation(); e.preventDefault(); } }, true);
-  });
-
   /* ── Scroll reveal ─────────────────────────────────── */
   if ('IntersectionObserver' in window) {
     const reveal = (selector, threshold) => {
@@ -66,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, { threshold, rootMargin: '0px 0px -40px 0px' });
       document.querySelectorAll(selector).forEach(el => io.observe(el));
     };
-    reveal('section', 0.07);
+    reveal('section', 0.05);
     reveal('.fade', 0.08);
     document.getElementById('home').classList.add('visible');
   } else {
@@ -82,10 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (targets.length) {
     const setActive = () => {
-      // 뷰포트 상단 1/3 지점을 기준선으로 삼아 현재 섹션을 판정
+      // 뷰포트 상단 1/3 지점을 기준선으로 현재 섹션을 판정
       const line = window.scrollY + window.innerHeight / 3;
       let current = targets[0];
       targets.forEach(t => { if (t.offsetTop <= line) current = t; });
+
       const href = '#' + current.id;
       let changed = false;
       navLinks.forEach(a => {

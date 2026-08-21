@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Seunghyeon Lee — Data Analyst · Researcher</title>
-<meta name="description" content="고객 행동과 E-commerce, AI 인식을 연구하는 데이터 분석가. M.S. @ Yonsei Graduate School of Information."/>
+<title>Seunghyeon Lee — Data Analyst · Data Scientist</title>
+<meta name="description" content="From real-world data to actionable decisions. 고객 행동, E-commerce, AI를 연구하는 데이터 분석가. M.S. Information Systems @ Yonsei University."/>
 
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://seunghyeon-lee-0.github.io/"/>
-<meta property="og:title" content="Seunghyeon Lee — Data Analyst · Researcher"/>
+<meta property="og:title" content="Seunghyeon Lee — Data Analyst · Data Scientist"/>
 <meta property="og:description" content="고객 행동과 E-commerce, AI 인식을 연구하는 데이터 분석가. M.S. @ Yonsei Graduate School of Information."/>
 <meta property="og:image" content="https://seunghyeon-lee-0.github.io/assets/images/og-cover.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -25,7 +25,7 @@
   "alternateName": "이승현",
   "url": "https://seunghyeon-lee-0.github.io/",
   "email": "mailto:dltmd004@yonsei.ac.kr",
-  "jobTitle": "Data Analyst · Researcher",
+  "jobTitle": "Data Analyst · Data Scientist",
   "image": "https://seunghyeon-lee-0.github.io/assets/images/og-cover.png",
   "address": { "@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR" },
   "alumniOf": [
@@ -52,8 +52,13 @@
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
-  <a href="#research">Research</a>
-  <a href="#projects">Projects</a>
+  <div class="nav-drop">
+    <a href="#projects">Projects</a>
+    <div class="nav-sub">
+      <button type="button" onclick="showTab('papers')">Working Papers</button>
+      <button type="button" onclick="showTab('selected')">Selected Projects</button>
+    </div>
+  </div>
   <a href="#education">Education</a>
   <a href="#awards">Awards</a>
   <a href="#conferences">Conferences</a>
@@ -65,7 +70,7 @@
 <section id="home">
 
   <div class="hero-left">
-    <div class="hero-label">Data Analyst · Researcher</div>
+    <div class="hero-label">Data Analyst · Data Scientist</div>
 
     <h1 class="hero-name">
       Seunghyeon
@@ -74,10 +79,8 @@
 
     <div class="hero-rule"></div>
 
-    <p class="hero-desc">
-      현실의 문제를 분석 가능한 질문으로.<br>
-      <span class="hero-sub">Customer Behavior · E-commerce · AI Agent · ML/DL · Spatial Analysis</span>
-    </p>
+    <p class="hero-desc">From real-world data to actionable decisions.</p>
+    <p class="hero-sub">현실의 데이터를 분석해 사람과 비즈니스의 행동을 이해하고, 분석 결과를 실제 의사결정과 문제 해결로 연결하는 일을 합니다. 현재 고객 행동, E-commerce, AI와 관련된 데이터 분석 및 연구에 관심을 두고 있습니다.</p>
 
     <div class="hero-meta">
       <span>🎓 M.S. Information Systems @ Yonsei Graduate School of Information</span>
@@ -131,33 +134,38 @@
   <div class="about-split fade">
     <div class="about-split-text">
       <div class="about-body">
-        <p>저는 데이터를 분석하는 것보다, <span class="highlight">분석 결과가 실제로 어디에 쓰이는지</span>를 고민하는 과정에 더 흥미를 느낍니다. 축제의 교통 혼잡을 줄일 셔틀 정류장을 찾고, 기후변화에 따른 홍수 위험을 다시 평가해 보험요율로 연결하고, 코드화된 의료 데이터를 사용자가 읽을 수 있는 대시보드로 바꿔 왔습니다.</p>
-        <p>다룬 문제는 달랐지만 과정은 같았습니다. <span class="highlight">현실의 문제를 분석 가능한 질문으로 바꾸고, 데이터에서 패턴을 찾고, 그 결과를 다시 정책·서비스·비즈니스 의사결정으로 되돌려 놓는 일</span>입니다.</p>
-
+        <p>데이터를 통해 현실의 문제를 구조화하고 패턴을 발견하는 것뿐만 아니라, <span class="highlight">분석 결과가 실제 사람과 비즈니스의 의사결정에 어떤 의미를 가질 수 있는지</span>를 고민합니다.</p>
+        <p>고객 행동 분석, 머신러닝, 공간 데이터 분석, 최적화, BI 대시보드 등 다양한 방법론을 활용해 문제를 분석해왔으며, <span class="highlight">분석 결과를 정책·서비스·비즈니스 아이디어로 연결하는 과정</span>에 관심이 있습니다.</p>
         <div class="career-timeline">
           <div class="ct-item">
             <div class="ct-dot"></div>
             <div class="ct-year">2021</div>
             <div class="ct-label">연세대학교 (학부)</div>
-            <div class="ct-desc">데이터사이언스 · 생명공학 — 데이터와 도메인을 함께 다루기 시작한 지점</div>
+            <div class="ct-desc">데이터사이언스 · 생명공학 복수전공 — 데이터와 도메인 지식을 함께 다루기 시작한 지점</div>
           </div>
           <div class="ct-item">
             <div class="ct-dot"></div>
-            <div class="ct-year">2023–25</div>
-            <div class="ct-label">Data Projects &amp; Competitions</div>
-            <div class="ct-desc">의료데이터 시각화 · 셔틀버스 입지 최적화 · 홍수 리스크 모델링 — 전국 단위 공모전 8회 수상</div>
+            <div class="ct-year">2023</div>
+            <div class="ct-label">Healthcare BI · 의료데이터 시각화</div>
+            <div class="ct-desc">국민건강보험공단 데이터 30만 건 전처리 · Power BI 대시보드 구현 · 2023 의료데이터 시각화 경진대회 장려상</div>
+          </div>
+          <div class="ct-item">
+            <div class="ct-dot"></div>
+            <div class="ct-year">2024</div>
+            <div class="ct-label">Spatial Optimization · 빅콘테스트</div>
+            <div class="ct-desc">MCLP · P-Median 기반 셔틀버스 입지 최적화 · 제12회 2024 빅콘테스트 데이터분석분야 최우수상 (SK텔레콤)</div>
           </div>
           <div class="ct-item">
             <div class="ct-dot"></div>
             <div class="ct-year">2025</div>
             <div class="ct-label">연세대학교 정보대학원 (석사)</div>
-            <div class="ct-desc">M.S. Information Systems · 지도교수 김희웅 — 텍스트 마이닝, 고객 행동 연구</div>
+            <div class="ct-desc">M.S. Information Systems · 지도교수 김희웅 — 텍스트 마이닝, 고객 행동 연구 · 삼성화재 리스크 관리 경진대회 장려상</div>
           </div>
           <div class="ct-item ct-item--last">
             <div class="ct-dot ct-dot--accent"></div>
-            <div class="ct-year">Now</div>
+            <div class="ct-year">2026</div>
             <div class="ct-label">Research &amp; Job Search</div>
-            <div class="ct-desc">고객 행동 · E-commerce · AI Agent — 워킹페이퍼 2편 집필 중, 데이터 직무 지원 중</div>
+            <div class="ct-desc">IIARP–Glovento 2026 국제학회 발표 · 워킹페이퍼 2편 집필 중 · 고객 행동 · E-commerce · AI Agent 방향의 데이터 직무 지원 중</div>
           </div>
         </div>
       </div>
@@ -176,35 +184,63 @@
     <div class="badge fade">Working Papers 2</div>
     <div class="badge fade">SQLD · ADsP</div>
   </div>
+
+  <div class="block-label">How I Work</div>
+  <div class="how-grid">
+    <div class="how-card fade">
+      <div class="how-step">Step 01</div>
+      <div class="how-title">Frame</div>
+      <div class="how-desc">현실의 문제를 데이터로 분석할 수 있는 형태로 구조화합니다. 무엇을 측정할 것인지, 어떤 단위로 볼 것인지를 먼저 정의합니다.</div>
+    </div>
+    <div class="how-card fade">
+      <div class="how-step">Step 02</div>
+      <div class="how-title">Analyze</div>
+      <div class="how-desc">데이터 분석, 통계, 머신러닝과 다양한 분석 방법론을 활용해 문제의 패턴과 원인을 탐색합니다.</div>
+    </div>
+    <div class="how-card fade">
+      <div class="how-step">Step 03</div>
+      <div class="how-title">Translate</div>
+      <div class="how-desc">분석 결과를 실제 비즈니스 의사결정, 정책 또는 서비스 아이디어로 연결합니다.</div>
+    </div>
+  </div>
+
+  <div class="block-label">Research Interests</div>
+  <div class="interest-row">
+    <span class="interest fade">Customer Behavior</span>
+    <span class="interest fade">E-commerce Analytics</span>
+    <span class="interest fade">AI Agents</span>
+    <span class="interest fade">Human–AI Interaction</span>
+  </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ══ SKILLS ══ -->
+<!-- ══ TOOLS & METHODS ══ -->
 <section id="skills">
-  <div class="sec-label">Technical Skills</div>
+  <div class="sec-label">Tools &amp; Methods</div>
   <h2>What I work with</h2>
-  <p class="sec-sub">분석·모델링부터 시각화, 공간 분석, 최적화까지 문제에 맞는 도구를 골라 씁니다.</p>
+  <p class="sec-sub">프로젝트와 연구에서 실제로 사용한 도구와 분석 방법입니다. 모든 라이브러리를 나열하기보다 주요 기술을 중심으로 정리했고, 세부 방법론은 각 프로젝트 상세에서 확인할 수 있습니다.</p>
 
   <div class="skills-grid">
 
     <div class="skill-card fade">
-      <div class="skill-card-title">Languages &amp; Data</div>
+      <div class="skill-card-title">Programming &amp; Data Analysis</div>
       <div class="skill-tags">
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""/>Python</span>
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt=""/>SQL / PostgreSQL</span>
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt=""/>R</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" onerror="this.remove()"/>Python</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" onerror="this.remove()"/>SQL</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="" onerror="this.remove()"/>R</span>
         <span class="skill-tag">SAS</span>
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt=""/>pandas</span>
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt=""/>NumPy</span>
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt=""/>Git / GitHub</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="" onerror="this.remove()"/>pandas</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="" onerror="this.remove()"/>NumPy</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="" onerror="this.remove()"/>Jupyter</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" onerror="this.remove()"/>Git</span>
       </div>
     </div>
 
     <div class="skill-card fade">
-      <div class="skill-card-title">Machine Learning</div>
+      <div class="skill-card-title">Machine Learning &amp; Clustering</div>
       <div class="skill-tags">
-        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt=""/>scikit-learn</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="" onerror="this.remove()"/>scikit-learn</span>
         <span class="skill-tag">XGBoost</span>
         <span class="skill-tag">K-Means</span>
         <span class="skill-tag">Hierarchical Clustering</span>
@@ -214,10 +250,10 @@
     </div>
 
     <div class="skill-card fade">
-      <div class="skill-card-title">NLP / Text Mining</div>
+      <div class="skill-card-title">NLP &amp; Text Mining</div>
       <div class="skill-tags">
-        <span class="skill-tag">BERTopic</span>
-        <span class="skill-tag">SentenceTransformers</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/huggingface" alt="" onerror="this.remove()"/>BERTopic</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/huggingface" alt="" onerror="this.remove()"/>SentenceTransformers</span>
         <span class="skill-tag">UMAP</span>
         <span class="skill-tag">HDBSCAN</span>
         <span class="skill-tag">PERVAL Framework</span>
@@ -225,28 +261,27 @@
     </div>
 
     <div class="skill-card fade">
-      <div class="skill-card-title">Visualization &amp; BI</div>
+      <div class="skill-card-title">Data Visualization &amp; BI</div>
       <div class="skill-tags">
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">Metabase</span>
-        <span class="skill-tag">Matplotlib</span>
-        <span class="skill-tag">KPI Dashboards</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/powerbi" alt="" onerror="this.remove()"/>Power BI</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/tableau" alt="" onerror="this.remove()"/>Tableau</span>
+        <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="" onerror="this.remove()"/>Matplotlib</span>
+        <span class="skill-tag">KPI Dashboard</span>
       </div>
     </div>
 
     <div class="skill-card fade">
-      <div class="skill-card-title">GIS &amp; Spatial</div>
+      <div class="skill-card-title">GIS &amp; Spatial Analysis</div>
       <div class="skill-tags">
-        <span class="skill-tag">ArcGIS</span>
-        <span class="skill-tag">QGIS</span>
-        <span class="skill-tag">GeoPandas</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/esri" alt="" onerror="this.remove()"/>ArcGIS</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/qgis" alt="" onerror="this.remove()"/>QGIS</span>
+        <span class="skill-tag"><img src="https://cdn.simpleicons.org/geopandas" alt="" onerror="this.remove()"/>GeoPandas</span>
         <span class="skill-tag">Landsat</span>
       </div>
     </div>
 
     <div class="skill-card fade">
-      <div class="skill-card-title">Optimization &amp; Methods</div>
+      <div class="skill-card-title">Optimization &amp; Decision Modeling</div>
       <div class="skill-tags">
         <span class="skill-tag">AHP</span>
         <span class="skill-tag">MCLP</span>
@@ -261,58 +296,67 @@
 
 <div class="divider"></div>
 
-<!-- ══ RESEARCH ══ -->
-<section id="research">
-  <div class="sec-label">Research</div>
-  <h2>Working Papers</h2>
-  <p class="sec-sub">분석은 마무리되었고 현재 논문을 집필 중인 연구입니다. 상세 방법론과 결과는 아직 공개하지 않습니다.</p>
-
-  <div class="card-grid">
-
-    <div class="pcard fade">
-      <div class="pcard-body">
-        <div class="ptag"><span class="status-dot"></span>Working Paper · Customer Analytics</div>
-        <div class="pname">클릭스트림 기반 고객 행동 &amp; 이탈 연구</div>
-        <div class="pdesc">클릭스트림과 구매 행동 데이터를 결합해 신규 고객 리텐션 전략, 로열 고객의 행동 패턴과 세분화, 구매·이탈 가능성 사전 예측을 다룹니다. 고객 행동에 대한 데이터 기반 이해로 이탈을 줄이고 전환을 높이는 의사결정을 지원하는 것이 목표입니다.</div>
-        <div class="ptechs"><span class="ptech">Clickstream</span><span class="ptech">Retention</span><span class="ptech">Segmentation</span><span class="ptech">Churn Prediction</span></div>
-        <div class="pnote">Analysis completed · Manuscript in preparation</div>
-      </div>
-    </div>
-
-    <div class="pcard fade">
-      <div class="pcard-body">
-        <div class="ptag"><span class="status-dot"></span>Working Paper · Text Mining</div>
-        <div class="pname">Generative · Agentic · Physical AI 인식 비교 분석</div>
-        <div class="pdesc">뉴스 미디어와 커뮤니티 담론을 텍스트 마이닝으로 분석해 AI 유형별로 중요하게 인식되는 가치와 이슈의 차이를 비교했습니다. 거시적 사회 담론과 미시적 사용자 경험을 함께 보고, AI 인식을 구조적으로 비교할 수 있는 분석 프레임을 제시합니다.</div>
-        <div class="ptechs"><span class="ptech">BERTopic</span><span class="ptech">PERVAL</span><span class="ptech">News · Reddit</span><span class="ptech">Topic Modeling</span></div>
-        <div class="pnote">Analysis completed · Presented at IIARP–Glovento 2026</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- ══ PROJECTS ══ -->
+<!-- ══ PROJECTS (tabbed) ══ -->
 <section id="projects">
-  <div class="sec-label">Featured Projects</div>
-  <h2>Selected Projects</h2>
-  <p class="sec-sub">분석에서 멈추지 않고 정책·운영·서비스 설계까지 이어간 프로젝트들입니다. 카드를 눌러 전체 과정을 확인할 수 있습니다.</p>
+  <div class="sec-label">Research &amp; Projects</div>
+  <h2>Selected Work</h2>
 
-  <div class="project-carousel-wrap">
-    <div class="project-carousel" id="projectCarousel">
+  <div class="tabs" role="tablist">
+    <button class="tab active" type="button" role="tab" data-tab="papers" onclick="showTab('papers')">Working Papers</button>
+    <button class="tab" type="button" role="tab" data-tab="selected" onclick="showTab('selected')">Selected Projects</button>
+  </div>
+
+  <!-- Working Papers -->
+  <div class="tab-panel" id="tab-papers">
+    <p class="tab-note">분석을 완료하고 현재 논문을 작성 중인 연구 프로젝트입니다. 세부 방법론과 결과는 논문 작성 과정에 따라 공개 범위를 조정합니다.</p>
+
+    <div class="card-grid">
+
+      <div class="pcard fade" onclick="openModal('paper-churn')" style="cursor:pointer">
+        <div class="pcard-body">
+          <div class="ptag"><span class="status-dot"></span>Working Paper · 01</div>
+          <div class="pname">Customer Behavior &amp; Churn Analysis</div>
+          <div class="psub">고객 행동 · 클릭스트림 · 이탈 예측</div>
+          <div class="pdesc">클릭스트림과 구매 행동 데이터를 기반으로 고객이 서비스 안에서 어떤 행동을 보이는지 분석하고, 이 행동이 구매·재방문·이탈과 어떤 관계를 갖는지 연구했습니다. 신규 고객의 초기 행동부터 로열 고객의 행동까지 고객 생애주기 전반을 탐색했습니다.</div>
+          <div class="ptechs"><span class="ptech">Clickstream</span><span class="ptech">Retention</span><span class="ptech">Segmentation</span><span class="ptech">Churn Prediction</span></div>
+          <div class="plink">Read More →</div>
+          <div class="pnote">Analysis completed | Manuscript in preparation</div>
+        </div>
+      </div>
+
+      <div class="pcard fade" onclick="openModal('paper-ai')" style="cursor:pointer">
+        <div class="pcard-body">
+          <div class="ptag"><span class="status-dot"></span>Working Paper · 02</div>
+          <div class="pname">AI Perception Analysis</div>
+          <div class="psub">텍스트 마이닝 · Generative · Agentic · Physical AI</div>
+          <div class="pdesc">Generative AI, Agentic AI, Physical AI에 대한 뉴스와 온라인 커뮤니티 담론을 분석해, AI 유형에 따라 사람들이 중요하게 인식하는 가치와 이슈가 어떻게 달라지는지 비교한 연구입니다.</div>
+          <div class="ptechs"><span class="ptech">Text Mining</span><span class="ptech">BERTopic</span><span class="ptech">UMAP · HDBSCAN</span><span class="ptech">AI Perception</span></div>
+          <div class="plink">Read More →</div>
+          <div class="pnote">Analysis completed | Manuscript in preparation</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Selected Projects -->
+  <div class="tab-panel" id="tab-selected" hidden>
+    <p class="tab-note">데이터 분석 결과를 실제 정책, 서비스 또는 비즈니스 문제 해결로 연결한 프로젝트입니다.</p>
+
+    <div class="card-grid">
 
       <div class="pcard fade" onclick="openModal('flood')" style="cursor:pointer">
         <div class="pcard-img">
           <img src="assets/images/flood-risk-motivation.png" alt="Flood Risk Modeling" onerror="this.style.display='none'"/>
         </div>
         <div class="pcard-body">
-          <div class="ptag">Risk Modeling · 삼성화재 × POSTECH × 서울대 · 2025</div>
-          <div class="pname">기후변화 대응 홍수 리스크 모델링</div>
-          <div class="pdesc">서울시 25개 자치구를 대상으로 평상시와 극한 강우 상황의 홍수 위험 변화를 비교하고, FVI·FDI 두 축의 복합지표를 설계해 보험요율과 보상 구조까지 연결했습니다.</div>
-          <div class="ptechs"><span class="ptech">ArcGIS</span><span class="ptech">Python</span><span class="ptech">AHP</span><span class="ptech">Landsat</span><span class="ptech">Composite Index</span></div>
-          <div class="plink">Read the Full Story →</div>
+          <div class="ptag">Project 01 · 2025</div>
+          <div class="pname">Flood Risk Modeling</div>
+          <div class="psub">Spatial Analysis · Risk Assessment · Insurance Design</div>
+          <span class="pbadge">🏆 리스크 관리 경진대회 장려상</span>
+          <div class="pdesc">기후변화에 따른 지역별 홍수 위험을 재평가하고, 위험 분석 결과를 보험요율과 보상 구조 설계까지 연결한 프로젝트입니다.</div>
+          <div class="ptechs"><span class="ptech">Python</span><span class="ptech">ArcGIS</span><span class="ptech">AHP</span><span class="ptech">Risk Modeling</span></div>
+          <div class="plink">View Project →</div>
         </div>
       </div>
 
@@ -321,32 +365,31 @@
           <img src="assets/images/shuttle-visual.png" alt="Shuttle Bus Location Optimization" onerror="this.style.display='none'"/>
         </div>
         <div class="pcard-body">
-          <div class="ptag">Location Optimization · 빅콘테스트 최우수상 · 2024</div>
-          <div class="pname">지역 축제 셔틀버스 입지 최적화</div>
-          <div class="pdesc">축제 기간 교통 혼잡을 완화하기 위해 MCLP와 P-Median을 병행해 43개 후보 정류장을 22개로 압축하고, 군집 분석으로 2개 운행 권역과 노선을 설계했습니다.</div>
-          <div class="ptechs"><span class="ptech">MCLP</span><span class="ptech">P-Median</span><span class="ptech">AHP</span><span class="ptech">K-Means</span><span class="ptech">Greedy</span></div>
-          <div class="plink">Read the Full Story →</div>
+          <div class="ptag">Project 02 · 2024</div>
+          <div class="pname">Shuttle Bus Location Optimization</div>
+          <div class="psub">Location Optimization · Spatial Analysis · Transportation Planning</div>
+          <span class="pbadge">🏆 2024 빅콘테스트 최우수상</span>
+          <div class="pdesc">지역 축제 기간의 교통 혼잡을 완화하기 위해 셔틀버스 정류장 위치, 운행 노선과 운영 계획을 데이터 기반으로 최적화한 프로젝트입니다.</div>
+          <div class="ptechs"><span class="ptech">Python</span><span class="ptech">MCLP</span><span class="ptech">P-Median</span><span class="ptech">Spatial Analysis</span></div>
+          <div class="plink">View Project →</div>
         </div>
       </div>
 
       <div class="pcard fade" onclick="openModal('health')" style="cursor:pointer">
         <div class="pcard-img">
-          <img src="assets/images/healthcare-thumb.svg" alt="Healthcare Dashboard" onerror="this.style.display='none'"/>
+          <img src="assets/images/healthcare-thumb.svg" alt="Healthcare Data Visualization" onerror="this.style.display='none'"/>
         </div>
         <div class="pcard-body">
-          <div class="ptag">Healthcare BI · 의료데이터 시각화 경진대회 · 2023</div>
-          <div class="pname">건강보험 데이터 BI 대시보드</div>
-          <div class="pdesc">2011–2017년 건강검진·진료내역·의약품 처방 데이터를 통합하고, 코드화된 의료 정보를 사람이 읽을 수 있는 상태로 변환해 Power BI 대시보드로 구현했습니다.</div>
-          <div class="ptechs"><span class="ptech">Python</span><span class="ptech">SAS</span><span class="ptech">SQL</span><span class="ptech">Power BI</span></div>
-          <div class="plink">Read the Full Story →</div>
+          <div class="ptag">Project 03 · 2023</div>
+          <div class="pname">Healthcare Data Visualization</div>
+          <div class="psub">Healthcare Analytics · BI Dashboard · Service Planning</div>
+          <span class="pbadge">🏆 의료데이터 시각화 경진대회 장려상</span>
+          <div class="pdesc">국민건강보험공단의 건강검진·진료·의약품 데이터를 분석하고, 개인의 건강 상태를 직관적으로 탐색할 수 있는 Power BI 대시보드를 제작했습니다.</div>
+          <div class="ptechs"><span class="ptech">Python</span><span class="ptech">SQL</span><span class="ptech">SAS</span><span class="ptech">Power BI</span></div>
+          <div class="plink">View Project →</div>
         </div>
       </div>
 
-    </div>
-
-    <div class="carousel-nav">
-      <button class="carousel-btn" onclick="scrollCarousel('projectCarousel',-1)" aria-label="Previous">←</button>
-      <button class="carousel-btn" onclick="scrollCarousel('projectCarousel',1)" aria-label="Next">→</button>
     </div>
   </div>
 </section>
@@ -362,32 +405,44 @@
 
     <div class="exp-item fade">
       <div class="exp-meta">
-        <div class="exp-date">2025 – Present</div>
-        <div class="exp-org">연세대학교 정보대학원</div>
-        <div class="exp-loc">Seoul, Korea</div>
+        <div class="exp-logo-row">
+          <img class="exp-logo" src="assets/images/logo-yonsei.png" alt="Yonsei University" onerror="this.remove()"/>
+          <div>
+            <div class="exp-org">연세대학교 정보대학원</div>
+            <div class="exp-loc">Seoul, Korea</div>
+          </div>
+        </div>
+        <div class="exp-date">2025.03 – Present</div>
       </div>
       <div>
-        <div class="exp-title">M.S. Information Systems <span style="font-size:.7rem;color:var(--muted);font-weight:400">· 지도교수 김희웅</span></div>
+        <div class="exp-title">M.S. Information Systems <span class="sub">· 지도교수 김희웅</span></div>
         <ul class="exp-items">
           <li>연구 분야: 고객 행동 분석, E-commerce, AI 인식 텍스트 마이닝.</li>
           <li>워킹페이퍼 2편 집필 중 — 클릭스트림 기반 이탈 연구, AI 유형별 인식 비교 연구.</li>
           <li>IIARP–Glovento 2026 국제학회 발표 (Kuala Lumpur, 2026.01).</li>
+          <li>재학 중 학회 주관 아이디어 공모전 3회 수상 (최우수상 2회, 장려상 1회).</li>
         </ul>
       </div>
     </div>
 
     <div class="exp-item fade">
       <div class="exp-meta">
-        <div class="exp-date">2021 – 2025</div>
-        <div class="exp-org">연세대학교</div>
-        <div class="exp-loc">Korea</div>
+        <div class="exp-logo-row">
+          <img class="exp-logo" src="assets/images/logo-yonsei.png" alt="Yonsei University" onerror="this.remove()"/>
+          <div>
+            <div class="exp-org">연세대학교</div>
+            <div class="exp-loc">Korea</div>
+          </div>
+        </div>
+        <div class="exp-date">2021.03 – 2025.02</div>
       </div>
       <div>
-        <div class="exp-title">B.S. Data Science <span style="font-size:.7rem;color:var(--muted);font-weight:400">+ 생명공학 전공</span></div>
+        <div class="exp-title">B.S. Data Science <span class="sub">+ 생명공학 복수전공</span></div>
         <ul class="exp-items">
           <li>데이터사이언스와 생명공학을 함께 전공하며 도메인 지식과 분석을 결합하는 방식에 익숙해졌습니다.</li>
-          <li>재학 중 전국 단위 데이터 분석·창업 공모전에 지속 참가, 총 8회 수상.</li>
-          <li><span class="tag-inline">SQLD · ADsP</span></li>
+          <li>주요 이수 과목: 통계학, 머신러닝, 데이터베이스, 공간정보분석, 데이터 시각화.</li>
+          <li>재학 중 전국 단위 데이터 분석·창업 공모전에 지속 참가, 총 5회 수상.</li>
+          <li><span class="tag-inline">SQLD · ADsP 취득</span></li>
         </ul>
       </div>
     </div>
@@ -409,7 +464,7 @@
       <div class="award-rank gold">최우수상</div>
       <div>
         <div class="award-name">2026 춘계 대학(원)생 아이디어 공모전 · TwinCept</div>
-        <div class="award-meta">한국디지털산업정보학회 · 한국스마트미디어학회 · 2026.04.25</div>
+        <div class="award-meta">한국디지털산업정보학회 · 한국스마트미디어학회 · 2026.04</div>
       </div>
     </div>
 
@@ -417,7 +472,7 @@
       <div class="award-rank gold">최우수상</div>
       <div>
         <div class="award-name">2025 D-테스트베드 사업 · 팀 핀핏</div>
-        <div class="award-meta">한국핀테크지원센터 · 2025.12.23</div>
+        <div class="award-meta">한국핀테크지원센터 · 2025.12</div>
       </div>
     </div>
 
@@ -425,7 +480,7 @@
       <div class="award-rank">장려상</div>
       <div>
         <div class="award-name">2025 추계 대학(원)생 아이디어 공모전 · FINZ</div>
-        <div class="award-meta">한국지식경영학회 · 2025.11.13</div>
+        <div class="award-meta">한국지식경영학회 · 2025.11</div>
       </div>
     </div>
 
@@ -441,7 +496,7 @@
       <div class="award-rank gold">최우수상</div>
       <div>
         <div class="award-name">제12회 2024 빅콘테스트 데이터분석분야 · 팀 우리OD가</div>
-        <div class="award-meta">SK텔레콤 · 2024.12.12</div>
+        <div class="award-meta">SK텔레콤 · 2024.12</div>
       </div>
     </div>
 
@@ -449,7 +504,7 @@
       <div class="award-rank">장려상</div>
       <div>
         <div class="award-name">2023 의료데이터 시각화 경진대회 · 팀 DS7</div>
-        <div class="award-meta">연세대학교 미래캠퍼스 SW중심대학사업단 · 2023.10.20</div>
+        <div class="award-meta">연세대학교 미래캠퍼스 SW중심대학사업단 · 2023.10</div>
       </div>
     </div>
 
@@ -457,7 +512,7 @@
       <div class="award-rank">창조상</div>
       <div>
         <div class="award-name">2023 강원창업오디션 6월대회</div>
-        <div class="award-meta">(재)강원창조경제혁신센터 · 2023.06.30</div>
+        <div class="award-meta">(재)강원창조경제혁신센터 · 2023.06</div>
       </div>
     </div>
 
@@ -465,7 +520,7 @@
       <div class="award-rank">우수상</div>
       <div>
         <div class="award-name">2022 데이터 임팩트 글로벌 창업캠프 IR · 팀 메디체인저</div>
-        <div class="award-meta">강원지역혁신플랫폼 디지털헬스케어사업단 · 2023.03.06</div>
+        <div class="award-meta">강원지역혁신플랫폼 디지털헬스케어사업단 · 2023.03</div>
       </div>
     </div>
 
@@ -474,26 +529,44 @@
 
 <div class="divider"></div>
 
-<!-- ══ CONFERENCES ══ -->
+<!-- ══ CONFERENCES & ACTIVITIES ══ -->
 <section id="conferences">
-  <div class="sec-label">Conferences</div>
+  <div class="sec-label">Conferences &amp; Activities</div>
   <h2>Academic Presentations</h2>
+  <p class="sec-sub">학회 발표와 학회 주관 프로그램 참여 이력입니다.</p>
 
-  <div class="exp-list">
-    <div class="exp-item fade">
-      <div class="exp-meta">
-        <div class="exp-date">2026.01.25</div>
-        <div class="exp-org">IIARP–Glovento 2026</div>
-        <div class="exp-loc">Kuala Lumpur, Malaysia · Online</div>
-      </div>
-      <div>
-        <div class="exp-title">Text Mining-Based Analysis and Comparison of Generative, Agentic, and Physical AI</div>
-        <ul class="exp-items">
-          <li>뉴스 미디어와 Reddit 담론을 BERTopic으로 토픽 모델링하고, PERVAL 가치 프레임으로 AI 유형별 인식 차이를 비교.</li>
-          <li>International Conference on Business, Social Sciences (ICBSS) 세션 발표.</li>
-        </ul>
+  <div class="card-grid">
+
+    <div class="pcard fade">
+      <div class="pcard-body">
+        <div class="ptag">International Conference · 2026.01</div>
+        <div class="pname">IIARP–Glovento 2026</div>
+        <div class="pdesc">「Text Mining-Based Analysis and Comparison of Generative, Agentic, and Physical AI」 발표. BERTopic 토픽 모델링과 PERVAL 가치 프레임으로 뉴스·커뮤니티 담론의 AI 유형별 인식 차이를 비교했습니다.</div>
+        <div class="ptechs"><span class="ptech">Kuala Lumpur</span><span class="ptech">ICBSS Session</span><span class="ptech">Online</span></div>
+        <div class="pnote">International Conference on Business, Social Sciences</div>
       </div>
     </div>
+
+    <div class="pcard fade">
+      <div class="pcard-body">
+        <div class="ptag">Academic Society Program · 2026.04</div>
+        <div class="pname">한국디지털산업정보학회 춘계 학술대회</div>
+        <div class="pdesc">대학(원)생 아이디어 공모전 부문에 「TwinCept」로 참가해 최우수상을 수상했습니다. 한국스마트미디어학회 공동 주관.</div>
+        <div class="ptechs"><span class="ptech">최우수상</span><span class="ptech">TwinCept</span></div>
+        <div class="pnote">한국디지털산업정보학회 · 한국스마트미디어학회</div>
+      </div>
+    </div>
+
+    <div class="pcard fade">
+      <div class="pcard-body">
+        <div class="ptag">Academic Society Program · 2025.11</div>
+        <div class="pname">한국지식경영학회 추계 학술대회</div>
+        <div class="pdesc">대학(원)생 아이디어 공모전 부문에 핀테크 서비스 「FINZ」로 참가해 장려상을 수상했습니다.</div>
+        <div class="ptechs"><span class="ptech">장려상</span><span class="ptech">FINZ</span></div>
+        <div class="pnote">한국지식경영학회</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -528,7 +601,7 @@
 <section id="contact">
   <div class="sec-label">Get in Touch</div>
   <h2>Let's connect</h2>
-  <p class="sec-sub" style="margin:0 auto 1rem">데이터 분석 직무, 고객 행동 · E-commerce · AI 연구 협업에 관심이 있습니다.</p>
+  <p class="sec-sub">데이터 분석 직무, 고객 행동 · E-commerce · AI 연구 협업에 관심이 있습니다.</p>
 
   <div class="contact-links">
     <a href="mailto:dltmd004@yonsei.ac.kr" class="clink">
@@ -578,12 +651,114 @@
 <!-- ══ MODALS ══ -->
 <div id="modal-overlay" onclick="closeModal()"></div>
 
+<!-- Working Paper 1 -->
+<div id="modal-paper-churn" class="modal">
+  <div class="modal-head">
+    <div>
+      <div class="modal-head-tag">Working Paper 01 · Manuscript in Preparation</div>
+      <div class="modal-head-title">Customer Behavior &amp; Churn Analysis</div>
+    </div>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body">
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Overview</div>
+      <p class="modal-text">클릭스트림과 구매 행동 데이터를 기반으로 고객이 서비스 안에서 어떤 행동을 보이는지 분석하고, 이러한 행동이 <strong>구매·재방문·이탈과 어떤 관계를 갖는지</strong>를 연구했습니다.</p>
+      <p class="modal-text">신규 고객의 초기 행동부터 장기적으로 서비스를 이용하는 로열 고객의 행동까지, 고객 생애주기 전반의 행동 패턴을 탐색했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Research Focus</div>
+      <div class="modal-sub">01. 신규 고객의 리텐션에 영향을 주는 초기 행동은 무엇인가?</div>
+      <p class="modal-text">신규 고객이 서비스에 처음 유입된 이후 어떤 행동을 보이는지가 재방문과 장기적인 이용으로 이어지는지 분석했습니다.</p>
+      <div class="modal-sub">02. 로열 고객은 일반 고객과 어떤 행동 차이를 보이는가?</div>
+      <p class="modal-text">구매 빈도와 서비스 이용 행동을 기반으로 고객을 세분화하고, 장기 고객에게 나타나는 행동적 특징을 탐색했습니다.</p>
+      <div class="modal-sub">03. 구매 및 이탈 가능성을 행동 데이터로 사전에 파악할 수 있는가?</div>
+      <p class="modal-text">클릭스트림과 구매 이력을 활용해 고객의 향후 행동 가능성을 예측할 수 있는지를 분석했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Methodology</div>
+      <p class="modal-text">클릭스트림과 구매 데이터를 결합해 고객 행동 데이터를 구성하고, 고객별 이용 패턴과 구매 행동을 분석했습니다. 고객 세분화와 행동 변수 분석을 통해 고객 유형별 특성을 비교하고, 머신러닝을 활용해 구매 및 이탈 가능성을 예측하는 분석을 수행했습니다.</p>
+      <div class="modal-hypothesis">※ 세부 방법론은 논문 작성 과정에 따라 공개 범위를 조정합니다.</div>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Key Findings</div>
+      <p class="modal-text">고객의 단순한 구매 결과뿐 아니라 <strong>구매 이전의 행동 패턴</strong>을 함께 살펴봄으로써 고객 관계를 보다 세밀하게 이해할 수 있음을 확인했습니다.</p>
+      <p class="modal-text">분석 결과를 고객 세분화, 초기 리텐션 관리 및 고객 이탈 대응 전략과 연결할 수 있는 가능성을 탐색했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Status</div>
+      <p class="modal-text"><strong>Analysis completed</strong> | Manuscript in preparation</p>
+      <div class="modal-actions">
+        <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Working Paper 2 -->
+<div id="modal-paper-ai" class="modal">
+  <div class="modal-head">
+    <div>
+      <div class="modal-head-tag">Working Paper 02 · Manuscript in Preparation</div>
+      <div class="modal-head-title">AI Perception Analysis</div>
+    </div>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+  </div>
+  <div class="modal-body">
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Overview</div>
+      <p class="modal-text">Generative AI, Agentic AI, Physical AI에 대한 뉴스와 온라인 커뮤니티 담론을 분석하여 <strong>AI 유형에 따라 사람들이 중요하게 인식하는 가치와 이슈가 어떻게 달라지는지</strong>를 비교한 연구입니다.</p>
+      <p class="modal-text">AI 기술의 발전을 기술적 성능만으로 바라보는 것이 아니라, 사회와 실제 사용자가 각각 새로운 AI 기술을 어떻게 이해하고 받아들이는지를 분석하고자 했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Research Focus</div>
+      <div class="modal-sub">01. AI 유형에 따라 중요하게 인식되는 가치와 이슈는 어떻게 다른가?</div>
+      <p class="modal-text">Generative AI, Agentic AI, Physical AI를 구분하여 각 기술을 둘러싼 주요 담론을 비교했습니다.</p>
+      <div class="modal-sub">02. 뉴스와 사용자 커뮤니티는 AI에 대해 서로 다른 이야기를 하고 있는가?</div>
+      <p class="modal-text">뉴스에서 나타나는 거시적인 사회 담론과 온라인 커뮤니티에서 나타나는 실제 사용자 경험을 비교했습니다.</p>
+      <div class="modal-sub">03. 서로 다른 AI 기술에 대한 인식을 하나의 구조 안에서 비교할 수 있는가?</div>
+      <p class="modal-text">각 AI 유형에서 나타나는 가치와 이슈를 구조적으로 비교할 수 있는 분석 프레임을 탐색했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Methodology</div>
+      <p class="modal-text">뉴스 기사와 온라인 커뮤니티 데이터를 수집하고 텍스트 전처리 과정을 수행했습니다. <strong>BERTopic</strong>을 기반으로 주요 토픽을 추출하고, SentenceTransformers · UMAP · HDBSCAN을 활용하여 대규모 텍스트 담론의 구조를 분석했습니다.</p>
+      <p class="modal-text">이후 AI 유형과 데이터 출처에 따라 나타나는 주요 가치와 이슈를 비교했습니다.</p>
+      <div class="modal-hypothesis">※ 세부 방법론은 논문 작성 과정에 따라 공개 범위를 조정합니다.</div>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Key Findings</div>
+      <p class="modal-text">Generative AI, Agentic AI, Physical AI는 동일한 AI 기술 범주에 속하지만 <strong>기술 유형에 따라 사람들이 중요하게 인식하는 가치와 우려가 서로 다르게</strong> 나타났습니다.</p>
+      <p class="modal-text">또한 뉴스에서 형성되는 사회적 담론과 온라인 커뮤니티에서 나타나는 사용자 경험 사이에서도 차이가 관찰되었습니다. 이를 통해 AI 기술에 대한 사회적 인식과 실제 사용자 경험을 함께 살펴볼 필요성을 확인했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Status</div>
+      <p class="modal-text"><strong>Analysis completed</strong> | Manuscript in preparation</p>
+      <p class="modal-text">2026년 1월 IIARP–Glovento 2026 (Kuala Lumpur, Malaysia · Online) ICBSS 세션에서 발표했습니다.</p>
+      <div class="modal-actions">
+        <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- Flood -->
 <div id="modal-flood" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Risk Modeling · 삼성화재 × POSTECH × 서울대 · 2025</div>
-      <div class="modal-head-title">기후변화 대응 홍수 리스크 모델링</div>
+      <div class="modal-head-tag">Project 01 · Spatial Analysis · Risk Assessment</div>
+      <div class="modal-head-title">Flood Risk Modeling</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
   </div>
@@ -591,66 +766,88 @@
   <div class="modal-body">
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">문제 정의</div>
-      <p class="modal-text">기후변화로 과거에는 피해가 크지 않던 지역에서도 예측하기 어려운 극한 강우와 침수가 발생하고 있습니다. 기존의 <strong>정적인 홍수 위험 평가만으로는 실제 지역 위험을 설명하기 어렵다</strong>는 문제에서 출발했습니다.</p>
-      <p class="modal-text">서울특별시를 대상으로 평상시와 집중호우 상황의 위험 변화를 비교하고, 지역의 취약성과 재난 대응 역량을 함께 반영하는 평가 체계를 설계했습니다. 목표는 단순한 위험 순위가 아니라 <strong>지역별 보험요율과 보상 구조 설계까지 연결하는 것</strong>이었습니다.</p>
+      <div class="modal-chapter-label">Overview</div>
+      <p class="modal-text">🏆 삼성화재 × POSTECH × 서울대학교 제3회 전국 대학생 리스크 관리 경진대회 <strong>장려상</strong> · 2025</p>
+      <p class="modal-text">기후변화로 인해 과거에는 피해가 크지 않았던 지역에서도 예측하기 어려운 극한 강우와 침수 피해가 발생하고 있습니다. 기존의 홍수 위험 평가는 과거 평균이나 정적인 지표를 중심으로 구성되어 있어 <strong>변화하는 실제 지역 위험을 충분히 설명하기 어렵다</strong>는 문제에서 프로젝트를 시작했습니다.</p>
+      <p class="modal-text">서울특별시를 대상으로 평상시와 집중호우 상황에서 나타나는 홍수 위험의 변화를 비교하고, 지역의 취약성과 재난 대응 역량을 함께 고려하는 새로운 위험 평가 체계를 설계했습니다. 분석 결과는 지역별 위험 순위 제시에 그치지 않고 <strong>보험요율과 보상 구조 설계까지</strong> 연결했습니다.</p>
       <div class="modal-img-slot"><img src="assets/images/flood-risk-motivation.png" alt="Motivation" onerror="this.parentElement.remove()"/></div>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">지표 설계 — FVI · FDI</div>
-      <p class="modal-text">공공데이터와 위성데이터에서 실제 홍수 피해와 관련된 변수를 추출해, 지역 위험을 두 축으로 재구성했습니다.</p>
+      <div class="modal-chapter-label">My Role — Spatial Data Analysis · Risk Modeling</div>
+      <ul class="modal-list">
+        <li>ArcGIS를 활용해 Landsat 위성 및 공간 데이터를 전처리하고 지역별 홍수 관련 지표를 시각화했습니다.</li>
+        <li>Python을 활용해 분석 변수의 중요도와 가중치를 산출했습니다.</li>
+        <li>전처리된 데이터와 가중치 분석 결과를 통합하여 서울시 자치구별 최종 홍수 위험 점수를 산출했습니다.</li>
+      </ul>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Approach 01 — Risk Index Design</div>
+      <p class="modal-text">공공데이터와 위성데이터를 활용해 실제 홍수 피해와 관련된 변수들을 분석하고, 지역의 위험을 <strong>취약성</strong>과 <strong>대응 역량</strong>이라는 두 축으로 재구성했습니다.</p>
       <div class="modal-sub">FVI — Flood Vulnerability Index</div>
-      <p class="modal-text">피해 규모, 인구·가구 밀도, 불투수면 비율로 지역의 홍수 취약성을 평가합니다.</p>
+      <p class="modal-text">지역의 홍수 취약성을 측정하는 지표입니다. 실제 피해 수준, 인구 및 가구 밀도, 불투수면 비율 등 홍수 피해 발생 가능성과 관련된 변수를 활용했습니다.</p>
       <div class="modal-sub">FDI — Flood Defense Infrastructure Index</div>
-      <p class="modal-text">방재시설, 하수관로, 재정자립도, 소방인력으로 지역의 대응 역량을 측정합니다.</p>
-      <div class="modal-hypothesis">지표 가중치는 전문가 대상 AHP 분석으로 산정해, 변수 선택의 자의성을 줄였습니다.</div>
+      <p class="modal-text">지역의 홍수 대응 역량을 측정하는 지표입니다. 방재시설, 하수도 네트워크, 재정자립도, 소방 인력 등 지역이 피해에 대응할 수 있는 능력을 나타내는 요소를 활용했습니다.</p>
+      <div class="modal-hypothesis">각 지표에 사용되는 변수별 가중치는 전문가 기반 AHP 분석을 활용해 산출했습니다.</div>
       <div class="modal-img-slot"><img src="assets/images/flood-risk-pipeline.png" alt="Pipeline" onerror="this.parentElement.remove()"/></div>
       <div class="modal-img-caption">전체 파이프라인: 공공·위성데이터 수집 → 전처리 → AHP 가중치 → 복합지표 산출 → 리스크 분류 → 보험 설계</div>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">기존 접근의 한계 — PCD Matrix</div>
-      <p class="modal-text">기존 PCD Matrix는 방재 역량과 관측 피해만으로 자치구를 <strong>Dangerous · Mess · Safe · Well-Protected</strong> 네 범주로 분류합니다. 2020년과 2022년 결과를 비교한 결과 분류와 실제 피해 사이에 괴리가 나타났고, 이것이 더 포괄적인 리스크 프레임이 필요한 근거가 되었습니다.</p>
+      <div class="modal-chapter-label">Approach 02 — Dynamic Risk Classification</div>
+      <p class="modal-text">기존 PCD Matrix는 지역의 홍수 방어 역량과 실제 관측 피해를 기준으로 지역을 네 가지 유형으로 분류합니다. 2020년과 2022년 결과를 비교한 결과 일부 지역에서는 <strong>기존 위험 분류와 실제 홍수 피해 사이에 차이</strong>가 발생했습니다.</p>
+      <p class="modal-text">이를 바탕으로 정적 위험 분류에서 벗어나 평상시와 극한 강우 상황에서 위험이 어떻게 변화하는지를 함께 고려하는 <strong>동적 위험 분류 체계</strong>를 구성했습니다.</p>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">결과</div>
+      <div class="modal-chapter-label">Result 01 — Flood Risk Classification</div>
       <div class="modal-stats-row">
         <div class="modal-stat"><div class="modal-stat-num">25</div><div class="modal-stat-label">서울시 자치구</div></div>
         <div class="modal-stat"><div class="modal-stat-num">2</div><div class="modal-stat-label">복합지표 (FVI·FDI)</div></div>
         <div class="modal-stat"><div class="modal-stat-num">4</div><div class="modal-stat-label">리스크 유형</div></div>
         <div class="modal-stat"><div class="modal-stat-num">1.00–1.96</div><div class="modal-stat-label">위험계수 범위</div></div>
       </div>
+      <table class="modal-table">
+        <tr><th>Risk Type</th><th>정의</th></tr>
+        <tr><td>Stable</td><td>평상시와 극한 상황 모두 비교적 안정적인 지역</td></tr>
+        <tr><td>Latent-Risk</td><td>평상시에는 위험도가 낮지만 극한 강우 상황에서 위험이 급격히 증가하는 지역</td></tr>
+        <tr><td>Chronic-Risk</td><td>평상시와 극한 상황에서 지속적으로 높은 위험을 나타내는 지역</td></tr>
+        <tr><td>Misclassified</td><td>기존 위험 평가와 실제 위험 특성 사이에 차이가 나타나는 지역</td></tr>
+      </table>
+      <p class="modal-text" style="margin-top:1rem">특히 기존 정적 평가에서는 포착하기 어려웠던 <strong>Latent-Risk 지역</strong>을 식별했습니다.</p>
+    </div>
 
-      <div class="modal-sub">01. Flood Risk Classification</div>
-      <p class="modal-text">평상시와 극한강우 상황의 위험 변화를 비교해 지역을 4가지 리스크 유형으로 분류했습니다. 특히 기존의 정적 평가로는 포착하기 어려웠던 <strong>잠재위험 지역(Latent-Risk)</strong>을 식별했습니다.</p>
-
-      <div class="modal-sub">02. Risk-Based Pricing</div>
-      <p class="modal-text">FVI 분석 결과를 실제 보험료 산정에 쓸 수 있도록 자치구별 Risk Coefficient로 변환했습니다. 위험도가 높은 지역일수록 더 높은 계수가 반영되는 구조입니다.</p>
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Result 02 — Risk-Based Pricing</div>
+      <p class="modal-text">FVI 기반 최종 지역 위험도를 실제 보험료 산정에 활용할 수 있도록 자치구별 <strong>Risk Coefficient</strong>로 변환했습니다. 최종 위험 순위에 따라 지역별 위험계수를 1.00–1.96 범위로 차등화하고, 위험도가 높은 지역일수록 높은 계수가 보험료에 반영되도록 설계했습니다.</p>
       <div class="modal-formula">risk_coefficient = 1.00 + 0.04 × (25 − rank)</div>
+    </div>
 
-      <div class="modal-sub">03. Compensation Design</div>
-      <p class="modal-text">리스크 유형별로 서로 다른 보상 구조를 설계했습니다.</p>
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Result 03 — Insurance &amp; Compensation Design</div>
+      <p class="modal-text">지역별 위험 유형에 동일한 보상 구조를 적용하는 대신, 각 지역의 위험 특성에 적합한 보상 방식을 설계했습니다.</p>
       <table class="modal-table">
         <tr><th>Risk Type</th><th>Compensation Structure</th></tr>
-        <tr><td>Stable</td><td>실손 기반 선형 보상</td></tr>
-        <tr><td>Latent-Risk</td><td>다중 강우 트리거 기반 단계적 지급</td></tr>
-        <tr><td>Chronic-Risk</td><td>단계적 지급 + 비례 상한 결합 구조</td></tr>
-        <tr><td>Misclassified</td><td>선지급 후 실손 정산</td></tr>
+        <tr><td>Stable</td><td>실제 피해액 기반 선형 보상 구조</td></tr>
+        <tr><td>Latent-Risk</td><td>강우량 수준에 따른 다단계 Trigger 기반 보상 구조</td></tr>
+        <tr><td>Chronic-Risk</td><td>단계형 보상과 비례 보상 상한을 결합한 구조</td></tr>
+        <tr><td>Misclassified</td><td>초기 선지급 후 실제 피해액 기준 정산 구조</td></tr>
       </table>
-
-      <div class="modal-sub">04. Product Segmentation</div>
-      <p class="modal-text">자산과 가입자 특성에 따라 주택용·상업용 상품군을 세분화했습니다.</p>
+      <p class="modal-text" style="margin-top:1rem">또한 자산과 가입자의 특성을 고려하여 주거용과 상업·산업용 보험 상품을 세분화했습니다.</p>
       <table class="modal-table">
         <tr><th>Type</th><th>건물 보장</th><th>가재도구</th><th>자기부담금</th><th>대상</th></tr>
         <tr><td>Basic</td><td>2억</td><td>5천만</td><td>100만</td><td>단독·노후 도심 주택</td></tr>
         <tr><td>Premium</td><td>3억</td><td>1억</td><td>50만</td><td>고가 주택 · 저위험 자치구</td></tr>
         <tr><td>Affordable</td><td>1.5억</td><td>3천만</td><td>200만</td><td>침수 취약 · 가격민감 가구</td></tr>
       </table>
+    </div>
 
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Impact</div>
+      <p class="modal-text">지역의 홍수 위험을 하나의 정적인 순위로 평가하는 대신, <strong>극한 기후 상황에서 각 지역의 위험이 어떻게 변화하는지</strong>를 분석했습니다. 이를 통해 위험 분석을 지역 분류에서 끝내지 않고 실제 보험요율과 보상 구조 설계까지 연결하는 방법을 제안했습니다.</p>
       <div class="modal-actions">
-        <a class="btn-primary" href="https://github.com/seunghyeon-lee-0/flood-risk-insurance-model" target="_blank" rel="noreferrer">View on GitHub ↗</a>
+        <a class="btn-primary" href="https://github.com/seunghyeon-lee-0/flood-risk-insurance-model" target="_blank" rel="noreferrer">GitHub → flood-risk-insurance-model ↗</a>
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
       </div>
     </div>
@@ -662,8 +859,8 @@
 <div id="modal-shuttle" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Location Optimization · 빅콘테스트 최우수상 · 2024</div>
-      <div class="modal-head-title">지역 축제 셔틀버스 입지 최적화</div>
+      <div class="modal-head-tag">Project 02 · Location Optimization · Transportation</div>
+      <div class="modal-head-title">Shuttle Bus Location Optimization</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
   </div>
@@ -671,41 +868,77 @@
   <div class="modal-body">
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">문제 정의</div>
-      <p class="modal-text">지역 축제 기간에는 차량과 방문객이 짧은 시간에 몰리며 교통 혼잡과 주차 문제가 발생합니다. 이를 완화하기 위해 <strong>셔틀버스 정류장 위치·운행 노선·배차 간격을 데이터 기반으로 최적화</strong>했습니다.</p>
-      <p class="modal-text">축제 기간의 유동인구와 교통 패턴을 분석해 관람객의 이동 편의와 축제 운영 효율을 높이고, 궁극적으로 축제 만족도와 지역 활성화에 기여하는 것이 목표였습니다.</p>
+      <div class="modal-chapter-label">Overview</div>
+      <p class="modal-text">🏆 제12회 2024 빅콘테스트 데이터분석분야 <strong>최우수상</strong> · 2024</p>
+      <p class="modal-text">지역 축제 기간에는 한정된 공간에 방문객과 차량이 집중되면서 교통 혼잡과 주차 문제가 발생합니다. 축제 기간의 유동인구와 교통 패턴을 분석하고 <strong>이용객의 접근성과 실제 운영 효율을 함께 고려</strong>하여 셔틀버스 운영 계획을 설계했습니다.</p>
+      <p class="modal-text">분석은 정류장 입지 선정에서 시작해 운행 권역과 노선 설계, 운영 정책 제안으로 확장했습니다.</p>
       <div class="modal-img-slot"><img src="assets/images/shuttle-visual.png" alt="Shuttle overview" onerror="this.parentElement.remove()"/></div>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">입지 최적화 모델</div>
-      <p class="modal-text">제한된 정류장 수 안에서 <strong>수요 커버리지</strong>와 <strong>이용자 접근성</strong>을 함께 만족시키기 위해 두 모델을 병행했습니다.</p>
+      <div class="modal-chapter-label">My Role — Data Analysis · Location Optimization</div>
+      <ul class="modal-list">
+        <li>입지 분석에 필요한 데이터를 수집하고 분석 가능한 형태로 전처리했습니다.</li>
+        <li>Python을 활용해 입지 평가 변수의 중요도와 가중치를 산출했습니다.</li>
+        <li>MCLP와 P-Median을 활용한 최적 입지 분석을 수행했습니다.</li>
+        <li>분석 결과를 기반으로 실제 정책 활용 가능성과 운영상 시사점을 정리하고, 분석의 한계와 향후 개선 방향을 도출했습니다.</li>
+      </ul>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Approach 01 — Demand Analysis</div>
+      <p class="modal-text">축제 방문 수요와 정류장 접근성에 영향을 미칠 수 있는 다양한 데이터를 수집하고 분석했습니다. <strong>AHP</strong>를 활용해 입지 평가 요소별 중요도를 산출하고, 이를 기반으로 지역별 수요 수준을 정량화했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Approach 02 — Location Optimization</div>
+      <p class="modal-text">제한된 수의 셔틀 정류장으로 최대한 많은 수요를 수용하면서 이용자의 접근성을 함께 확보하기 위해 두 가지 입지 최적화 모델을 적용했습니다.</p>
       <div class="modal-sub">📍 MCLP — Maximal Covering Location Problem</div>
-      <p class="modal-text">AHP 기반 수요 가중치를 반영해, 400m 서비스 반경 안에서 가중 수요 커버리지를 최대화하는 정류장을 선택합니다.</p>
+      <p class="modal-text">AHP 기반 수요 가중치를 반영하여 400m 서비스 반경 안에서 최대한 많은 가중 수요를 커버하는 정류장 조합을 탐색했습니다.</p>
       <div class="modal-sub">📍 P-Median</div>
-      <p class="modal-text">각 수요 지점을 가장 가까운 정류장에 배정하고, 수요 가중 총 이동거리를 최소화합니다.</p>
+      <p class="modal-text">각 수요 지점을 선택된 정류장에 할당하고, 수요를 고려한 전체 이동거리 합을 최소화하는 정류장 조합을 탐색했습니다.</p>
       <div class="modal-img-slot"><img src="assets/images/shuttle-pipeline.png" alt="Pipeline" onerror="this.parentElement.remove()"/></div>
       <div class="modal-img-caption">전체 파이프라인: 데이터 수집 → 전처리 → AHP 가중치 → MCLP·P-Median → Greedy 중복 제거 → 군집 기반 노선 설계</div>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">최종 정류장 선정</div>
-      <p class="modal-text">MCLP와 P-Median 결과를 통합해 약 43개의 후보군을 구성한 뒤 <strong>Greedy Algorithm</strong>을 적용했습니다. AHP 기반 종합 중요도가 높은 후보부터 검토하면서, 이미 선택된 정류장과 400m 이상 간격을 유지하도록 중복 후보를 제거해 최종 22개를 선정했습니다.</p>
+      <div class="modal-chapter-label">Approach 03 — Final Bus Stop Selection</div>
+      <p class="modal-text">MCLP와 P-Median 분석 결과를 통합하여 약 43개의 정류장 후보군을 구성했습니다. 이후 AHP 기반 종합 중요도가 높은 후보부터 검토하는 <strong>Greedy Algorithm</strong>을 적용했습니다.</p>
+      <p class="modal-text">기존에 선택된 정류장과 최소 400m 이상의 공간적 간격을 유지하도록 중복 후보를 제거했고, 최종적으로 <strong>22개</strong>의 셔틀버스 정류장을 선정했습니다.</p>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">노선 · 배차 설계</div>
-      <p class="modal-text">선정된 22개 정류장의 공간 분포를 기준으로 K-Means와 Hierarchical Clustering을 비교했습니다. <strong>Silhouette Score</strong>를 기준으로 최적 군집 수를 K=2로 결정하고, 각 11개 정류장으로 구성된 2개의 셔틀 운행 권역과 노선을 설계했습니다.</p>
+      <div class="modal-chapter-label">Approach 04 — Route Planning</div>
+      <p class="modal-text">선정된 22개 정류장의 공간적 분포를 기반으로 K-Means와 Hierarchical Clustering을 비교했습니다. <strong>Silhouette Score</strong>를 기준으로 적정 군집 수를 평가한 결과 K=2를 선택했습니다.</p>
+      <p class="modal-text">각 11개 정류장으로 구성된 두 개의 셔틀 운행 권역을 구성하고, 이를 기반으로 실제 운행 가능한 셔틀 노선을 설계했습니다.</p>
+    </div>
 
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Approach 05 — Demand &amp; Frequency Planning</div>
+      <p class="modal-text">정류장과 노선을 선정한 이후 실제 셔틀 운영에 활용할 수 있도록 방문객 수요와 시간대별 운영 전략을 함께 검토했습니다. 수요 예측 결과를 바탕으로 <strong>시간대별 승객 집중 정도를 고려한 배차 운영 방안</strong>을 제안해, 입지 선정뿐 아니라 실제 운영 단계까지 이어지는 분석 구조를 구성했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Results</div>
       <div class="modal-stats-row">
-        <div class="modal-stat"><div class="modal-stat-num">43</div><div class="modal-stat-label">후보 정류장</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">22</div><div class="modal-stat-label">최종 정류장</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">43 → 22</div><div class="modal-stat-label">후보 → 최종 정류장</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">22 → 2</div><div class="modal-stat-label">정류장 → 운행 권역</div></div>
         <div class="modal-stat"><div class="modal-stat-num">400m</div><div class="modal-stat-label">서비스 반경</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">2</div><div class="modal-stat-label">운행 권역</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">K=2</div><div class="modal-stat-label">Silhouette 기준 군집</div></div>
       </div>
+      <ul class="modal-list">
+        <li><strong>43 → 22</strong> — 두 입지 모델에서 도출된 약 43개의 후보 정류장을 공간적 중복과 중요도를 고려해 22개로 압축했습니다.</li>
+        <li><strong>22 → 2</strong> — 22개의 정류장을 공간적 특성에 따라 2개의 운행 권역으로 구성했습니다.</li>
+        <li><strong>Location → Operation</strong> — 정류장 선정 결과를 노선과 운영 계획으로 연결해 실제 축제 현장에서 활용할 수 있는 셔틀 운영 방안을 제안했습니다.</li>
+      </ul>
+    </div>
 
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Impact</div>
+      <p class="modal-text">입지 분석 결과를 단순한 최적 위치 선정에서 끝내지 않고 <strong>실제 축제 운영에 활용할 수 있는 교통 정책</strong>으로 연결했습니다. 분석 과정에서 수요 커버리지, 이용자 접근성, 공간적 중복과 실제 운영 가능성을 함께 고려했습니다.</p>
+      <p class="modal-text">또한 분석 모델의 한계를 검토하고, 향후 실시간 교통 데이터와 방문객 이동 데이터를 활용한 개선 방향을 제안했습니다.</p>
       <div class="modal-actions">
-        <a class="btn-primary" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer">View on GitHub ↗</a>
+        <a class="btn-primary" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer">GitHub → shuttle-stop-location-analysis ↗</a>
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
       </div>
     </div>
@@ -717,8 +950,8 @@
 <div id="modal-health" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Healthcare BI · 의료데이터 시각화 경진대회 · 2023</div>
-      <div class="modal-head-title">건강보험 데이터 BI 대시보드</div>
+      <div class="modal-head-tag">Project 03 · Healthcare Analytics · BI Dashboard</div>
+      <div class="modal-head-title">Healthcare Data Visualization</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
   </div>
@@ -726,36 +959,74 @@
   <div class="modal-body">
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">문제 정의</div>
-      <p class="modal-text">국민건강보험공단의 건강검진정보, 진료내역정보, 의약품 처방정보를 활용해 개인의 건강 상태를 종합적으로 분석하고 시각화한 프로젝트입니다. 여러 의료 데이터를 종합해 <strong>개인별 건강위험수치와 질병·의약품 분포를 한눈에 확인</strong>할 수 있는 Power BI 대시보드로 구현하고, 이를 바탕으로 개인 맞춤형 건강관리 서비스 <strong>Easy Care</strong>를 기획했습니다.</p>
+      <div class="modal-chapter-label">Overview</div>
+      <p class="modal-text">🏆 2023 의료데이터 시각화 경진대회 <strong>장려상</strong> · 연세대학교</p>
+      <p class="modal-text">건강검진, 진료내역, 의약품 처방 데이터는 개인의 건강 상태를 이해하는 데 유용하지만 서로 다른 코드와 복잡한 의료 지표로 구성되어 있어 <strong>일반 사용자가 직접 이해하기 어렵습니다.</strong></p>
+      <p class="modal-text">국민건강보험공단의 여러 의료 데이터를 통합하고, 사용자가 자신의 건강 상태를 보다 쉽게 이해할 수 있도록 Power BI 기반 시각화 대시보드를 구축했습니다. 이후 분석 결과를 개인 건강관리 서비스 아이디어인 <strong>Easy Care</strong>로 확장했습니다.</p>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">데이터 처리 과정</div>
+      <div class="modal-chapter-label">My Role — Data Processing · BI Visualization · Service Planning</div>
       <ul class="modal-list">
-        <li>2011–2017년 건강검진·진료내역·의약품 처방 데이터를 수집하고, 연도별로 달랐던 변수명과 자료형을 통일했습니다.</li>
-        <li>Python과 SAS로 결측치·이상치를 처리하고, 연령·지역·질병·의약품 코드를 이해 가능한 값으로 변환했습니다.</li>
-        <li>건강검진 수치를 정상·경계·의심으로 범주화하고 각 상태에 점수를 부여해 탐색용 건강위험수치를 생성했습니다.</li>
-        <li>Power BI의 슬라이서, KPI 카드, 분해트리로 연령·성별·지역·기준연도별 건강 상태와 질병 분포를 시각화했습니다.</li>
+        <li>국민건강보험공단의 연도별 진료내역 및 의약품 처방 데이터 약 <strong>30만 건</strong>을 수집하고 분석용 데이터셋을 구축했습니다.</li>
+        <li>Python을 활용해 변수 범주화, 결측치·이상치 처리, 의료 코드 변환 등 데이터 전처리를 수행했습니다.</li>
+        <li>Power BI를 활용해 연령, 성별, 거주지역, 측정연도에 따른 주요 질병 및 의약품 처방 분포를 시각화했습니다.</li>
+        <li>분석 결과를 기반으로 건강관리 서비스 아이디어를 기획하고 시장성, 경쟁 서비스 및 차별화 요소를 분석했습니다.</li>
       </ul>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">결과</div>
+      <div class="modal-chapter-label">Approach 01 — Data Processing</div>
+      <ul class="modal-list">
+        <li>2011년부터 2017년까지의 건강검진, 진료내역 및 의약품 처방 데이터를 활용했습니다.</li>
+        <li>연도별로 서로 달랐던 변수명과 데이터 형식을 통일하고 결측치와 이상치를 처리했습니다.</li>
+        <li>연령, 지역, 질병 코드, 의약품 코드처럼 바로 이해하기 어려운 값을 실제 의미를 가진 범주와 명칭으로 변환했습니다.</li>
+        <li>SQL을 활용해 필요한 데이터를 조회하고 분석에 활용할 수 있는 형태로 정리했습니다.</li>
+      </ul>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Approach 02 — Health Risk Interpretation</div>
+      <p class="modal-text">건강검진 결과를 단순한 수치로 제시하는 대신 각각의 검진 항목을 <strong>정상·경계·의심</strong> 상태로 범주화했습니다. 각 상태에 점수를 부여하고 여러 검진 항목을 통합하여 개인의 전반적인 건강 상태를 탐색할 수 있는 건강위험 지표를 구성했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Approach 03 — BI Dashboard</div>
+      <p class="modal-text">Power BI의 슬라이서, KPI 카드, 분해트리 등 다양한 시각화 기능을 활용해 대시보드를 구성했습니다. 사용자는 기준연도, 지역, 성별, 연령 등의 조건을 선택하여 건강 상태를 비교할 수 있습니다.</p>
+      <div class="modal-sub">Dashboard Components</div>
+      <ul class="modal-list">
+        <li>건강검진 종합 현황</li>
+        <li>개인별 건강위험 분석</li>
+        <li>주요 질병 분포</li>
+        <li>의약품 처방 분포</li>
+        <li>지역별 건강 상태 비교</li>
+        <li>연령 및 성별 건강 상태 비교</li>
+      </ul>
       <div class="modal-stats-row">
         <div class="modal-stat"><div class="modal-stat-num">2011–17</div><div class="modal-stat-label">데이터 기간</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">30만+</div><div class="modal-stat-label">처리 레코드</div></div>
         <div class="modal-stat"><div class="modal-stat-num">3</div><div class="modal-stat-label">통합 데이터셋</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">4</div><div class="modal-stat-label">대시보드 뷰</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">Power BI</div><div class="modal-stat-label">구현 도구</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">6</div><div class="modal-stat-label">대시보드 뷰</div></div>
       </div>
-      <p class="modal-text">건강검진 종합 현황, 개인별 건강위험 분석, 주상병 분포, 의약품 처방 분포를 확인할 수 있는 대시보드를 제작했습니다. 사용자는 기준연도와 지역을 선택해 연령별 신장·체중, BMI, 흡연·음주 여부, 혈압, 당뇨, 빈혈, 신장 및 간 기능 상태를 비교할 수 있고, 가입자별 건강위험수치와 세부 건강 상태도 확인할 수 있습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Dashboard Demo</div>
+      <p class="modal-text">기준연도·지역·연령·성별 조건 선택 → 조건 변화에 따른 시각화 변화 → 개인별 건강 상태 및 위험 수준 확인 → 질병 및 의약품 처방 분포 탐색 순으로 구성했습니다.</p>
       <video class="modal-video" controls preload="metadata" src="assets/video/healthcare-dashboard-demo.mp4"></video>
       <div class="modal-img-caption">실제 Power BI 대시보드 시연 영상</div>
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">인사이트</div>
-      <p class="modal-text">의료 데이터는 수치를 그대로 보여주는 것보다 <strong>사용자가 이해할 수 있는 상태와 언어로 변환하는 과정</strong>이 중요했습니다. 질병 코드와 의약품 코드를 실제 질병명·약물명·주요 기능으로 변환해 해석 가능성을 높였고, 흩어진 건강검진 항목을 하나의 탐색 지표로 통합해 개인의 건강 상태를 직관적으로 비교할 수 있게 했습니다.</p>
+      <div class="modal-chapter-label">Service Planning — Easy Care</div>
+      <p class="modal-text">대시보드 분석 결과를 바탕으로 복잡한 건강검진 결과를 사용자가 보다 쉽게 이해하고 <strong>일상적인 건강관리 행동으로 연결</strong>할 수 있도록 개인 건강관리 서비스 Easy Care를 기획했습니다.</p>
+      <p class="modal-text">관련 시장과 경쟁 서비스를 분석하고, 기존 건강관리 서비스와 비교해 차별화할 수 있는 기능과 서비스 방향을 검토했습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Insight</div>
+      <p class="modal-text">의료 데이터 분석에서는 단순히 많은 수치를 보여주는 것보다 <strong>사용자가 이해할 수 있는 언어와 상태로 데이터를 변환하는 과정</strong>이 중요했습니다. 질병 코드와 의약품 코드를 실제 질병명과 약물 정보로 변환해 데이터의 해석 가능성을 높였습니다.</p>
+      <p class="modal-text">또한 여러 건강검진 항목을 하나의 탐색 지표로 통합하여 사용자가 자신의 건강 상태를 보다 직관적으로 비교할 수 있도록 구성했습니다.</p>
       <div class="modal-actions">
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
       </div>
