@@ -16,19 +16,27 @@ assets/
 
 GitHub Pages 설정은 그대로 (`main` / `(root)`).
 
-## 넣어야 하는 파일
+## 에셋
 
-| 경로 | 용도 | 없을 때 동작 |
-|---|---|---|
-| `assets/images/profile.jpg` | 히어로 우측 사진 (세로형 권장, 3:4 이상) | 회색 플레이스홀더 |
-| `assets/images/about.jpg` | About 우측 사진 | 회색 플레이스홀더 |
-| `assets/resume/Seunghyeon_Lee_Resume.pdf` | Resume 버튼 | 404 |
-| `assets/video/healthcare-dashboard-demo.mp4` | 대시보드 시연 (현재 4초 더미) | 재생 불가 |
-| `assets/images/healthcare-thumb.svg` | 프로젝트 카드 썸네일 (SVG 목업) | — 실제 대시보드 캡처로 교체 권장 |
-| `assets/images/og-cover.png` | 링크 공유 미리보기 (1200×630, 생성 완료) | — 내용 바뀌면 재생성 |
-| `assets/favicon.svg` | 파비콘 (SL 모노그램) | 기본 아이콘 |
+Word 문서에 첨부해준 이미지 22장을 모두 반영했습니다. 전부 JPEG(q90)로 변환해 이미지 폴더 총 용량은 약 3.9MB입니다.
 
-이미지가 없으면 `onerror`로 제거되고 플레이스홀더가 남으므로 깨진 아이콘은 안 뜬다.
+| 파일 | 위치 |
+|---|---|
+| `profile.jpg` / `about.jpg` | 히어로 우측, About 우측 |
+| `thumb-churn / -ai / -flood / -shuttle / -health.jpg` | 프로젝트 카드 썸네일 5장 |
+| `flood-01~04` | Flood 모달 (motivation / pipeline / FVI·FDI 지표 / PCD Matrix) |
+| `shuttle-01~09` | Shuttle 모달 (EDA / 방문객 / 프로세스 / 요약 / 모델비교 / MCLP / P-Median / Greedy / 노선) |
+| `health-01~03` | Healthcare 모달 (종합현황 / 지역별 / 개인별·질병) |
+| `logo-yonsei.png` | Education 로고 |
+| `og-cover.png` | 링크 공유 미리보기 |
+
+아직 없는 것:
+
+| 경로 | 상태 |
+|---|---|
+| `assets/resume/Seunghyeon_Lee_Resume.pdf` | 없음 — Resume 버튼이 404 |
+| `assets/video/healthcare-dashboard-demo.mp4` | 4초 더미 |
+| `assets/video/healthcare-dashboard-demo-2.mp4` | 위 파일 복사본 (Demo 02 자리 확보용) |
 
 ## 자주 만질 값
 
