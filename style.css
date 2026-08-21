@@ -76,12 +76,13 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 .nav-drop:hover .nav-sub,.nav-drop:focus-within .nav-sub{
   opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0);
 }
-.nav-sub button{
-  font:inherit;font-size:.96rem;font-weight:500;text-align:left;
-  background:none;border:none;cursor:pointer;color:var(--dark);
+.nav-sub a{
+  font-size:.96rem;font-weight:500;text-align:left;text-decoration:none;
+  color:var(--dark);opacity:1;white-space:nowrap;
   padding:.62rem .8rem;border-radius:9px;transition:background .12s;
 }
-.nav-sub button:hover{background:var(--fill)}
+.nav-sub a:hover{background:var(--fill)}
+.nav-sub a.active{background:transparent}
 
 /* ── HERO (PC) ─────────────────────────────────────────── */
 #home{
@@ -236,7 +237,13 @@ h2{
   color:var(--subtle);font-weight:700;margin-bottom:1rem;
 }
 .how-title{font-size:1.45rem;font-weight:700;letter-spacing:-.03em;color:var(--dark);margin-bottom:.65rem}
-.how-desc{font-size:1.08rem;color:var(--muted);line-height:1.85}
+.how-desc{font-size:1.14rem;color:var(--dark);line-height:1.7;font-weight:500;letter-spacing:-.015em}
+/* 카드 사이를 잇는 화살표 — 데스크톱은 카드 오른쪽, 모바일은 아래쪽 */
+.how-card{position:relative}
+.how-arrow{
+  position:absolute;top:50%;right:-.9rem;transform:translateY(-50%) rotate(-90deg);
+  font-size:1.15rem;color:var(--subtle);line-height:1;pointer-events:none;
+}
 
 /* ── RESEARCH INTERESTS ────────────────────────────────── */
 .interest-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
@@ -268,20 +275,8 @@ h2{
 }
 .skill-tag img{width:17px;height:17px;object-fit:contain;flex-shrink:0}
 
-/* ── TABS ──────────────────────────────────────────────── */
-.tabs{
-  display:inline-flex;gap:.3rem;padding:.35rem;
-  background:var(--fill);border-radius:980px;margin-bottom:2.6rem;
-}
-.tab{
-  font:inherit;font-size:1.08rem;font-weight:600;letter-spacing:-.015em;
-  padding:.68rem 1.6rem;border:none;border-radius:980px;cursor:pointer;
-  background:transparent;color:var(--muted);transition:background .18s,color .18s,box-shadow .18s;
-}
-.tab:hover{color:var(--dark)}
-.tab.active{background:#fff;color:var(--dark);box-shadow:0 1px 4px rgba(0,0,0,.1)}
-.tab-panel[hidden]{display:none}
-.tab-note{font-size:1.12rem;color:var(--muted);line-height:1.85;margin-bottom:2.2rem;max-width:44em}
+/* ── 모바일 전용 nav 링크 (데스크톱에서는 드롭다운 사용) ── */
+.only-mobile{display:none}
 
 /* ── CARDS ─────────────────────────────────────────────── */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:stretch}
@@ -522,8 +517,8 @@ section.visible{opacity:1;transform:translateY(0)}
   }
   nav::-webkit-scrollbar{display:none}
   nav a{flex-shrink:0;font-size:.9rem;padding:.4rem .8rem}
-  .nav-drop::after{display:none}
-  .nav-sub{display:none}
+  .nav-drop{display:none}
+  .only-mobile{display:inline-flex;align-items:center}
 
   /* hero: 좌우 분할 대신 사진 위 / 텍스트 아래 세로 스택 */
   #home{
@@ -570,16 +565,13 @@ section.visible{opacity:1;transform:translateY(0)}
   .skills-grid,.card-grid,.award-grid,.certs-grid,.how-grid{grid-template-columns:1fr}
   .how-card{padding:1.5rem 1.5rem 1.6rem}
   .how-title{font-size:1.2rem}
+  .how-arrow{top:auto;right:auto;bottom:-1.05rem;left:50%;transform:translateX(-50%)}
   .block-label{font-size:.74rem;gap:.7rem;margin-top:2.6rem}
   .block-label::before{width:24px}
   .interest{font-size:.88rem;padding:.45rem 1rem}
   .skill-card{padding:1.4rem 1.5rem}
   .pcard-body{padding:1.6rem 1.5rem 1.7rem}
   .pname{font-size:1.18rem}
-
-  /* tabs: 전체폭 2분할 */
-  .tabs{display:grid;grid-template-columns:1fr 1fr;width:100%;margin-bottom:2rem}
-  .tab{font-size:.9rem;padding:.7rem .5rem}
 
   /* education: 로고 행 + 스택 */
   .exp-item{grid-template-columns:1fr;gap:1.1rem;padding:2rem 0}
