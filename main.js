@@ -2,12 +2,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ── Modal ─────────────────────────────────────────── */
   const overlay = document.getElementById('modal-overlay');
+  // closeModal이 예약한 "display:none" 타이머가 살아 있으면,
+  // 380ms 안에 새로 연 모달까지 같이 숨겨버린다. 항상 취소한 뒤 연다.
+  let hideTimer = null;
 
   window.openModal = function (id) {
     const modal = document.getElementById('modal-' + id);
     if (!modal) return;
+    clearTimeout(hideTimer);
+    hideTimer = null;
+
+    document.querySelectorAll('.modal').forEach(m => {
+      if (m === modal) return;
+      m.style.display = 'none';
+      m.style.transform = 'translateX(100%)';
+      m.querySelectorAll('video').forEach(v => v.pause());
+    });
+
     overlay.style.display = 'block';
     modal.style.display = 'block';
+    modal.scrollTop = 0;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(() => {
       requestAnimationFrame(() => { modal.style.transform = 'translateX(0)'; });
@@ -15,16 +29,31 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   window.closeModal = function () {
-    document.querySelectorAll('.modal').forEach(m => {
+    clearTimeout(hideTimer);
+    const open = [...document.querySelectorAll('.modal')].filter(m => m.style.display === 'block');
+    open.forEach(m => {
       m.style.transform = 'translateX(100%)';
-      setTimeout(() => { m.style.display = 'none'; }, 380);
       m.querySelectorAll('video').forEach(v => v.pause());
     });
+    hideTimer = setTimeout(() => {
+      open.forEach(m => { m.style.display = 'none'; });
+      hideTimer = null;
+    }, 380);
     overlay.style.display = 'none';
     document.body.style.overflow = '';
   };
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ── Awards accordion ──────────────────────────────── */
+  document.querySelectorAll('.award-card').forEach(card => {
+    const body = card.querySelector('.award-detail');
+    if (!body) return;
+    card.addEventListener('click', () => {
+      const open = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', open);
+    });
+  });
 
   /* ── Scroll reveal ─────────────────────────────────── */
   if ('IntersectionObserver' in window) {

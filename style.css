@@ -37,7 +37,7 @@ body{
 /* ── NAV ───────────────────────────────────────────────── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:300;
-  display:flex;justify-content:center;align-items:center;gap:.5rem;
+  display:flex;justify-content:center;align-items:center;gap:1.5rem;
   padding:0 2rem;height:var(--nav-h);
   background:rgba(255,255,255,.82);
   backdrop-filter:saturate(180%) blur(20px);
@@ -85,26 +85,36 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 .nav-sub a.active{background:transparent}
 
 /* ── HERO (PC) ─────────────────────────────────────────── */
+/* 히어로도 본문과 같은 중앙 컬럼 안에 두되, 조금 더 좁게 잡아
+   텍스트와 사진이 양 끝으로 벌어지지 않게 한다. */
 #home{
-  min-height:100vh;width:100%;max-width:none;padding:0;
-  display:grid;grid-template-columns:1.28fr .72fr;
-  align-items:stretch;background:#fff;overflow:hidden;
+  min-height:100vh;
+  width:min(1180px, 74vw);max-width:100%;margin:0 auto;padding:0;
+  /* 두 칸 모두 내용 폭에 맞춘 뒤 가운데로 모아, 좌우로 벌어지지 않게 한다 */
+  display:grid;grid-template-columns:auto auto;justify-content:center;gap:5rem;
+  align-items:center;background:#fff;
 }
 .hero-left{
   display:flex;flex-direction:column;justify-content:center;
-  padding:calc(var(--nav-h) + 2rem) 5rem 2.5rem max(2rem, var(--gutter));
+  padding:calc(var(--nav-h) + 3rem) 0 3rem;
   position:relative;z-index:2;
 }
-.hero-right{position:relative;overflow:hidden;background:var(--fill)}
-.hero-photo{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block}
-/* 사진이 로드되면 .hero-photo(z-index:1)가 이 플레이스홀더를 덮는다 */
-.hero-photo-fallback{
-  position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:.6rem;
-  font-size:.7rem;letter-spacing:.2em;color:var(--subtle);text-align:center;
+.hero-right{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  padding:calc(var(--nav-h) + 3rem) 0 3rem;background:#fff;
 }
-.hero-photo-fallback svg{width:44px;height:44px;fill:var(--fill2)}
 
+/* 사진 액자 — 흰 매트지 + 얇은 테두리 + 은은한 그림자 (장식 최소화) */
+.photo-frame{width:300px;max-width:100%}
+.photo-frame-mat{
+  background:#fff;padding:14px;border:1px solid var(--hairline);border-radius:3px;
+  box-shadow:0 1px 2px rgba(0,0,0,.05), 0 12px 28px -14px rgba(0,0,0,.28);
+}
+.photo-frame-mat img{
+  display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;
+  background:var(--fill);
+}
+.photo-frame-mat.is-empty{min-height:360px;background:var(--fill)}
 /* eyebrow label — 대시 + 확대된 타이포 */
 .hero-label,.sec-label{
   display:flex;align-items:center;gap:1rem;
@@ -114,7 +124,7 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
   content:'';width:36px;height:2px;background:var(--dark);flex-shrink:0;
 }
 .sec-label::after{content:'';flex:1;height:1px;background:var(--hairline)}
-.hero-label{font-size:.95rem;letter-spacing:.14em;margin-bottom:1.3rem}
+.hero-label{font-size:1.28rem;letter-spacing:.1em;margin-bottom:1.6rem}
 .sec-label{font-size:.82rem;letter-spacing:.14em;margin-bottom:1.4rem}
 
 .hero-name{
@@ -126,17 +136,10 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 
 .hero-rule{width:52px;height:2px;background:var(--dark);margin:1.5rem 0}
 
-.hero-desc{font-size:1.5rem;color:var(--dark);line-height:1.45;max-width:22ch;font-weight:600;letter-spacing:-.025em}
-.hero-sub{font-size:1.15rem;color:var(--muted);font-weight:400;line-height:1.8;margin-top:1rem;max-width:66ch}
+.hero-desc{font-size:2.15rem;color:var(--dark);line-height:1.3;font-weight:600;letter-spacing:-.03em}
 
 .hero-meta{display:flex;flex-direction:column;gap:.3rem;margin:1.4rem 0 1.4rem}
 .hero-meta span{font-size:1rem;color:var(--muted);display:flex;align-items:flex-start;gap:.5rem;line-height:1.6}
-
-.hero-keywords{display:flex;gap:.45rem;flex-wrap:wrap;margin:1.4rem 0 0}
-.hero-kw{
-  padding:.4rem 1rem;border:1px solid var(--hairline);border-radius:980px;
-  font-size:.92rem;font-weight:500;color:var(--muted);letter-spacing:-.01em;
-}
 
 .hero-socials{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.5rem}
 .social-btn{
@@ -208,17 +211,20 @@ h2{
 .badge:hover{background:var(--fill2)}
 
 /* career timeline — 연도 · 굵은 제목 · 설명 3단 구성 */
-/* 세로 막대(2px)와 점(12px)의 중심을 모두 left:6px 에 맞춘다.
-   막대: left 5px + 폭 2px  → 중심 6px
-   점  : 아이템 좌측(28px) 기준 -22px → 절대 6px, 폭 12px → 중심 6px */
+/* 세로 막대와 점의 중심을 모두 left:6px 에 맞춘다.
+   막대는 컨테이너 전체가 아니라 항목 사이에만 그려서, 마지막 원 뒤로 선이 남지 않게 한다. */
 .career-timeline{display:flex;flex-direction:column;margin:2.4rem 0 .4rem;position:relative;padding-left:28px}
-.career-timeline::before{content:'';position:absolute;left:5px;top:16px;bottom:16px;width:2px;background:var(--hairline);border-radius:1px}
 .ct-item{
   position:relative;padding:.9rem 0 .9rem 1rem;
   display:grid;grid-template-columns:4.6rem 1fr;column-gap:1.2rem;grid-template-rows:auto auto;
 }
+/* 각 항목의 점 중심에서 다음 항목의 점 중심까지만 연결 */
+.ct-item:not(:last-child)::before{
+  content:'';position:absolute;left:-22px;margin-left:-1px;
+  top:calc(1.15rem + 6px);height:100%;width:2px;background:var(--hairline);
+}
 .ct-dot{
-  position:absolute;left:-22px;top:1.15rem;
+  position:absolute;left:-22px;top:1.15rem;z-index:1;
   width:12px;height:12px;border-radius:50%;box-sizing:border-box;
   background:#fff;border:3px solid var(--hairline);
   transform:translateX(-50%);
@@ -329,10 +335,28 @@ h2{
 .award-grid{display:flex;flex-direction:column;gap:.6rem}
 .award-card{
   background:var(--fill);border:none;padding:1.25rem 1.6rem;border-radius:16px;
-  display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:center;
-  transition:background .12s;
+  display:grid;grid-template-columns:auto 1fr auto auto;gap:.4rem 1.5rem;align-items:center;
+  transition:background .12s;cursor:pointer;
 }
+.award-card:focus-visible{outline:2px solid var(--dark);outline-offset:2px}
 .award-meta{text-align:right;white-space:nowrap}
+/* 펼침 화살표 */
+.award-card::after{
+  content:'⌄';font-size:1rem;color:var(--subtle);line-height:1;
+  grid-column:4;grid-row:1;justify-self:end;align-self:center;
+  transition:transform .22s;
+}
+.award-card.open::after{transform:rotate(180deg)}
+/* 상세 설명 — 클릭 시 펼쳐짐 */
+.award-detail{
+  grid-column:2 / -1;grid-row:2;display:grid;grid-template-rows:0fr;
+  transition:grid-template-rows .28s cubic-bezier(.22,1,.36,1);
+}
+.award-card.open .award-detail{grid-template-rows:1fr}
+.award-detail > p{
+  overflow:hidden;margin:0;font-size:1rem;color:var(--muted);line-height:1.8;
+}
+.award-card.open .award-detail > p{padding-top:.85rem}
 .award-card:hover{background:var(--fill2)}
 .award-rank{
   flex-shrink:0;padding:.34rem .85rem;border-radius:8px;background:#fff;
@@ -463,15 +487,23 @@ footer a:hover{color:var(--dark)}
 .modal-actions .btn-primary,.modal-actions .btn-ghost{font-size:.96rem;padding:.72rem 1.6rem}
 .modal-video{width:100%;border-radius:14px;margin-top:1.2rem;background:#000;display:block}
 
-/* 본문 우측에 붙는 작은 My Role 박스 */
-.modal-role{
-  float:right;width:290px;margin:.3rem 0 1.4rem 1.6rem;
-  background:var(--fill);border-radius:16px;padding:1.3rem 1.4rem;
+/* 강조 — 카드 본문의 핵심 구절(붉은색), 모달 상단의 수상 내역(파란색) */
+.hl{color:#c0392b;font-weight:600}
+.modal-award{
+  font-size:1.06rem;font-weight:600;color:#1a4fa0;line-height:1.7;
+  background:#eef3fb;border-radius:12px;padding:.9rem 1.2rem;margin-bottom:1.4rem;
 }
-.modal-role-label{font-size:.74rem;letter-spacing:.11em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.45rem}
-.modal-role-sub{font-size:.92rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;letter-spacing:-.015em;line-height:1.45}
+.modal-award strong{font-weight:800;color:#12376f}
+
+/* Overview 다음에 전체 폭으로 펼쳐지는 My Role 박스 */
+.modal-role{
+  margin:1.6rem 0 .2rem;
+  background:var(--fill);border-radius:16px;padding:1.5rem 1.6rem;
+}
+.modal-role-label{font-size:.84rem;letter-spacing:.11em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin-bottom:.45rem}
+.modal-role-sub{font-size:1.04rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;letter-spacing:-.015em;line-height:1.45}
 .modal-role ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.modal-role li{font-size:.88rem;color:var(--muted);line-height:1.7;padding-left:.85rem;position:relative}
+.modal-role li{font-size:1.02rem;color:var(--muted);line-height:1.75;padding-left:.95rem;position:relative}
 .modal-role li::before{content:'';position:absolute;left:0;top:.72em;width:3px;height:3px;background:var(--subtle);border-radius:50%}
 .modal-chapter::after{content:'';display:block;clear:both}
 
@@ -498,7 +530,8 @@ section.visible{opacity:1;transform:translateY(0)}
 @media(max-width:1180px){
   :root{--col:auto}
   section{width:auto;max-width:none;padding:5.5rem 2.2rem}
-  .hero-left{padding:calc(var(--nav-h) + 3rem) 3rem 3rem 2.2rem}
+  #home{width:auto;padding:0 2.2rem;gap:3rem}
+  .photo-frame{width:260px}
   .skills-grid,.card-grid,.award-grid,.certs-grid,.how-grid{grid-template-columns:repeat(2,1fr)}
   .about-split{grid-template-columns:1fr minmax(260px,.5fr);min-height:0}
   .about-split-text{padding:2.6rem 2.6rem 2.4rem}
@@ -511,31 +544,27 @@ section.visible{opacity:1;transform:translateY(0)}
 
   /* nav: 가로 스크롤, 드롭다운 비활성 */
   nav{
-    justify-content:flex-start;gap:0;padding:0 .5rem;
+    justify-content:flex-start;gap:.4rem;padding:0 .6rem;
     overflow-x:auto;-webkit-overflow-scrolling:touch;
     scrollbar-width:none;-ms-overflow-style:none;
   }
   nav::-webkit-scrollbar{display:none}
-  nav a{flex-shrink:0;font-size:.9rem;padding:.4rem .8rem}
+  nav a{flex-shrink:0;font-size:.9rem;padding:.4rem .75rem}
   .nav-drop{display:none}
   .only-mobile{display:inline-flex;align-items:center}
 
-  /* hero: 좌우 분할 대신 사진 위 / 텍스트 아래 세로 스택 */
-  #home{
-    grid-template-columns:1fr;grid-template-rows:38vh auto;
-    min-height:0;padding-bottom:3rem;
-  }
-  .hero-right{grid-row:1;min-height:38vh}
-  .hero-photo{object-position:center 20%}
-  .hero-left{grid-row:2;padding:2.4rem 1.4rem 0;justify-content:flex-start}
-  .hero-label{font-size:.78rem;letter-spacing:.12em;margin-bottom:1.2rem;gap:.7rem}
+  /* hero: 액자 사진을 위에, 텍스트를 아래에 */
+  #home{width:auto;grid-template-columns:1fr;justify-content:stretch;gap:0;min-height:0;padding:0 0 3rem}
+  .hero-right{grid-row:1;padding:calc(var(--nav-h) + 1.8rem) 1.4rem 0;justify-content:flex-start}
+  .photo-frame{width:min(230px,55%)}
+  .photo-frame{width:min(230px,55%)}
+  .photo-frame-mat{padding:10px}
+  .hero-left{grid-row:2;padding:2rem 1.4rem 0;justify-content:flex-start}
+  .hero-label{font-size:1rem;letter-spacing:.08em;margin-bottom:1.2rem;gap:.7rem}
   .hero-label::before,.sec-label::before{width:24px}
   .hero-name{font-size:clamp(2.6rem,11vw,3.6rem)}
   .hero-rule{margin:1.5rem 0;width:40px}
-  .hero-desc{font-size:1.15rem;max-width:100%}
-  .hero-sub{font-size:.92rem;max-width:100%}
-  .hero-keywords{margin-top:1rem;gap:.35rem}
-  .hero-kw{font-size:.82rem;padding:.32rem .8rem}
+  .hero-desc{font-size:1.5rem}
   .hero-meta{margin:1.3rem 0 1.6rem;gap:.35rem}
   .hero-meta span{font-size:.84rem}
   .social-btn{font-size:.85rem;padding:.5rem 1rem}
@@ -583,11 +612,14 @@ section.visible{opacity:1;transform:translateY(0)}
   .btn-submit{align-self:stretch;text-align:center}
 
   /* awards 일렬 → 세로 스택 */
-  .award-card{grid-template-columns:auto 1fr;gap:.5rem .9rem;align-items:flex-start}
-  .award-meta{grid-column:2;text-align:left;white-space:normal;margin-top:.3rem}
+  .award-card{grid-template-columns:auto 1fr auto;gap:.5rem .9rem;align-items:flex-start}
+  .award-name{grid-column:2;grid-row:1}
+  .award-meta{grid-column:2 / -1;grid-row:2;text-align:left;white-space:normal;margin-top:.3rem}
+  .award-card::after{grid-column:3;grid-row:1;align-self:start;margin-top:.35rem}
+  .award-detail{grid-column:1 / -1;grid-row:3}
+  .award-detail > p{font-size:.95rem}
 
   /* modal */
-  .modal-role{float:none;width:auto;margin:1.2rem 0}
   .modal-img-pair{grid-template-columns:1fr}
   .modal-head{padding:1rem 1.3rem}
   .modal-head-title{font-size:1.08rem}
