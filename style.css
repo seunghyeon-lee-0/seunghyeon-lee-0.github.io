@@ -105,7 +105,12 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 }
 
 /* 사진 액자 — 흰 매트지 + 얇은 테두리 + 은은한 그림자 (장식 최소화) */
-.photo-frame{width:300px;max-width:100%}
+/* 액자 뒤로 한 겹 어긋난 외곽선을 둬 평면적인 느낌을 덜어낸다 */
+.photo-frame{width:300px;max-width:100%;position:relative}
+.photo-frame::after{
+  content:'';position:absolute;left:13px;top:13px;right:-13px;bottom:-13px;
+  border:1px solid var(--fill2);border-radius:2px;z-index:-1;pointer-events:none;
+}
 .photo-frame-mat{
   background:#fff;padding:14px;border:1px solid var(--hairline);border-radius:3px;
   box-shadow:0 1px 2px rgba(0,0,0,.05), 0 12px 28px -14px rgba(0,0,0,.28);
@@ -120,8 +125,12 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
   display:flex;align-items:center;gap:1rem;
   font-weight:700;text-transform:uppercase;color:var(--dark);
 }
+/* 작은 사각형 + 짧은 룰을 겹쳐 그린 라벨 마크 */
 .hero-label::before,.sec-label::before{
-  content:'';width:36px;height:2px;background:var(--dark);flex-shrink:0;
+  content:'';width:46px;height:9px;flex-shrink:0;
+  background:
+    linear-gradient(var(--dark),var(--dark)) left center / 9px 9px no-repeat,
+    linear-gradient(var(--dark),var(--dark)) right center / 29px 2px no-repeat;
 }
 .sec-label::after{content:'';flex:1;height:1px;background:var(--hairline)}
 .hero-label{font-size:1.28rem;letter-spacing:.1em;margin-bottom:1.6rem}
@@ -167,7 +176,15 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 .btn-ghost:hover{background:var(--fill)}
 
 /* ── SECTION SHELL ─────────────────────────────────────── */
-.divider{width:100%;height:1px;background:var(--hairline)}
+.divider{
+  width:100%;height:1px;position:relative;
+  background:linear-gradient(90deg,transparent,var(--hairline) 12%,var(--hairline) 88%,transparent);
+}
+.divider::after{
+  content:'';position:absolute;left:50%;top:-2px;width:5px;height:5px;
+  margin-left:-2.5px;background:#fff;border:1px solid var(--hairline);
+  transform:rotate(45deg);
+}
 section{width:var(--col);margin:0 auto;padding:7rem 0;scroll-margin-top:var(--nav-h)}
 
 h2{
@@ -175,7 +192,7 @@ h2{
   font-weight:700;line-height:1.06;letter-spacing:-.04em;
   color:var(--dark);margin-bottom:1.3rem;
 }
-.sec-sub{font-size:1.24rem;color:var(--muted);line-height:1.85;margin-bottom:3rem;max-width:44em;font-weight:400}
+.sec-sub{font-size:1.24rem;color:var(--muted);line-height:1.7;margin-bottom:3rem;font-weight:400}
 
 /* ── ABOUT ─────────────────────────────────────────────── */
 .about-split{
@@ -238,21 +255,17 @@ h2{
 
 /* ── HOW I WORK ────────────────────────────────────────── */
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:2.6rem}
-.how-card{background:var(--fill);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-/* 세 사진 모두 같은 비율(4:3)로 잘라 크기를 통일 */
-.how-photo{aspect-ratio:4/3;background:var(--fill2);overflow:hidden}
-.how-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.how-card:nth-child(3) .how-photo img{object-position:center 32%}
-.how-body{padding:1.6rem 1.7rem 1.8rem;display:flex;flex-direction:column;flex:1}
-.how-caption{margin-top:auto;padding-top:1rem;font-size:.9rem;color:var(--subtle);line-height:1.6}
-.how-step{
-  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--subtle);font-weight:700;margin-bottom:1rem;
+.how-card{background:var(--fill);border-radius:18px;padding:1.8rem 1.8rem 1.6rem;display:flex;flex-direction:column}
+.how-body{margin-bottom:1.5rem}
+/* 사진을 흰 매트지 액자에 넣어 자료 사진처럼 보이게 한다 */
+.how-figure{margin-top:auto}
+.how-photo{
+  background:#fff;padding:10px;border:1px solid var(--hairline);border-radius:3px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04), 0 10px 22px -14px rgba(0,0,0,.25);
 }
-.how-title{font-size:1.45rem;font-weight:700;letter-spacing:-.03em;color:var(--dark);margin-bottom:.6rem}
-.how-desc{font-size:1.14rem;color:var(--dark);line-height:1.7;font-weight:500;letter-spacing:-.015em}
-/* 카드 사이를 잇는 화살표 — 데스크톱은 카드 오른쪽, 모바일은 아래쪽 */
-.how-card{position:relative}
+.how-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--fill2)}
+.how-card:nth-child(3) .how-photo img{object-position:center 32%}
+.how-caption{margin-top:.85rem;font-size:.92rem;color:var(--subtle);line-height:1.55}
 .how-arrow{
   position:absolute;top:50%;right:-.62rem;transform:translateY(-50%) rotate(-90deg);
   font-size:1.3rem;color:var(--subtle);line-height:1;pointer-events:none;z-index:2;
@@ -261,15 +274,22 @@ h2{
 /* ── RESEARCH INTERESTS ────────────────────────────────── */
 .interest-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
 .interest{
-  padding:.6rem 1.3rem;border:1px solid var(--hairline);border-radius:980px;
-  font-size:1.04rem;font-weight:500;color:var(--dark);letter-spacing:-.01em;
+  padding:.75rem 1.6rem;border:1px solid var(--hairline);border-radius:980px;
+  font-size:1.2rem;font-weight:500;color:var(--dark);letter-spacing:-.015em;
+  transition:border-color .15s,background .15s;
 }
+.interest:hover{border-color:var(--dark);background:var(--fill)}
 .block-label{
   font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--dark);font-weight:700;display:flex;align-items:center;gap:1rem;
   margin:3.4rem 0 0;
 }
-.block-label::before{content:'';width:36px;height:2px;background:var(--dark);flex-shrink:0}
+.block-label::before{
+  content:'';width:46px;height:9px;flex-shrink:0;
+  background:
+    linear-gradient(var(--dark),var(--dark)) left center / 9px 9px no-repeat,
+    linear-gradient(var(--dark),var(--dark)) right center / 29px 2px no-repeat;
+}
 .block-label::after{content:'';flex:1;height:1px;background:var(--hairline)}
 
 /* ── SKILLS ────────────────────────────────────────────── */
@@ -296,13 +316,19 @@ h2{
 #research .card-grid{grid-template-columns:repeat(2,1fr)}
 
 .pcard{
+  position:relative;
   background:#fff;border:1px solid var(--border);
   text-decoration:none;color:inherit;
   border-radius:20px;overflow:hidden;
   display:flex;flex-direction:column;
   transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1);
 }
-.pcard:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.1)}
+.pcard::before{
+  content:'';position:absolute;top:0;left:0;height:2px;width:0;background:var(--dark);
+  transition:width .35s cubic-bezier(.22,1,.36,1);z-index:3;
+}
+.pcard:hover::before{width:100%}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.1);border-color:var(--hairline)}
 /* 사진을 카드 안쪽으로 들여 여백을 준다 */
 .pcard-img{
   overflow:hidden;aspect-ratio:16/9;flex-shrink:0;background:var(--fill);
@@ -340,6 +366,12 @@ h2{
 .exp-date{font-size:.98rem;color:var(--subtle);font-weight:500;letter-spacing:.01em}
 .exp-org{font-size:1.12rem;color:var(--dark);font-weight:700;letter-spacing:-.02em;line-height:1.35}
 .exp-loc{font-size:.94rem;color:var(--subtle)}
+.gpa-row{display:flex;align-items:baseline;gap:.7rem;margin:-.35rem 0 1rem;flex-wrap:wrap}
+.gpa-main{font-size:1.06rem;font-weight:700;color:var(--dark);letter-spacing:-.02em}
+.gpa-sub{
+  font-size:.92rem;font-weight:600;color:var(--muted);
+  background:var(--fill);border-radius:6px;padding:.16rem .55rem;
+}
 .exp-title{font-size:1.3rem;font-weight:700;letter-spacing:-.025em;color:var(--dark);margin-bottom:.85rem}
 .exp-title .sub{font-size:.96rem;color:var(--muted);font-weight:400;letter-spacing:0}
 .exp-items{list-style:none;display:flex;flex-direction:column;gap:.5rem}
@@ -405,12 +437,12 @@ h2{
   transition:background .12s;
 }
 .cert-card:hover{background:var(--fill2)}
-.cert-icon{
-  width:44px;height:44px;flex-shrink:0;background:#fff;border-radius:10px;
+.cert-logo{
+  width:78px;height:46px;flex-shrink:0;background:#fff;border-radius:10px;
   display:flex;align-items:center;justify-content:center;overflow:hidden;
-  box-shadow:0 1px 3px rgba(0,0,0,.09);font-size:.78rem;font-weight:700;letter-spacing:-.02em;
+  box-shadow:0 1px 3px rgba(0,0,0,.09);font-size:.8rem;font-weight:700;letter-spacing:-.02em;
 }
-.cert-icon img{width:32px;height:32px;object-fit:contain}
+.cert-logo img{width:56px;object-fit:contain}
 .cert-title{font-size:1.06rem;font-weight:600;color:var(--dark);margin-bottom:.22rem;line-height:1.4}
 .cert-meta{font-size:.96rem;color:var(--subtle)}
 
@@ -593,7 +625,7 @@ section.visible{opacity:1;transform:translateY(0)}
   .photo-frame-mat{padding:10px}
   .hero-left{grid-row:2;padding:2rem 1.4rem 0;justify-content:flex-start}
   .hero-label{font-size:1rem;letter-spacing:.08em;margin-bottom:1.2rem;gap:.7rem}
-  .hero-label::before,.sec-label::before{width:24px}
+  .hero-label::before,.sec-label::before,.block-label::before{width:34px;background-size:7px 7px, 21px 2px}
   .hero-name{font-size:clamp(2.6rem,11vw,3.6rem)}
   .hero-rule{margin:1.5rem 0;width:40px}
   .hero-desc{font-size:1.5rem}
@@ -624,12 +656,13 @@ section.visible{opacity:1;transform:translateY(0)}
 
   /* 1열 그리드 */
   .skills-grid,.card-grid,.award-grid,.certs-grid,.how-grid,#research .card-grid{grid-template-columns:1fr}
-  .how-body{padding:1.4rem 1.5rem 1.5rem}
+  .how-card{padding:1.5rem 1.5rem 1.3rem}
+  .how-body{margin-bottom:1.2rem}
   .how-title{font-size:1.2rem}
   .how-arrow{top:auto;right:auto;bottom:-1.05rem;left:50%;transform:translateX(-50%)}
   .block-label{font-size:.74rem;gap:.7rem;margin-top:2.6rem}
   .block-label::before{width:24px}
-  .interest{font-size:.88rem;padding:.45rem 1rem}
+  .interest{font-size:1rem;padding:.55rem 1.15rem}
   .skill-card{padding:1.4rem 1.5rem}
   .pcard-body{padding:1.4rem 1.4rem 1.6rem}
   .pcard-img{margin:.8rem .8rem 0}
