@@ -1,5 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* ── 빌드 확인 ─────────────────────────────────────── */
+  // 로컬(file://)로 열었을 때만 브라우저 탭 제목에 빌드 번호를 붙인다.
+  // 배포(https)에서는 제목이 그대로 유지된다.
+  var BUILD = document.querySelector('.build')?.textContent.trim() || '';
+  console.log('%c' + BUILD, 'font-size:16px;font-weight:700;color:#c0392b');
+  if (location.protocol === 'file:' && BUILD) document.title = '[' + BUILD + '] ' + document.title;
+
   /* ── Modal ─────────────────────────────────────────── */
   const overlay = document.getElementById('modal-overlay');
   // closeModal이 예약한 "display:none" 타이머가 살아 있으면,
