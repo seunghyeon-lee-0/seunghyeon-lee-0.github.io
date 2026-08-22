@@ -42,7 +42,7 @@
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
-<link rel="stylesheet" href="style.css?v=16"/>
+<link rel="stylesheet" href="style.css?v=17"/>
 <noscript><style>section,.fade{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -53,14 +53,16 @@
   <a href="#education">Education</a>
   <a href="#skills">Skills</a>
   <div class="nav-drop">
-    <a href="#research" data-spy="research projects">Projects</a>
+    <a href="#research" data-spy="research projects activities">Projects</a>
     <div class="nav-sub">
       <a href="#research">01. Research Papers</a>
       <a href="#projects">02. Selected Projects</a>
+      <a href="#activities">03. Field Activities</a>
     </div>
   </div>
   <a class="only-mobile" href="#research">Research</a>
   <a class="only-mobile" href="#projects">Projects</a>
+  <a class="only-mobile" href="#activities">Activities</a>
   <a href="#awards">Awards</a>
   <a href="#conferences">Conferences</a>
   <a href="#certifications">Certs</a>
@@ -160,42 +162,67 @@
     </div>
   </div>
 
-  <div class="block-label">How I Work</div>
-  <div class="how-grid">
-    <div class="how-card fade">
-      <h3 class="how-title"><span class="how-num">Step 01.</span> Frame</h3>
-      <p class="how-desc">현실의 문제 구조화</p>
-      <figure class="how-figure">
-        <div class="how-photo"><img src="assets/images/how-01.jpg" alt="핀테크 기업 탐방 및 프로젝트 논의 회의" loading="lazy" onerror="this.parentElement.parentElement.remove()"/></div>
-        <figcaption class="how-caption">핀테크 기업 탐방 및 프로젝트 논의 회의</figcaption>
-      </figure>
-      <div class="how-arrow">↓</div>
-    </div>
-    <div class="how-card fade">
-      <h3 class="how-title"><span class="how-num">Step 02.</span> Analyze</h3>
-      <p class="how-desc">데이터 분석 및 시각화</p>
-      <figure class="how-figure">
-        <div class="how-photo"><img src="assets/images/how-02.jpg" alt="실제 진행했던 프로젝트 데이터 시각화 자료" loading="lazy" onerror="this.parentElement.parentElement.remove()"/></div>
-        <figcaption class="how-caption">실제 진행했던 프로젝트 데이터 시각화 자료</figcaption>
-      </figure>
-      <div class="how-arrow">↓</div>
-    </div>
-    <div class="how-card fade">
-      <h3 class="how-title"><span class="how-num">Step 03.</span> Translate</h3>
-      <p class="how-desc">의사결정, 서비스로 결과 연결</p>
-      <figure class="how-figure">
-        <div class="how-photo"><img src="assets/images/how-03.jpg" alt="ICBASS 2026 Conference 발표" loading="lazy" onerror="this.parentElement.parentElement.remove()"/></div>
-        <figcaption class="how-caption">ICBASS 2026 Conference 발표</figcaption>
-      </figure>
-    </div>
-  </div>
-
   <div class="block-label">Research Interests</div>
   <div class="interest-row">
     <span class="interest fade">Customer Behavior</span>
     <span class="interest fade">E-commerce Analytics</span>
     <span class="interest fade">AI Agents</span>
     <span class="interest fade">Human–AI Interaction</span>
+  </div>
+
+  <div class="block-label">How I Work</div>
+  <div class="hiw-wrap fade">
+
+    <div class="hiw-list">
+      <div class="hiw-item open" onclick="toggleHiw(this)">
+        <div class="hiw-trigger">
+          <div class="hiw-trigger-left">
+            <div class="hiw-step">Step 01. Listen &amp; Frame</div>
+            <div class="hiw-title">다양한 관점을 연결해 현실의 문제를 구조화</div>
+          </div>
+          <div class="hiw-chevron">⌄</div>
+        </div>
+        <div class="hiw-body">
+          <img class="hiw-item-photo" src="assets/images/how-01.jpg" alt="핀테크 기업 탐방 및 프로젝트 논의 회의" loading="lazy"/>
+          <div class="hiw-body-inner">사용자와 실무자, 연구자의 이야기를 직접 듣고 서로 다른 관점을 조율해 프로젝트의 핵심 문제와 방향을 정의합니다.</div>
+        </div>
+      </div>
+
+      <div class="hiw-item" onclick="toggleHiw(this)">
+        <div class="hiw-trigger">
+          <div class="hiw-trigger-left">
+            <div class="hiw-step">Step 02. Analyze &amp; Validate</div>
+            <div class="hiw-title">데이터와 현장 근거를 통해 가설을 검증</div>
+          </div>
+          <div class="hiw-chevron">⌄</div>
+        </div>
+        <div class="hiw-body">
+          <img class="hiw-item-photo" src="assets/images/how-02.jpg" alt="프로젝트 데이터 시각화 자료" loading="lazy"/>
+          <div class="hiw-body-inner">정량 데이터 분석과 시각화를 통해 문제의 구조를 파악하고, 인터뷰와 실무자 피드백을 함께 검토해 분석 결과의 현실성을 확인합니다.</div>
+        </div>
+      </div>
+
+      <div class="hiw-item" onclick="toggleHiw(this)">
+        <div class="hiw-trigger">
+          <div class="hiw-trigger-left">
+            <div class="hiw-step">Step 03. Translate &amp; Deliver</div>
+            <div class="hiw-title">분석 결과를 의사결정과 서비스로 구체화</div>
+          </div>
+          <div class="hiw-chevron">⌄</div>
+        </div>
+        <div class="hiw-body">
+          <img class="hiw-item-photo" src="assets/images/how-03.jpg" alt="ICBASS 2026 Conference 발표" loading="lazy"/>
+          <div class="hiw-body-inner">분석 결과를 이해하기 쉬운 언어로 전달하고, 실제 의사결정 기준과 운영안, 서비스 프로토타입으로 발전시킵니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-photo-panel">
+      <img class="hiw-photo active" id="hphoto-0" src="assets/images/how-01.jpg" alt="Listen &amp; Frame"/>
+      <img class="hiw-photo" id="hphoto-1" src="assets/images/how-02.jpg" alt="Analyze &amp; Validate"/>
+      <img class="hiw-photo" id="hphoto-2" src="assets/images/how-03.jpg" alt="Translate &amp; Deliver"/>
+    </div>
+
   </div>
 </section>
 
@@ -392,44 +419,16 @@
 
   <div class="card-grid">
 
-    <div class="pcard fade" onclick="openModal('twincept')" style="cursor:pointer">
-      <div class="pcard-img">
-        <img src="assets/images/thumb-twincept.jpg" alt="TwinCept: Explainable Factory AI" onerror="this.style.display='none'"/>
-      </div>
-      <div class="pcard-body">
-        <div class="ptag">Project 01 · 2026</div>
-        <div class="pname">TwinCept: Explainable Factory AI</div>
-        <div class="psub">Smart Manufacturing · Explainable AI · Decision Support</div>
-        <div class="pdesc">제조 데이터를 관리자가 이해할 수 있는 판단 기준으로 변환하고, <span class="hl">여러 생산 시나리오의 납기·비용·품질을 비교</span>할 수 있도록 설계한 AI 의사결정 지원 서비스입니다.</div>
-        <div class="ptechs"><span class="ptech">Digital Twin</span><span class="ptech">CBM</span><span class="ptech">DES</span><span class="ptech">DRL</span></div>
-        <div class="plink">View Project →</div>
-      </div>
-    </div>
-
     <div class="pcard fade" onclick="openModal('pinfit')" style="cursor:pointer">
       <div class="pcard-img">
         <img src="assets/images/thumb-pinfit.jpg" alt="Graph-Based Credit Scoring" onerror="this.style.display='none'"/>
       </div>
       <div class="pcard-body">
-        <div class="ptag">Project 02 · 2025</div>
+        <div class="ptag">Selected Project · 2025</div>
         <div class="pname">Graph-Based Credit Scoring</div>
         <div class="psub">Credit Risk Modeling · Graph Learning · Financial Inclusion</div>
         <div class="pdesc">금융이력이 부족해 신용평가가 어려운 씬파일러(Thin-filer)를 위해 <span class="hl">금융·비금융 데이터를 결합한 그래프 기반 신용평가 모델</span>을 개발했습니다.</div>
         <div class="ptechs"><span class="ptech">Python</span><span class="ptech">GAT</span><span class="ptech">XAI</span></div>
-        <div class="plink">View Project →</div>
-      </div>
-    </div>
-
-    <div class="pcard fade" onclick="openModal('flood')" style="cursor:pointer">
-      <div class="pcard-img">
-        <img src="assets/images/thumb-flood.jpg" alt="Flood Risk Modeling" onerror="this.style.display='none'"/>
-      </div>
-      <div class="pcard-body">
-        <div class="ptag">Project 03 · 2025</div>
-        <div class="pname">Flood Risk Modeling</div>
-        <div class="psub">Climate Risk · Spatial Analysis · Insurance Design</div>
-        <div class="pdesc">기후변화에 따른 지역별 홍수 위험을 재평가하고, 위험 분석 결과를 <span class="hl">보험요율과 보상 구조 설계</span>까지 연결한 프로젝트입니다.</div>
-        <div class="ptechs"><span class="ptech">ArcGIS</span><span class="ptech">AHP</span><span class="ptech">Risk Index</span><span class="ptech">Python</span></div>
         <div class="plink">View Project →</div>
       </div>
     </div>
@@ -439,11 +438,45 @@
         <img src="assets/images/thumb-shuttle.jpg" alt="Shuttle Bus Location Optimization" onerror="this.style.display='none'"/>
       </div>
       <div class="pcard-body">
-        <div class="ptag">Project 04 · 2024</div>
+        <div class="ptag">Selected Project · 2024</div>
         <div class="pname">Shuttle Bus Location Optimization</div>
         <div class="psub">Mobility Planning · Location Optimization · Route Design</div>
         <div class="pdesc">지역 축제 기간의 교통 혼잡을 완화하기 위해 <span class="hl">셔틀버스 정류장 위치, 운행 노선과 운영 계획</span>을 데이터 기반으로 최적화한 프로젝트입니다.</div>
         <div class="ptechs"><span class="ptech">입지분석</span><span class="ptech">클러스터링</span><span class="ptech">수요 예측</span><span class="ptech">GIS</span><span class="ptech">Python</span></div>
+        <div class="pcard-actions">
+            <span class="plink">View Project →</span>
+            <a class="card-gh" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" aria-label="GitHub 저장소 열기"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 5.1 18 5.4 18 5.4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
+          </div>
+      </div>
+    </div>
+
+    <div class="pcard fade" onclick="openModal('flood')" style="cursor:pointer">
+      <div class="pcard-img">
+        <img src="assets/images/thumb-flood.jpg" alt="Flood Risk Modeling" onerror="this.style.display='none'"/>
+      </div>
+      <div class="pcard-body">
+        <div class="ptag">Selected Project · 2025</div>
+        <div class="pname">Flood Risk Modeling</div>
+        <div class="psub">Climate Risk · Spatial Analysis · Insurance Design</div>
+        <div class="pdesc">기후변화에 따른 지역별 홍수 위험을 재평가하고, 위험 분석 결과를 <span class="hl">보험요율과 보상 구조 설계</span>까지 연결한 프로젝트입니다.</div>
+        <div class="ptechs"><span class="ptech">ArcGIS</span><span class="ptech">AHP</span><span class="ptech">Risk Index</span><span class="ptech">Python</span></div>
+        <div class="pcard-actions">
+            <span class="plink">View Project →</span>
+            <a class="card-gh" href="https://github.com/seunghyeon-lee-0/flood-risk-insurance-model" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" aria-label="GitHub 저장소 열기"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 5.1 18 5.4 18 5.4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
+          </div>
+      </div>
+    </div>
+
+    <div class="pcard fade" onclick="openModal('twincept')" style="cursor:pointer">
+      <div class="pcard-img">
+        <img src="assets/images/thumb-twincept.jpg" alt="TwinCept: Explainable Factory AI" onerror="this.style.display='none'"/>
+      </div>
+      <div class="pcard-body">
+        <div class="ptag">Selected Project · 2026</div>
+        <div class="pname">TwinCept: Explainable Factory AI</div>
+        <div class="psub">Smart Manufacturing · Explainable AI · Decision Support</div>
+        <div class="pdesc">제조 데이터를 관리자가 이해할 수 있는 판단 기준으로 변환하고, <span class="hl">여러 생산 시나리오의 납기·비용·품질을 비교</span>할 수 있도록 설계한 AI 의사결정 지원 서비스입니다.</div>
+        <div class="ptechs"><span class="ptech">Digital Twin</span><span class="ptech">CBM</span><span class="ptech">DES</span><span class="ptech">DRL</span></div>
         <div class="plink">View Project →</div>
       </div>
     </div>
@@ -453,7 +486,7 @@
         <img src="assets/images/thumb-health.jpg" alt="Healthcare Data Visualization" onerror="this.style.display='none'"/>
       </div>
       <div class="pcard-body">
-        <div class="ptag">Project 05 · 2023</div>
+        <div class="ptag">Selected Project · 2023</div>
         <div class="pname">Healthcare Data Visualization</div>
         <div class="psub">Healthcare Analytics · BI Visualization · Service Planning</div>
         <div class="pdesc">국민건강보험공단의 건강검진·진료·의약품 데이터를 분석하고, 개인의 건강 상태를 직관적으로 탐색할 수 있는 <span class="hl">Power BI 대시보드</span>를 제작했습니다.</div>
@@ -461,7 +494,31 @@
         <div class="plink">View Project →</div>
       </div>
     </div>
+  </div>
+</section>
 
+<div class="divider"></div>
+
+<!-- ══ ACTIVITIES ══ -->
+<section id="activities">
+  <div class="sec-label">Research &amp; Projects — 03</div>
+  <h2>Field Activities</h2>
+  <p class="sec-sub">데이터 밖에서, 사용자와 실무자를 직접 만나 문제를 확인한 활동입니다.</p>
+
+  <div class="card-grid">
+    <div class="pcard fade" onclick="openModal('medi')" style="cursor:pointer">
+      <div class="pcard-img">
+        <img src="assets/images/thumb-medi.jpg" alt="Medi-Changer in the UK" onerror="this.style.display='none'"/>
+      </div>
+      <div class="pcard-body">
+        <div class="ptag">Field Activity · 2023</div>
+        <div class="pname">Medi-Changer in the UK</div>
+        <div class="psub">Field Research · Pharmacy Collaboration · Service Prototyping</div>
+        <div class="pdesc">해외여행 중 언어 장벽으로 약국 이용에 어려움을 겪는 사람들을 위한 <span class="hl">다국어 의약품 안내 서비스</span>입니다. 영국 현지 인터뷰와 국내 약국 협업으로 문제를 구체화해 프로토타입까지 발전시켰습니다.</div>
+        <div class="ptechs"><span class="ptech">Street Interview</span><span class="ptech">Market Research</span><span class="ptech">Prototyping</span></div>
+        <div class="plink">View Activity →</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -543,7 +600,8 @@
       <div class="award-rank">우수상</div>
       <div class="award-name">Cambridge UK Global Entrepreneurship Camp</div>
       <div class="award-meta">University of Cambridge · 2023.03</div>
-      <div class="award-detail"><div><p>시각적 증상 전달과 유사 의약품 검색을 통해 해외 약국 이용의 언어 장벽을 낮춘 다국어 의약품 안내 서비스입니다.</p></div></div>
+      <div class="award-detail"><div><p>영국 현지 인터뷰와 국내 약국 협업을 통해 해외 약국 이용의 언어 장벽 문제를 구체화하고, 다국어 의약품 안내 서비스 프로토타입으로 발전시킨 프로젝트입니다.</p>
+        <button class="rel-link" type="button" onclick="event.stopPropagation();openModal('medi')">Related Project → Medi-Changer in the UK</button></div></div>
     </div>
   </div>
 </section>
@@ -573,7 +631,7 @@
         <div class="ptag">International Conference · 2026.01</div>
         <div class="pname">ICBASS 2026 — AI Perception</div>
         <div class="pdesc">「Text Mining-Based Analysis and Comparison of Generative, Agentic, and Physical AI」 발표. BERTopic 기반 토픽 모델링으로 뉴스·커뮤니티 담론을 분석해 AI 유형별 인식 차이를 비교했습니다.</div>
-        <div class="ptechs"><span class="ptech">Kuala Lumpur</span><span class="ptech">ICBSS Session</span><span class="ptech">Online</span></div>
+        <div class="ptechs"><span class="ptech">Kuala Lumpur</span><span class="ptech">ICBASS Session</span><span class="ptech">Online</span></div>
         <div class="pnote">International Conference on Business, Social Sciences</div>
       </div>
     </div>
@@ -672,7 +730,7 @@
 </section>
 
 <footer>
-  <span>© 2026 Seunghyeon Lee &nbsp;·&nbsp; <span class="build">build v16</span> &nbsp;·&nbsp;
+  <span>© 2026 Seunghyeon Lee &nbsp;·&nbsp; <span class="build">build v17</span> &nbsp;·&nbsp;
     <a href="https://github.com/seunghyeon-lee-0" target="_blank" rel="noreferrer">GitHub</a> &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/seunghyeon-lee-a156aa310/" target="_blank" rel="noreferrer">LinkedIn</a>
   </span>
@@ -786,7 +844,7 @@
     <div class="modal-chapter">
       <div class="modal-chapter-label">Status</div>
       <p class="modal-text"><strong>Analysis completed</strong> | Manuscript in preparation</p>
-      <p class="modal-text">2026년 1월 IIARP–Glovento 2026 (Kuala Lumpur, Malaysia · Online) ICBSS 세션에서 발표했습니다.</p>
+      <p class="modal-text">2026년 1월 ICBASS 2026 (Kuala Lumpur, Malaysia · Online)에서 발표했습니다.</p>
       <div class="modal-actions">
         <a class="btn-ghost" href="assets/docs/ai-perception-analysis.pdf" target="_blank" rel="noreferrer">📄 Full Report (PDF)</a>
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
@@ -800,7 +858,7 @@
 <div id="modal-twincept" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Project 01 · Smart Manufacturing · Explainable AI</div>
+      <div class="modal-head-tag">Smart Manufacturing · Explainable AI</div>
       <div class="modal-head-title">TwinCept: Explainable Factory AI</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
@@ -867,13 +925,19 @@
 <div id="modal-pinfit" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Project 02 · Credit Risk Modeling · Graph Learning</div>
+      <div class="modal-head-tag">Credit Risk Modeling · Graph Learning</div>
       <div class="modal-head-title">Graph-Based Credit Scoring</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
   </div>
 
   <div class="modal-body">
+
+    <div class="modal-links">
+      <a class="mlink" href="https://www.fsc.go.kr/no010101/85933" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a1 1 0 0 1 1 1v11H6a2 2 0 0 1-2-2V6Z"/><path d="M16 9h3a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2h-2"/><path d="M7 9h5M7 12h5M7 15h3"/></svg>금융위원회 보도자료 ↗</a>
+      <a class="mlink" href="https://www.newsworks.co.kr/news/articleView.html?idxno=824393" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a1 1 0 0 1 1 1v11H6a2 2 0 0 1-2-2V6Z"/><path d="M16 9h3a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2h-2"/><path d="M7 9h5M7 12h5M7 15h3"/></svg>뉴스웍스 보도자료 ↗</a>
+    </div>
+
 
     <div class="modal-chapter">
       <p class="modal-award"><strong>🏆 2025 D-테스트베드 사업 최우수상 · 한국핀테크지원센터</strong></p>
@@ -958,8 +1022,103 @@
         <li>모델 설명력 확보를 통한 규제 대응 강화</li>
       </ul>
       <div class="modal-actions">
-        <a class="btn-press" href="https://www.fsc.go.kr/no010101/85933" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a1 1 0 0 1 1 1v11H6a2 2 0 0 1-2-2V6Z"/><path d="M16 9h3a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2h-2"/><path d="M7 9h5M7 12h5M7 15h3"/></svg>금융위원회 보도자료 ↗</a>
-        <a class="btn-press" href="https://www.newsworks.co.kr/news/articleView.html?idxno=824393" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a1 1 0 0 1 1 1v11H6a2 2 0 0 1-2-2V6Z"/><path d="M16 9h3a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2h-2"/><path d="M7 9h5M7 12h5M7 15h3"/></svg>뉴스웍스 보도자료 ↗</a>
+        <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Medi-Changer -->
+<div id="modal-medi" class="modal">
+  <div class="modal-head">
+    <div>
+      <div class="modal-head-tag">Field Research · Pharmacy Collaboration · Service Prototyping</div>
+      <div class="modal-head-title">Medi-Changer in the UK</div>
+    </div>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+  </div>
+
+  <div class="modal-body">
+
+    <div class="modal-chapter">
+      <p class="modal-award"><strong>🏆 Cambridge UK Global Entrepreneurship Camp 우수상 · University of Cambridge</strong></p>
+
+      <div class="modal-role">
+        <div class="modal-role-label">My Contribution</div>
+        <div class="modal-role-sub">Data Research · Market Research · Field Validation</div>
+        <ul>
+          <li>영국 현지 거리 인터뷰와 시장조사를 수행했습니다.</li>
+          <li>약국 협업 과정에서 확보한 사용자·실무자 피드백을 정리했습니다.</li>
+          <li>조사 결과가 아이디어에 머무르지 않도록 문제 정의와 서비스 기능, 프로토타입으로 연결했습니다.</li>
+        </ul>
+      </div>
+
+      <div class="modal-chapter-label">Overview</div>
+      <p class="modal-text">Medi-Changer는 해외여행 중 언어 장벽과 익숙하지 않은 의약품 정보로 약국 이용에 어려움을 겪는 사람들을 위한 <strong>다국어 의약품 안내 서비스</strong>입니다.</p>
+      <p class="modal-text">영국 창업 프로그램에 참여해 현지 사용자를 직접 인터뷰하고, 국내 약국과의 협업을 통해 문제를 구체화한 뒤 서비스 프로토타입으로 발전시켰습니다.</p>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Finding the Real Problem</div>
+      <p class="modal-text">해외에서 아픈 경험과 약국 이용 시 겪었던 불편, 의약품 정보를 확인하는 방식과 서비스 이용 의향을 알아보기 위해 영국 현지에서 거리 인터뷰를 진행했습니다.</p>
+      <p class="modal-text">인터뷰를 통해 문제는 단순한 언어 번역을 넘어, <strong>자신의 증상을 정확히 전달하기 어렵고 현지 의약품을 익숙한 약과 비교하기 어렵다</strong>는 점에 있음을 확인했습니다.</p>
+      <div class="modal-img-slot"><img src="assets/images/medi-01-interview.jpg" alt="Street Interviews in the UK" loading="lazy" onerror="this.parentElement.remove()"/></div>
+      <div class="modal-img-caption"><strong>Evidence 01 · Street Interviews in the UK</strong> — 영국 현지 사용자를 대상으로 해외 약국 이용 경험과 의약품 정보 탐색 과정, 서비스 이용 의향을 조사했습니다.</div>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Testing with Pharmacies</div>
+      <p class="modal-text">사용자 관점의 문제만 확인하는 데 그치지 않고, 실제 약국과 협업해 <strong>약사가 외국인 고객을 응대하는 과정과 복약 안내 방식</strong>도 함께 살펴보았습니다.</p>
+      <p class="modal-text">흥업온누리약국과 명동약국에서 증상 표현 자료와 복약 안내를 활용하고, 현장에서 확보한 피드백을 바탕으로 증상 분류와 안내 문구를 보완했습니다.</p>
+      <div class="modal-img-slot"><img src="assets/images/medi-02-pharmacy.jpg" alt="Pharmacy Collaboration" loading="lazy" onerror="this.parentElement.remove()"/></div>
+      <div class="modal-img-caption"><strong>Evidence 02 · Pharmacy Collaboration</strong> — 실제 약국 환경에서 증상 전달과 복약 안내 과정을 확인하고, 사용자와 약사 양쪽의 요구를 서비스 구조에 반영했습니다.</div>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Building the Prototype</div>
+      <p class="modal-text">현장 조사 결과를 바탕으로 사용자가 자신의 증상을 시각적으로 전달하고, 현지 일반의약품을 스캔해 익숙한 해외 의약품과 비교할 수 있는 프로토타입을 설계했습니다.</p>
+      <ul class="modal-list">
+        <li>신체 부위와 증상을 선택하는 시각형 증상 보드</li>
+        <li>일반의약품 스캔 및 성분 정보 확인</li>
+        <li>국가별 유사 의약품 정보 제공</li>
+        <li>사용자와 약사를 위한 다국어 복약 안내</li>
+      </ul>
+      <div class="modal-img-slot"><img src="assets/images/medi-03-prototype.jpg" alt="Service Prototype" loading="lazy" onerror="this.parentElement.remove()"/></div>
+      <div class="modal-img-caption"><strong>Evidence 03 · Service Prototype</strong> — 거리 인터뷰와 약국 협업에서 발견한 문제를 실제 사용 흐름과 주요 기능으로 구체화했습니다.</div>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Validation</div>
+      <div class="modal-stats-row">
+        <div class="modal-stat"><div class="modal-stat-num">621</div><div class="modal-stat-label">조사한 일반의약품</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">207</div><div class="modal-stat-label">제공한 복약 안내</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">51</div><div class="modal-stat-label">설문 참여자</div></div>
+        <div class="modal-stat"><div class="modal-stat-num">10</div><div class="modal-stat-label">심층 인터뷰</div></div>
+      </div>
+      <p class="modal-text">검증 과정에서 다음과 같은 피드백을 확보했습니다.</p>
+      <ul class="modal-list">
+        <li>증상을 더 <strong>세부적으로 표현</strong>할 필요가 있다</li>
+        <li>안내 <strong>언어의 다양화</strong>가 필요하다</li>
+        <li>외국인뿐 아니라 <strong>장애인과 고령층</strong>도 사용할 수 있어야 한다</li>
+        <li>복약 정보가 <strong>지나치게 전문적</strong>이어서 더 쉬운 표현이 필요하다</li>
+      </ul>
+    </div>
+
+    <div class="modal-chapter">
+      <div class="modal-chapter-label">Key Takeaway</div>
+      <p class="modal-text">사용자의 문제는 자료만으로 완전히 이해할 수 없었습니다. <strong>현장에서 직접 사용자를 만나고 약국의 업무 과정을 확인하면서 초기 가정을 수정</strong>할 수 있었고, 실제 사용 맥락에 맞는 서비스 기능으로 발전시킬 수 있었습니다.</p>
+
+      <div class="partner-block">
+        <div class="partner-label">함께 협력한 기관</div>
+        <div class="partner-logos">
+          <img src="assets/images/partner-hira.png" alt="건강보험심사평가원" onerror="this.remove()"/>
+          <img src="assets/images/partner-nhic.png" alt="국민건강보험공단" onerror="this.remove()"/>
+          <img src="assets/images/partner-gangwon.png" alt="강원도" onerror="this.remove()"/>
+        </div>
+      </div>
+
+      <div class="modal-actions">
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
       </div>
     </div>
@@ -971,13 +1130,19 @@
 <div id="modal-flood" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Project 01 · Spatial Analysis · Risk Assessment · Insurance Design</div>
+      <div class="modal-head-tag">Climate Risk · Spatial Analysis · Insurance Design</div>
       <div class="modal-head-title">Flood Risk Modeling</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
   </div>
 
   <div class="modal-body">
+
+    <div class="modal-links">
+      <a class="mlink mlink--gh" href="https://github.com/seunghyeon-lee-0/flood-risk-insurance-model" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 5.1 18 5.4 18 5.4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub Repository ↗</a>
+      <a class="mlink" href="https://www.newsdream.kr/news/articleView.html?idxno=86727" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a1 1 0 0 1 1 1v11H6a2 2 0 0 1-2-2V6Z"/><path d="M16 9h3a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2h-2"/><path d="M7 9h5M7 12h5M7 15h3"/></svg>보도자료 ↗</a>
+    </div>
+
 
     <div class="modal-chapter">
       <p class="modal-award"><strong>🏆 삼성화재 × POSTECH × 서울대학교 제3회 전국 대학생 리스크 관리 경진대회 장려상 · 2025</strong></p>
@@ -1064,8 +1229,6 @@
       <div class="modal-chapter-label">Impact</div>
       <p class="modal-text">지역의 홍수 위험을 하나의 정적인 순위로 평가하는 대신, <strong>극한 기후 상황에서 각 지역의 위험이 어떻게 변화하는지</strong>를 분석했습니다. 이를 통해 위험 분석을 지역 분류에서 끝내지 않고 실제 보험요율과 보상 구조 설계까지 연결하는 방법을 제안했습니다.</p>
       <div class="modal-actions">
-        <a class="btn-primary" href="https://github.com/seunghyeon-lee-0/flood-risk-insurance-model" target="_blank" rel="noreferrer">GitHub → flood-risk-insurance-model ↗</a>
-        <a class="btn-press" href="https://www.newsdream.kr/news/articleView.html?idxno=86727" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a1 1 0 0 1 1 1v11H6a2 2 0 0 1-2-2V6Z"/><path d="M16 9h3a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2h-2"/><path d="M7 9h5M7 12h5M7 15h3"/></svg>보도자료 ↗</a>
         <a class="btn-ghost" href="assets/docs/flood-risk-modeling.pdf" target="_blank" rel="noreferrer">📄 Full Report (PDF)</a>
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
       </div>
@@ -1078,13 +1241,18 @@
 <div id="modal-shuttle" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Project 02 · Location Optimization · Transportation Planning</div>
+      <div class="modal-head-tag">Mobility Planning · Location Optimization · Route Design</div>
       <div class="modal-head-title">Shuttle Bus Location Optimization</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
   </div>
 
   <div class="modal-body">
+
+    <div class="modal-links">
+      <a class="mlink mlink--gh" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 5.1 18 5.4 18 5.4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub Repository ↗</a>
+    </div>
+
 
     <div class="modal-chapter">
       <p class="modal-award"><strong>🏆 제12회 2024 빅콘테스트 데이터분석분야 최우수상 · 2024</strong></p>
@@ -1166,7 +1334,6 @@
       <p class="modal-text">또한 분석 모델의 한계를 검토하고 향후 실시간 교통 데이터와 방문객 이동 데이터를 활용한 개선 방향을 제안했습니다.</p>
       <div class="modal-hypothesis">해당 결과를 해당 축제 자치구에 전달했고, 실제 긍정적 검토가 이뤄져 <strong>실행 여부를 논의 중</strong>입니다.</div>
       <div class="modal-actions">
-        <a class="btn-primary" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer">GitHub → shuttle-stop-location-analysis ↗</a>
         <a class="btn-ghost" href="assets/docs/shuttle-bus-location-optimization.pdf" target="_blank" rel="noreferrer">📄 Full Report (PDF)</a>
         <button class="btn-ghost" onclick="closeModal()" style="background:none;cursor:pointer">← Back</button>
       </div>
@@ -1179,7 +1346,7 @@
 <div id="modal-health" class="modal">
   <div class="modal-head">
     <div>
-      <div class="modal-head-tag">Project 03 · Healthcare Analytics · BI Dashboard · Service Planning</div>
+      <div class="modal-head-tag">Healthcare Analytics · BI Visualization · Service Planning</div>
       <div class="modal-head-title">Healthcare Data Visualization</div>
     </div>
     <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
@@ -1271,6 +1438,6 @@
   </div>
 </div>
 
-<script src="main.js?v=16"></script>
+<script src="main.js?v=17"></script>
 </body>
 </html>
