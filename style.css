@@ -345,6 +345,7 @@ h2{
 /* ── CARDS ─────────────────────────────────────────────── */
 .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:stretch}
 #research .card-grid{grid-template-columns:repeat(3,1fr)}
+#conferences .pname{font-size:1.18rem;line-height:1.45}
 
 .pcard{
   position:relative;
@@ -367,6 +368,9 @@ h2{
 }
 /* 프로젝트 썸네일: 2:1 프레임에 꽉 채워 넣는다 (여백 0) */
 #projects .pcard-img{aspect-ratio:2/1;background:#fff;border:1px solid var(--border)}
+#projects .ptag{text-align:right}
+/* Activities 사진은 인물 사진이라 세로를 더 확보한다 */
+#conferences .pcard-img{aspect-ratio:3/2}
 #projects .pcard-img img{object-fit:cover}
 .pcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .pcard:hover .pcard-img img{transform:scale(1.04)}
@@ -387,6 +391,11 @@ h2{
 }
 .card-gh svg{width:15px;height:15px}
 .card-gh:hover{background:var(--dark);border-color:var(--dark);color:#fff}
+.conf-venue{
+  margin:.2rem 0 1.1rem;padding-top:.9rem;border-top:1px solid var(--border);
+}
+.conf-name{font-size:1.02rem;font-weight:700;color:var(--dark);letter-spacing:-.02em}
+.conf-place{font-size:.94rem;color:var(--subtle);margin-top:.2rem}
 .pnote{font-size:.94rem;color:var(--subtle);letter-spacing:-.01em;margin-top:.5rem}
 .disclosure-line{
   font-size:1rem;color:#b06a1a;line-height:1.7;font-weight:500;
@@ -685,6 +694,7 @@ section.visible{opacity:1;transform:translateY(0)}
   .photo-frame{width:260px}
   .skills-grid,.card-grid,.award-grid,.certs-grid{grid-template-columns:repeat(2,1fr)}
   #research .card-grid{grid-template-columns:repeat(3,1fr)}
+#conferences .pname{font-size:1.18rem;line-height:1.45}
   .about-split{grid-template-columns:1fr minmax(260px,.5fr);min-height:0}
   .about-split-text{padding:2.6rem 2.6rem 2.4rem}
   .exp-item{grid-template-columns:220px 1fr;gap:2rem}

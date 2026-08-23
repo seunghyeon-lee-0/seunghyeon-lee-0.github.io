@@ -1,79 +1,72 @@
-# Seunghyeon Lee — Portfolio (v3)
+# Seunghyeon Lee — Portfolio
 
-레퍼런스(`yejin-hwang.github.io`)의 디자인 토큰을 그대로 가져와 재작성한 버전.
-960px 단일 컬럼, 소형 타이포, 라운드 카드 + pill 태그, 우측 슬라이드 모달 구조.
+데이터 분석 포트폴리오 웹사이트. 정적 사이트이며 빌드 도구나 의존성이 없습니다.
+`index.html`을 열면 그대로 동작하고, GitHub Pages에 그대로 올릴 수 있습니다.
+
+## 파일 구성
+
+```
+index.html      전체 마크업 (섹션 + 상세 모달)
+style.css       스타일 전체
+main.js         모달 · 아코디언 · 스크롤 스파이 · 메일 링크
+404.html        존재하지 않는 주소로 접근했을 때 표시
+robots.txt      검색엔진 크롤링 허용
+sitemap.xml     사이트맵
+assets/
+  images/       사진 · 썸네일 · 로고 · 프로젝트 이미지
+  video/        대시보드 시연 영상
+  docs/         프로젝트 보고서 PDF
+  resume/       이력서 PDF
+  favicon.svg   파비콘
+```
+
+## 페이지 구성
+
+| 섹션 | id | 내용 |
+|---|---|---|
+| Home | `home` | 이름, 한 줄 소개, 링크 |
+| About Me | `about` | 소개글, 학력 타임라인, Research Interests, How I Work |
+| Education | `education` | 학위, 논문 주제, 이수 과목 |
+| Tools & Methods | `skills` | 사용 도구와 방법론 |
+| Research Papers | `research` | 진행 중인 연구 2건 |
+| Selected Projects | `projects` | 프로젝트 5건 |
+| Field Activities | `activities` | 현장 활동 |
+| Awards | `awards` | 수상 내역 (클릭 시 상세 펼침) |
+| Conferences & Activities | `conferences` | 학회 발표, 대외 활동 |
+| Certifications | `certifications` | 자격증 |
+| Contact | `contact` | 연락처, 메시지 폼 |
+
+## 동작 방식
+
+- **상세 모달** — 프로젝트·연구 카드를 클릭하면 우측에서 슬라이드로 열립니다. `openModal('id')` / `closeModal()`.
+- **How I Work** — 클릭하면 설명이 펼쳐지고 우측 사진이 바뀌는 아코디언입니다.
+- **Awards** — 카드를 클릭하면 상세 설명이 펼쳐집니다. 일부는 관련 프로젝트 모달로 연결됩니다.
+- **스크롤 스파이** — 현재 보고 있는 섹션의 메뉴에 표시가 붙습니다.
+- **Contact 폼** — 서버가 없으므로 메일 앱을 여는 방식입니다. 실제 수신이 필요하면 `main.js`의 submit 핸들러를 Formspree 등의 엔드포인트로 교체하세요.
+- **이메일 노출 방지** — 화면에는 `[at]`으로 표기하고, 링크는 스크립트가 조립합니다.
+
+## 수정 방법
+
+| 하고 싶은 것 | 위치 |
+|---|---|
+| 본문 폭 조정 | `style.css` 의 `--col` |
+| 색상 조정 | `style.css` 상단 `:root` |
+| 프로젝트 카드 순서 | `index.html` 의 `#projects .card-grid` 안 카드 블록 순서 |
+| 썸네일 비율 | `style.css` 의 `#projects .pcard-img` |
+| 이미지 교체 | `assets/images/` 에 같은 이름으로 덮어쓰기 |
 
 ## 배포
 
-`seunghyeon-lee-0/seunghyeon-lee-0.github.io` 저장소 루트에 아래를 덮어쓰기:
+저장소 루트에 전체 파일을 올리고 GitHub Pages를 `main` / `(root)`로 설정하면 됩니다.
 
-```
-index.html
-style.css
-main.js
-assets/
-```
+**이미지나 CSS를 교체했는데 화면이 그대로면 브라우저 캐시입니다.** `Ctrl+Shift+R`(Mac은 `Cmd+Shift+R`)로 새로고침하세요.
+`index.html`의 `style.css?v=` 와 `main.js?v=` 뒤 숫자를 올리면 캐시를 확실히 무효화할 수 있습니다.
+푸터에 표시되는 빌드 번호로 현재 보고 있는 버전을 확인할 수 있습니다.
 
-GitHub Pages 설정은 그대로 (`main` / `(root)`).
+## 채워 넣어야 하는 파일
 
-## 에셋
-
-Word 문서에 첨부해준 이미지 22장을 모두 반영했습니다. 전부 JPEG(q90)로 변환해 이미지 폴더 총 용량은 약 3.9MB입니다.
-
-| 파일 | 위치 |
+| 경로 | 없을 때 |
 |---|---|
-| `profile.jpg` / `about.jpg` | 히어로 우측, About 우측 |
-| `thumb-churn / -ai / -flood / -shuttle / -health.jpg` | 프로젝트 카드 썸네일 5장 |
-| `flood-01~04` | Flood 모달 (motivation / pipeline / FVI·FDI 지표 / PCD Matrix) |
-| `shuttle-01~09` | Shuttle 모달 (EDA / 방문객 / 프로세스 / 요약 / 모델비교 / MCLP / P-Median / Greedy / 노선) |
-| `health-01~03` | Healthcare 모달 (종합현황 / 지역별 / 개인별·질병) |
-| `logo-yonsei.png` | Education 로고 |
-| `og-cover.png` | 링크 공유 미리보기 |
-
-아직 없는 것:
-
-| 경로 | 상태 |
-|---|---|
-| `assets/resume/Seunghyeon_Lee_Resume.pdf` | 없음 — Resume 버튼이 404 |
-| `assets/video/healthcare-dashboard-demo.mp4` | 4초 더미 |
-| `assets/video/healthcare-dashboard-demo-2.mp4` | 위 파일 복사본 (Demo 02 자리 확보용) |
-
-## 자주 만질 값
-
-| 위치 | 변수 / 셀렉터 | 설명 |
-|---|---|---|
-| `style.css` `:root` | `--hero-photo-col` | 히어로 사진 칼럼 폭. `.8fr` → `.65fr`로 줄이면 사진이 더 작아짐 |
-| `style.css` | `section{max-width:960px}` | 전체 콘텐츠 폭 |
-| `style.css` | `.pcard{flex:0 0 calc(42% - .5rem)}` | 캐러셀에서 한 화면에 보이는 카드 수 |
-| `index.html` `.ct-item` | — | About 타임라인 항목 |
-
-## 구조
-
-- 섹션 순서: Home → About → Skills → Research → Projects → Education → Awards → Conferences → Certs → Contact
-- Research(워킹페이퍼 2건)는 캐러셀이 아닌 2열 그리드. 항목이 3개 이상 되면 `card-grid`를 `project-carousel`로 바꾸고 `carousel-nav`를 추가하면 된다.
-- Projects는 캐러셀 + 우측 슬라이드 모달(`openModal('flood'|'shuttle'|'health')`).
-- Contact 폼은 백엔드 없이 `mailto:`로 열린다. 실제 폼 수신이 필요하면 Formspree/Getform 엔드포인트로 `main.js`의 submit 핸들러만 교체.
-
-## 확인해야 할 사항
-
-- Education에 지도교수명(김희웅)을 넣어뒀다. 공개를 원치 않으면 해당 `<span>` 삭제.
-- Research 카드는 "Analysis completed / Manuscript in preparation" 상태만 노출하고 방법론·결과는 비공개로 유지했다. 논문 게재 확정 후 모달을 추가하는 것이 자연스럽다.
-- `og:image`는 생성해둔 `og-cover.png`를 쓴다. 프로필 사진이 없어도 링크 공유 미리보기는 정상 동작한다.
-- JSON-LD(`schema.org/Person`)에 학력·기술·SNS를 넣어뒀다. 이름/소속이 바뀌면 `<script type="application/ld+json">` 블록도 같이 수정할 것.
-- 커스텀 도메인을 쓸 경우 루트에 `CNAME` 파일을 추가하고, `index.html`의 `og:url`·`canonical`, `sitemap.xml`, `robots.txt`의 주소를 함께 바꿔야 한다.
-
-## 추가된 파일 (v3.1)
-
-| 파일 | 용도 |
-|---|---|
-| `404.html` | GitHub Pages 기본 404 대체 |
-| `robots.txt` / `sitemap.xml` | 검색엔진 색인 |
-| `assets/favicon.svg` | 파비콘 · 홈화면 아이콘 |
-| `assets/images/og-cover.png` | 링크 공유 미리보기 카드 |
-
-## 동작 메모
-
-- **스크롤 스파이**: 현재 섹션의 nav 링크에 pill 배경이 붙는다. 모든 링크에 동일한 padding을 주어 활성화 시 레이아웃 시프트가 0이다. 모바일에서는 nav가 가로 스크롤되며 활성 링크를 자동으로 중앙에 맞춘다.
-- **`scroll-margin-top:44px`**: 고정 내비 높이만큼 앵커 이동 위치를 보정한다. 없으면 섹션 제목이 내비 뒤로 숨는다.
-- **`<noscript>` 가드**: JS가 죽어도 섹션이 `opacity:0`으로 남지 않는다.
-- **캐러셀 드래그**: 8px 이상 드래그한 직후의 click은 캡처 단계에서 차단되어 모달이 잘못 열리지 않는다.
+| `assets/resume/Seunghyeon_Lee_Resume.pdf` | Resume 버튼이 404 |
+| `assets/docs/*.pdf` | 모달의 Full Report 버튼이 404 |
+| `assets/video/healthcare-dashboard-demo*.mp4` | 대시보드 시연 영상 재생 불가 (현재 더미) |
