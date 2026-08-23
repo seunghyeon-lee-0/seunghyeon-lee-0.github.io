@@ -13,20 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var photos = [...document.querySelectorAll('.hiw-photo')];
     var idx = items.indexOf(item);
     var wasOpen = item.classList.contains('open');
-    var isMobile = window.innerWidth <= 768;
 
     items.forEach(function (el) { el.classList.remove('open'); });
-    if (isMobile) {
-      // 모바일: 토글 (닫힌 상태 허용)
-      if (!wasOpen) item.classList.add('open');
-      return;
-    }
-    // 데스크톱: 항상 하나는 열려 있어야 우측 사진 패널이 빈칸이 되지 않는다
+    if (!wasOpen) item.classList.add('open');
+
+    // 우측 사진: 열린 항목의 사진, 모두 닫혔으면 첫 번째 사진을 기본으로
     photos.forEach(function (ph) { ph.classList.remove('active'); });
-    var target = wasOpen ? items[0] : item;
-    target.classList.add('open');
-    var ph = document.getElementById('hphoto-' + items.indexOf(target));
-    if (ph) ph.classList.add('active');
+    var target = document.getElementById('hphoto-' + (wasOpen ? 0 : idx));
+    if (target) target.classList.add('active');
   };
 
   /* ── Modal ─────────────────────────────────────────── */

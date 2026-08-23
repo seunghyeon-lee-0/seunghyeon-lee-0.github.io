@@ -42,7 +42,7 @@
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
-<link rel="stylesheet" href="style.css?v=18"/>
+<link rel="stylesheet" href="style.css?v=25"/>
 <noscript><style>section,.fade{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -171,10 +171,21 @@
   </div>
 
   <div class="block-label">How I Work</div>
+  <p class="hiw-intro">문제를 정의하고 데이터를 분석해, 해결책을 도출하는 저만의 업무 프로세스입니다.</p>
+  <p class="click-hint">
+    <span class="click-hint-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 4.5a1.6 1.6 0 0 1 3.2 0v6"/>
+        <path d="M12.2 10.6V9a1.6 1.6 0 0 1 3.2 0v1.9"/>
+        <path d="M15.4 11.2v-.9a1.6 1.6 0 0 1 3.2 0v5.2a5.4 5.4 0 0 1-5.4 5.4h-1.4a5 5 0 0 1-3.9-1.9L5 15.4a1.6 1.6 0 0 1 2.5-2l1.5 1.8"/>
+      </svg>
+    </span>
+    각 단계를 클릭하면 자세한 설명이 열립니다
+  </p>
   <div class="hiw-wrap fade">
 
     <div class="hiw-list">
-      <div class="hiw-item open" onclick="toggleHiw(this)">
+      <div class="hiw-item" onclick="toggleHiw(this)">
         <div class="hiw-trigger">
           <div class="hiw-trigger-left">
             <div class="hiw-step">Step 01. Listen &amp; Frame</div>
@@ -375,6 +386,7 @@
   <div class="sec-label">Research &amp; Projects — 01</div>
   <h2>Research Papers</h2>
   <p class="sec-sub">데이터를 통해 연구 질문을 검증하고, 그 결과를 학술적 논의로 발전시킨 연구입니다.</p>
+  <p class="disclosure-line">※ 세부 방법론 및 내용은 논문 작성 과정에 따라 공개 범위를 조정합니다.</p>
 
   <div class="card-grid">
 
@@ -383,7 +395,6 @@
         <img src="assets/images/thumb-churn.jpg" alt="Customer Behavior &amp; Churn Analysis" onerror="this.style.display='none'"/>
       </div>
       <div class="pcard-body">
-        <div class="disclosure">※ 세부 방법론 및 내용은 논문 작성 과정에 따라 공개 범위를 조정합니다.</div>
         
         <div class="ptag">Research Paper 01</div>
         <div class="pname">Customer Behavior &amp; Churn Analysis</div>
@@ -399,7 +410,6 @@
         <img src="assets/images/thumb-ai.jpg" alt="AI Perception Analysis" onerror="this.style.display='none'"/>
       </div>
       <div class="pcard-body">
-        <div class="disclosure">※ 세부 방법론 및 내용은 논문 작성 과정에 따라 공개 범위를 조정합니다.</div>
         
         <div class="ptag">Research Paper 02</div>
         <div class="pname">AI Perception Analysis</div>
@@ -422,23 +432,6 @@
   <p class="sec-sub">현실의 문제에서 출발해, 분석 결과를 서비스와 의사결정안으로 구체화한 프로젝트입니다.</p>
 
   <div class="card-grid">
-
-    <div class="pcard fade" onclick="openModal('shuttle')" style="cursor:pointer">
-      <div class="pcard-img">
-        <img src="assets/images/thumb-shuttle.jpg" alt="Shuttle Bus Location Optimization" onerror="this.style.display='none'"/>
-      </div>
-      <div class="pcard-body">
-        <div class="ptag">2024</div>
-        <div class="pname">Shuttle Bus Location Optimization</div>
-        <div class="psub">Mobility Planning · Location Optimization · Route Design</div>
-        <div class="pdesc">지역 축제 기간의 교통 혼잡을 완화하기 위해 <span class="hl">셔틀버스 정류장 위치, 운행 노선과 운영 계획</span>을 데이터 기반으로 최적화한 프로젝트입니다.</div>
-        <div class="ptechs"><span class="ptech">입지분석</span><span class="ptech">클러스터링</span><span class="ptech">수요 예측</span><span class="ptech">GIS</span><span class="ptech">Python</span></div>
-        <div class="pcard-actions">
-            <span class="plink">View Project →</span>
-            <a class="card-gh" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" aria-label="GitHub 저장소 열기"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 5.1 18 5.4 18 5.4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
-          </div>
-      </div>
-    </div>
 
     <div class="pcard fade" onclick="openModal('flood')" style="cursor:pointer">
       <div class="pcard-img">
@@ -471,6 +464,20 @@
       </div>
     </div>
 
+    <div class="pcard fade" onclick="openModal('health')" style="cursor:pointer">
+      <div class="pcard-img">
+        <img src="assets/images/thumb-health.jpg" alt="Healthcare Data Visualization" onerror="this.style.display='none'"/>
+      </div>
+      <div class="pcard-body">
+        <div class="ptag">2023</div>
+        <div class="pname">Healthcare Data Visualization</div>
+        <div class="psub">Healthcare Analytics · BI Visualization · Service Planning</div>
+        <div class="pdesc">국민건강보험공단의 건강검진·진료·의약품 데이터를 분석하고, 개인의 건강 상태를 직관적으로 탐색할 수 있는 <span class="hl">Power BI 대시보드</span>를 제작했습니다.</div>
+        <div class="ptechs"><span class="ptech">SQL</span><span class="ptech">Power BI</span><span class="ptech">Data Processing</span><span class="ptech">Python</span></div>
+        <div class="plink">View Project →</div>
+      </div>
+    </div>
+
     <div class="pcard fade" onclick="openModal('twincept')" style="cursor:pointer">
       <div class="pcard-img">
         <img src="assets/images/thumb-twincept.jpg" alt="TwinCept: Explainable Factory AI" onerror="this.style.display='none'"/>
@@ -485,17 +492,20 @@
       </div>
     </div>
 
-    <div class="pcard fade" onclick="openModal('health')" style="cursor:pointer">
+    <div class="pcard fade" onclick="openModal('shuttle')" style="cursor:pointer">
       <div class="pcard-img">
-        <img src="assets/images/thumb-health.jpg" alt="Healthcare Data Visualization" onerror="this.style.display='none'"/>
+        <img src="assets/images/thumb-shuttle.jpg" alt="Shuttle Bus Location Optimization" onerror="this.style.display='none'"/>
       </div>
       <div class="pcard-body">
-        <div class="ptag">2023</div>
-        <div class="pname">Healthcare Data Visualization</div>
-        <div class="psub">Healthcare Analytics · BI Visualization · Service Planning</div>
-        <div class="pdesc">국민건강보험공단의 건강검진·진료·의약품 데이터를 분석하고, 개인의 건강 상태를 직관적으로 탐색할 수 있는 <span class="hl">Power BI 대시보드</span>를 제작했습니다.</div>
-        <div class="ptechs"><span class="ptech">SQL</span><span class="ptech">Power BI</span><span class="ptech">Data Processing</span><span class="ptech">Python</span></div>
-        <div class="plink">View Project →</div>
+        <div class="ptag">2024</div>
+        <div class="pname">Shuttle Bus Location Optimization</div>
+        <div class="psub">Mobility Planning · Location Optimization · Route Design</div>
+        <div class="pdesc">지역 축제 기간의 교통 혼잡을 완화하기 위해 <span class="hl">셔틀버스 정류장 위치, 운행 노선과 운영 계획</span>을 데이터 기반으로 최적화한 프로젝트입니다.</div>
+        <div class="ptechs"><span class="ptech">입지분석</span><span class="ptech">클러스터링</span><span class="ptech">수요 예측</span><span class="ptech">GIS</span><span class="ptech">Python</span></div>
+        <div class="pcard-actions">
+            <span class="plink">View Project →</span>
+            <a class="card-gh" href="https://github.com/seunghyeon-lee-0/shuttle-stop-location-analysis" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" aria-label="GitHub 저장소 열기"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.1 5.1 18 5.4 18 5.4c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg><span>GitHub</span></a>
+          </div>
       </div>
     </div>
   </div>
@@ -744,7 +754,7 @@
 </section>
 
 <footer>
-  <span>© 2026 Seunghyeon Lee &nbsp;·&nbsp; <span class="build">build v18</span> &nbsp;·&nbsp;
+  <span>© 2026 Seunghyeon Lee &nbsp;·&nbsp; <span class="build">build v25</span> &nbsp;·&nbsp;
     <a href="https://github.com/seunghyeon-lee-0" target="_blank" rel="noreferrer">GitHub</a> &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/seunghyeon-lee-a156aa310/" target="_blank" rel="noreferrer">LinkedIn</a>
   </span>
@@ -1188,6 +1198,8 @@
       <div class="modal-hypothesis">각 지표에 사용되는 변수별 가중치는 전문가 기반 AHP 분석을 활용해 산출했습니다.</div>
       <div class="modal-img-slot"><img src="assets/images/flood-03-indicators.jpg" alt="FVI and FDI indicators" loading="lazy" onerror="this.parentElement.remove()"/></div>
       <div class="modal-img-caption">FVI · FDI 지표 구성과 변수별 산식, GIS 지표 맵</div>
+      <div class="modal-img-slot"><img src="assets/images/flood-05-maps.jpg" alt="지표 산출 결과 맵" loading="lazy" onerror="this.parentElement.remove()"/></div>
+      <div class="modal-img-caption">서울시 격자 단위 지표 산출 결과 — 좌: 지표 A, 우: 지표 B</div>
     </div>
 
     <div class="modal-chapter">
@@ -1452,6 +1464,6 @@
   </div>
 </div>
 
-<script src="main.js?v=18"></script>
+<script src="main.js?v=25"></script>
 </body>
 </html>
