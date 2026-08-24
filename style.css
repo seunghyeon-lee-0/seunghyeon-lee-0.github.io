@@ -160,6 +160,21 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 .social-btn svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
 .social-btn:hover{background:var(--fill2)}
 
+.social-btn--mail{cursor:pointer;font-family:inherit}
+.mail-reveal{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.62rem 1.3rem;background:var(--dark);border-radius:980px;
+  color:#fff;font-size:1rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap;
+}
+.mail-copy{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.16);color:#fff;transition:background .14s;
+}
+.mail-copy:hover{background:rgba(255,255,255,.32)}
+.mail-copy svg{width:14px;height:14px}
+.mail-copy.done{background:#2f7d4f}
+
 .hero-ctas{display:flex;gap:.7rem;flex-wrap:wrap}
 .btn-primary{
   padding:.85rem 2rem;background:var(--dark);color:#fff;
@@ -297,7 +312,7 @@ h2{
 }
 .hiw-photo.active{opacity:1;transform:scale(1)}
 #hphoto-0{object-position:center 66%}
-#hphoto-2{object-position:center 62%}
+#hphoto-2{object-position:center 30%}
 /* 인라인 사진은 모바일에서만 사용 */
 .hiw-item-photo{display:none}
 
@@ -381,6 +396,24 @@ h2{
 .pdesc{font-size:1.12rem;color:var(--muted);line-height:1.85;margin-bottom:1.1rem;flex:1}
 .ptechs{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.1rem}
 .ptech{padding:.3rem .75rem;background:var(--fill);border:none;border-radius:980px;font-size:.86rem;color:var(--dark);font-weight:500}
+
+/* 카드 키워드 - 도메인(테두리)과 방법론(채움)을 나눠 표기 */
+.kw-block{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.1rem}
+.kw-row{display:grid;grid-template-columns:4.2rem 1fr;gap:.7rem;align-items:start}
+.kw-label{
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--subtle);padding-top:.34rem;
+}
+.kw-tags{display:flex;flex-wrap:wrap;gap:.32rem}
+/* 도메인은 눌러 두고, 강조는 방법론에 준다 */
+.ptag-dom{
+  padding:.28rem .72rem;border:1px solid transparent;border-radius:980px;
+  background:var(--fill);font-size:.86rem;font-weight:500;color:var(--muted);letter-spacing:-.01em;
+}
+.ptag-met{
+  padding:.28rem .72rem;border:1.5px solid var(--dark);border-radius:980px;
+  background:transparent;font-size:.86rem;font-weight:700;color:var(--dark);letter-spacing:-.01em;
+}
 .plink{font-size:.98rem;color:var(--dark);font-weight:700;letter-spacing:-.015em}
 /* 카드 하단: 상세보기 + GitHub 바로가기 */
 .pcard-actions{display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
@@ -758,6 +791,9 @@ section.visible{opacity:1;transform:translateY(0)}
   .hero-meta{margin:1.3rem 0 1.6rem;gap:.35rem}
   .hero-meta span{font-size:.84rem}
   .social-btn{font-size:.85rem;padding:.5rem 1rem}
+  .mail-reveal{font-size:.86rem;padding:.5rem 1rem}
+  .kw-row{grid-template-columns:1fr;gap:.25rem}
+  .kw-label{padding-top:0}
   .hero-ctas{gap:.55rem}
   .btn-primary,.btn-ghost{flex:1;text-align:center;font-size:.92rem;padding:.8rem 1rem}
 

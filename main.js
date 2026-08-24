@@ -144,6 +144,35 @@ document.addEventListener('DOMContentLoaded', function () {
   const mailAddr = mailLink ? mailLink.dataset.user + '@' + mailLink.dataset.domain : 'dltmd004@yonsei.ac.kr';
   if (mailLink) mailLink.setAttribute('href', 'mailto:' + mailAddr);
 
+  /* ── 히어로 Email 버튼 ─────────────────────────────── */
+  // 주소를 HTML에 그대로 두지 않고, 클릭했을 때만 조립해 노출한다.
+  var mailBtn = document.getElementById('mailBtn');
+  if (mailBtn) {
+    mailBtn.addEventListener('click', function () {
+      var addr = mailBtn.dataset.u + '@' + mailBtn.dataset.d;
+      var shown = addr.replace('@', ' [at] ').replace(/\./g, ' [dot] ');
+
+      var box = document.createElement('span');
+      box.className = 'mail-reveal';
+      box.innerHTML = '<span>' + shown + '</span>';
+
+      var copy = document.createElement('button');
+      copy.type = 'button';
+      copy.className = 'mail-copy';
+      copy.setAttribute('aria-label', '이메일 주소 복사');
+      copy.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+      copy.addEventListener('click', function (e) {
+        e.stopPropagation();
+        navigator.clipboard?.writeText(addr);
+        copy.classList.add('done');
+        copy.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>';
+        setTimeout(function () { box.replaceWith(mailBtn); }, 1400);
+      });
+      box.appendChild(copy);
+      mailBtn.replaceWith(box);
+    });
+  }
+
   /* ── Contact form → mailto ─────────────────────────── */
   const form = document.getElementById('contactForm');
   form?.addEventListener('submit', e => {
