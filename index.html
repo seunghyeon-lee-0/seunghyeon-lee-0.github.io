@@ -42,7 +42,7 @@
 
 <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
-<link rel="stylesheet" href="style.css?v=37"/>
+<link rel="stylesheet" href="style.css?v=38"/>
 <noscript><style>section,.fade{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -66,7 +66,6 @@
   <a href="#awards">Awards</a>
   <a href="#conferences">Conferences</a>
   <a href="#certifications">Certs</a>
-  <a href="#contact">Contact</a>
 </nav>
 
 <!-- ══ HERO ══ -->
@@ -103,10 +102,6 @@
         <svg viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm4.6 4.2H6.4l3.1 9.6h2.3l3.1-9.6h-2.2l-2 6.9-2.1-6.9z"/></svg>
         Blog
       </a>
-      <button type="button" class="social-btn social-btn--mail" id="mailBtn" data-u="dltmd004" data-d="yonsei.ac.kr">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg>
-        Email
-      </button>
       <a class="social-btn" href="assets/resume/Seunghyeon_Lee_Resume.pdf" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11zm-5-9H9v2h4v-2zm2 4H9v2h6v-2z"/></svg>
         Resume
@@ -115,7 +110,7 @@
 
     <div class="hero-ctas">
       <a class="btn-primary" href="#research">View My Work</a>
-      <a class="btn-ghost" href="#contact">Contact Me</a>
+      <button type="button" class="btn-ghost btn-mail" id="mailBtn" data-u="dltmd004" data-d="yonsei.ac.kr">Contact Me</button>
     </div>
   </div>
 
@@ -762,55 +757,17 @@
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="sec-label">Get in Touch</div>
-
-  <div class="contact-links">
-    <a href="#" class="clink" data-user="dltmd004" data-domain="yonsei.ac.kr" id="mailLink">
-      <div class="clink-icon">@</div>
-      <span>dltmd004 [at] yonsei [dot] ac [dot] kr</span>
-    </a>
-    <a href="https://www.linkedin.com/in/seunghyeon-lee-a156aa310/" target="_blank" rel="noreferrer" class="clink">
-      <div class="clink-icon">in</div>
-      <span>linkedin.com/in/seunghyeon-lee</span>
-    </a>
-    <a href="https://github.com/seunghyeon-lee-0" target="_blank" rel="noreferrer" class="clink">
-      <div class="clink-icon">gh</div>
-      <span>github.com/seunghyeon-lee-0</span>
-    </a>
-    <a href="https://velog.io/@idam0424/series" target="_blank" rel="noreferrer" class="clink">
-      <div class="clink-icon">V</div>
-      <span>velog.io/@idam0424</span>
-    </a>
-  </div>
-
-  <div class="form-separator">or send a message</div>
-
-  <form class="contact-form" id="contactForm">
-    <div>
-      <label for="cf-name">Name</label>
-      <input id="cf-name" type="text" placeholder="성함" autocomplete="off"/>
-    </div>
-    <div>
-      <label for="cf-email">Email</label>
-      <input id="cf-email" type="email" placeholder="you@example.com" autocomplete="off"/>
-    </div>
-    <div>
-      <label for="cf-msg">Message</label>
-      <textarea id="cf-msg" rows="4" placeholder="어떤 내용이든 편하게 남겨주세요."></textarea>
-    </div>
-    <button class="btn-submit" type="submit">Send Message</button>
-  </form>
-</section>
-
 <footer>
-  <span>© 2026 Seunghyeon Lee &nbsp;·&nbsp; <span class="build">build v37</span> &nbsp;·&nbsp;
-    <a href="https://github.com/seunghyeon-lee-0" target="_blank" rel="noreferrer">GitHub</a> &nbsp;·&nbsp;
-    <a href="https://www.linkedin.com/in/seunghyeon-lee-a156aa310/" target="_blank" rel="noreferrer">LinkedIn</a>
-  </span>
+  <div class="foot-inner">
+    <span class="foot-copy">© 2026 Seunghyeon Lee</span>
+    <div class="foot-links">
+      <button type="button" class="foot-link foot-mail" id="footMail" data-u="dltmd004" data-d="yonsei.ac.kr">Email</button>
+      <a class="foot-link" href="https://github.com/seunghyeon-lee-0" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="foot-link" href="https://www.linkedin.com/in/seunghyeon-lee-a156aa310/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="foot-link" href="https://velog.io/@idam0424/series" target="_blank" rel="noreferrer">Blog</a>
+    </div>
+    <span class="build">build v38</span>
+  </div>
 </footer>
 
 <!-- ══ MODALS ══ -->
@@ -1260,13 +1217,10 @@
     </div>
 
     <div class="modal-chapter">
-      <div class="modal-chapter-label">Validation</div>
-      <div class="modal-stats-row">
-        <div class="modal-stat"><div class="modal-stat-num">621</div><div class="modal-stat-label">조사한 일반의약품</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">207</div><div class="modal-stat-label">제공한 복약 안내</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">51</div><div class="modal-stat-label">설문 참여자</div></div>
-        <div class="modal-stat"><div class="modal-stat-num">10</div><div class="modal-stat-label">심층 인터뷰</div></div>
-      </div>
+      <div class="modal-chapter-label">Research at a Glance</div>
+      <p class="modal-text">서비스 컨셉을 검증하기 위해 한국과 영국에서 현장 조사를 진행했습니다.</p>
+      <div class="modal-img-slot"><img src="assets/images/medi-04-research.jpg" alt="Research at a Glance" loading="lazy" onerror="this.parentElement.remove()"/></div>
+    </div>
     </div>
 
     <div class="modal-chapter">
@@ -1644,6 +1598,6 @@
   </div>
 </div>
 
-<script src="main.js?v=37"></script>
+<script src="main.js?v=38"></script>
 </body>
 </html>

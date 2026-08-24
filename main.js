@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // 배포(https)에서는 제목이 그대로 유지된다.
   var BUILD = document.querySelector('.build')?.textContent.trim() || '';
   console.log('%c' + BUILD, 'font-size:16px;font-weight:700;color:#c0392b');
-  if (location.protocol === 'file:' && BUILD) document.title = '[' + BUILD + '] ' + document.title;
+  var buildEl = document.querySelector('.build');
+  if (location.protocol === 'file:') {
+    if (BUILD) document.title = '[' + BUILD + '] ' + document.title;   // 로컬에서만 버전 확인
+  } else if (buildEl) {
+    buildEl.remove();                                                   // 배포본에는 노출하지 않는다
+  }
 
   /* ── How I Work 아코디언 ───────────────────────────── */
   window.toggleHiw = function (item) {
@@ -144,12 +149,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const mailAddr = mailLink ? mailLink.dataset.user + '@' + mailLink.dataset.domain : 'dltmd004@yonsei.ac.kr';
   if (mailLink) mailLink.setAttribute('href', 'mailto:' + mailAddr);
 
-  /* ── 히어로 Email 버튼 ─────────────────────────────── */
+  /* ── 이메일 공개 버튼 (히어로 · 푸터) ───────────────── */
   // 주소를 HTML에 그대로 두지 않고, 클릭했을 때만 조립해 노출한다.
-  var mailBtn = document.getElementById('mailBtn');
-  if (mailBtn) {
-    mailBtn.addEventListener('click', function () {
-      var addr = mailBtn.dataset.u + '@' + mailBtn.dataset.d;
+  function bindMail(btn) {
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var addr = btn.dataset.u + '@' + btn.dataset.d;
       var shown = addr.replace('@', ' [at] ').replace(/\./g, ' [dot] ');
 
       var box = document.createElement('span');
@@ -166,23 +171,13 @@ document.addEventListener('DOMContentLoaded', function () {
         navigator.clipboard?.writeText(addr);
         copy.classList.add('done');
         copy.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg>';
-        setTimeout(function () { box.replaceWith(mailBtn); }, 1400);
+        setTimeout(function () { box.replaceWith(btn); }, 1600);
       });
       box.appendChild(copy);
-      mailBtn.replaceWith(box);
+      btn.replaceWith(box);
     });
   }
-
-  /* ── Contact form → mailto ─────────────────────────── */
-  const form = document.getElementById('contactForm');
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    const name = document.getElementById('cf-name').value.trim();
-    const email = document.getElementById('cf-email').value.trim();
-    const msg = document.getElementById('cf-msg').value.trim();
-    const subject = encodeURIComponent(`[Portfolio] ${name || 'Contact'}`);
-    const body = encodeURIComponent(`${msg}\n\n---\n${name}\n${email}`);
-    window.location.href = `mailto:${mailAddr}?subject=${subject}&body=${body}`;
-  });
+  bindMail(document.getElementById('mailBtn'));
+  bindMail(document.getElementById('footMail'));
 
 });

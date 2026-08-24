@@ -160,7 +160,7 @@ nav a.active{opacity:1;background:var(--fill);font-weight:600}
 .social-btn svg{width:15px;height:15px;fill:currentColor;flex-shrink:0}
 .social-btn:hover{background:var(--fill2)}
 
-.social-btn--mail{cursor:pointer;font-family:inherit}
+.btn-mail{cursor:pointer;font-family:inherit}
 .mail-reveal{
   display:inline-flex;align-items:center;gap:.55rem;
   padding:.62rem 1.3rem;background:var(--dark);border-radius:980px;
@@ -497,7 +497,7 @@ h2{
 .tag-inline{background:var(--sage-pale);border:1px solid var(--sage-mid);border-radius:6px;padding:.2rem .65rem;font-size:.94rem;font-weight:600;color:var(--accent)}
 
 /* ── AWARDS ────────────────────────────────────────────── */
-.award-grid{display:flex;flex-direction:column;gap:.6rem;max-width:64rem}
+.award-grid{display:flex;flex-direction:column;gap:.6rem;max-width:64rem;margin:0 auto}
 .award-card{
   background:var(--fill);border:none;padding:1.35rem 1.7rem;border-radius:16px;
   display:grid;grid-template-columns:auto 1fr auto auto;gap:.4rem 1.8rem;align-items:center;
@@ -600,9 +600,20 @@ h2{
 .form-separator::before,.form-separator::after{content:'';flex:1;height:1px;background:var(--hairline)}
 
 /* ── FOOTER ────────────────────────────────────────────── */
-footer{border-top:1px solid var(--hairline);padding:1.8rem 2rem;text-align:center;font-size:.98rem;color:var(--subtle);background:#fff}
-footer a{color:var(--subtle);text-decoration:none}
-.build{font-variant-numeric:tabular-nums;opacity:.55}
+footer{border-top:1px solid var(--hairline);padding:2rem;background:#fff}
+.foot-inner{
+  width:var(--col);max-width:100%;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;
+}
+.foot-copy{font-size:.98rem;color:var(--subtle)}
+.foot-links{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+.foot-link{
+  font:inherit;font-size:.98rem;font-weight:500;color:var(--muted);
+  background:none;border:none;padding:0;cursor:pointer;text-decoration:none;
+  transition:color .14s;
+}
+.foot-link:hover{color:var(--dark)}
+.build{font-size:.82rem;color:var(--subtle);opacity:.5;font-variant-numeric:tabular-nums}
 footer a:hover{color:var(--dark)}
 
 /* ── MODAL ─────────────────────────────────────────────── */
@@ -846,8 +857,8 @@ section.visible{opacity:1;transform:translateY(0)}
   .exp-title{font-size:1.08rem}
 
   /* contact */
-  .contact-links,.contact-form{max-width:100%}
-  .btn-submit{align-self:stretch;text-align:center}
+  .foot-inner{flex-direction:column;gap:.9rem;text-align:center}
+  .foot-links{justify-content:center;gap:1.2rem}
 
   /* awards 일렬 → 세로 스택 */
   /* 모바일: 등급/펼침 아이콘 한 줄 → 제목 → 주최 → 상세 */
