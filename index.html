@@ -83,6 +83,62 @@
 }
 </style>
 
+
+<style id="award-column-fix">
+/* Awards only: rebalance columns for longer English labels */
+@media (min-width: 901px){
+  .award-card{
+    grid-template-columns:
+      minmax(120px, 0.75fr)
+      minmax(300px, 1.7fr)
+      minmax(240px, 1fr)
+      42px !important;
+    column-gap: 28px !important;
+    align-items: center;
+  }
+
+  .award-rank{
+    min-width: 0;
+    line-height: 1.35;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .award-name{
+    min-width: 0;
+    line-height: 1.4;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  .award-meta{
+    min-width: 0;
+    line-height: 1.35;
+    align-items: flex-end;
+  }
+
+  .award-org{
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-align: right;
+  }
+}
+
+/* Slightly tighter balance for medium-width screens */
+@media (min-width: 721px) and (max-width: 1100px){
+  .award-card{
+    grid-template-columns:
+      minmax(105px, 0.7fr)
+      minmax(250px, 1.55fr)
+      minmax(190px, 0.95fr)
+      38px !important;
+    column-gap: 20px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
