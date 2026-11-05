@@ -3,18 +3,28 @@
 ## 파일 구성
 
 ```
-index.html      전체 마크업 (섹션 + 상세 모달)
-style.css       스타일 전체
-main.js         모달 · 아코디언 · 스크롤 스파이 · 메일 링크
-404.html        존재하지 않는 주소로 접근했을 때 표시
-robots.txt      검색엔진 크롤링 허용
-sitemap.xml     사이트맵
+index.html          전체 마크업 (섹션 + 상세 모달)
+404.html            존재하지 않는 주소로 접근했을 때 표시
+robots.txt          검색엔진 크롤링 허용
+sitemap.xml         사이트맵
 assets/
-  images/       사진 · 썸네일 · 로고 · 프로젝트 이미지
-  video/        대시보드 시연 영상
-  docs/         프로젝트 보고서 PDF
-  resume/       이력서 PDF
-  favicon.svg   파비콘
+  css/style.css     스타일 전체
+  js/main.js        모달 · 아코디언 · 스크롤 스파이 · 메일 링크
+  favicon.svg       파비콘
+  images/
+    about/          프로필 · 졸업 사진 · How I Work 사진
+    activities/     현장 활동 사진
+    icons/          아이콘
+    logos/          학교 · 기관 · 파트너 로고
+    thumbnails/     프로젝트 카드 썸네일
+    projects/       프로젝트별 상세 이미지 (flood, shuttle, healthcare, medichanger,
+                    pinfit, twincept, disclosure, moeun)
+    og-cover.png    링크 공유 미리보기 이미지
+  video/            대시보드 시연 영상
+  docs/             프로젝트 보고서 PDF
+  resume/           이력서 PDF
+_notes/             문구 수정용 메모 (사이트에 배포되지 않음)
+_archive/           현재 사이트에서 쓰지 않는 이미지 보관 (사이트에 배포되지 않음)
 ```
 
 ## 페이지 구성
