@@ -18,7 +18,8 @@ assets/
     logos/          학교 · 기관 · 파트너 로고
     thumbnails/     프로젝트 카드 썸네일
     projects/       프로젝트별 상세 이미지 (flood, shuttle, healthcare, medichanger,
-                    pinfit, twincept, disclosure, moeun)
+                    pinfit, twincept, disclosure, moeun,
+                    ai-perception)
     og-cover.png    링크 공유 미리보기 이미지
   video/            대시보드 시연 영상
   docs/             프로젝트 보고서 PDF
